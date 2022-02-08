@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom'
 import Signup from './Pages/Signup';
 import Home from './Pages/Home';
 import React from 'react';
+import Profile from './Pages/Profile';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/home' component={Home} />
+          <Route exact path='/profile' component={Profile} />
         </Switch>
       </Router>
     </div>
