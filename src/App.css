@@ -1,6 +1,13 @@
 .App {
-  /* text-align: center; */
-  
+  /* text-align: center; */  
+}
+
+
+.App .links{
+  font-size: 21px;
+  font-weight: 700;
+  margin: 5rem 0 0 5rem; 
+  align-items: center;
 }
 
 body{

@@ -1,17 +1,26 @@
 import './App.css';
-import {Switch,Route,Link} from 'react-router-dom'
-import Button from './Shared/Button';
+import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom'
+// import Button from './Shared/Button';
 import Signup from './Pages/Signup';
-
+import Sidebar from './Shared/Sidebar';
+import Home from './Pages/Home';
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <Switch>
-        <Route path='/signup'>
-            <Signup/>
-        </Route>
-      </Switch>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <div className='links'>
+              <a href='signup'>Signup</a><br/>
+            </div>
+          </Route>
+          
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/home' component={Home} />
+        </Switch>
+      </Router>
     </div>
   );
 }

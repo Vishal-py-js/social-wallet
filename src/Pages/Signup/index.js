@@ -31,6 +31,8 @@ const Container = styled.div`
 
 const Header = styled.div`
     strong{
+        cursor: pointer;
+        font-size: 21px;
         background: #6CFF77;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
