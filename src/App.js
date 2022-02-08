@@ -2,7 +2,6 @@ import './App.css';
 import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom'
 // import Button from './Shared/Button';
 import Signup from './Pages/Signup';
-import Sidebar from './Shared/Sidebar';
 import Home from './Pages/Home';
 import React from 'react';
 
