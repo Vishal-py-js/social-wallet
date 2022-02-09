@@ -6,11 +6,12 @@ import { selectExplore, selectFollowers, selectHome, selectNFTs, selectProfile }
 import Sidebar from "../../Shared/Sidebar";
 import Explore from "./ExploreScreen";
 import HomeScreen from "./HomeScreen";
+import NFT from "./NFTScreen";
 
 
 const Container = styled.div`
     display: flex;
-    //height: fit-content;
+    height: 100%;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
     .sidebar{
         flex:1;
@@ -87,7 +88,8 @@ const Home = () => {
 
                 {
                     tabSelector==="Home"?<HomeScreen />:
-                    tabSelector==="Explore"?<Explore />: ""
+                    tabSelector==="Explore"?<Explore />:
+                    tabSelector==="NFTs"?<NFT />:""
                 }
             </Body>
 

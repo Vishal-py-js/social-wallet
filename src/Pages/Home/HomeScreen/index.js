@@ -147,6 +147,14 @@ const HomeScreen = (props) => {
                             <img src={friendIcon5} />
                             <h4>User#5</h4>
                         </div>
+                        <div>
+                            <img src={friendIcon1} />
+                            <h4>User#5</h4>
+                        </div>
+                        <div>
+                            <img src={friendIcon2} />
+                            <h4>User#5</h4>
+                        </div>
                         <img className="arrow" src src={arrowIcon} />
                     </ImageContainer>
                 </Friends>  

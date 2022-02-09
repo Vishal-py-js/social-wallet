@@ -24,7 +24,6 @@ const data = {
       pointRadius: 1,
       pointHitRadius: 10,
       data: [45, 59, 80, 81, 56, 46, 76, 66],
-      //data: ["$ ETH", "$ ETH", "$ ETH", "$ ETH",]
       
     },
     
@@ -35,7 +34,6 @@ const data = {
 const options = {
   legend: {
     display: false,
-    //position: "center"
   },
   layout:{
     padding: 70
