@@ -12,10 +12,12 @@ const Container = styled.div`
         flex:1;
     }
 `
-
+// rgba(185, 11, 122, 1)
 const Body = styled.div`
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
     flex: 15;
+    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.06) 97.96%);
+
     color: #fff;
     display: flex;
     gap: 3rem;
@@ -71,6 +73,11 @@ const ProfileDetail = styled.div`
         font-size: 19px;
         width: 27vw;
         padding-left: 8px;
+    }
+    @media (max-width: 868px) {
+        //display: grid;
+        //margin: none;
+        //grid-template-columns: repeat(2, 1fr);
     }
 `
 

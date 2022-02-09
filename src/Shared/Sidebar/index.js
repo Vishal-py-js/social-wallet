@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
 
@@ -12,7 +13,7 @@ const settingsIcon = "assets/icons/settings-icon.svg"
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     height: 100vh;
-    width: 6.5rem;
+    width: 110px;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -32,38 +33,45 @@ const Container = styled.div`
 `
 
 const Sidebar = (props) => {
- return(
-    <Container>
-        <div>
-            <img src={userIcon} alt="user"/>
-            <p>USER</p>
-        </div>
-        <div>
-            <img src={hashIcon} alt="hash"/>
-            <p>HASH</p>
-        </div>
-        <div>
-            <img src={transactionIcon} alt="transaction"/>
-            <p>TRANSACTION</p>
-        </div>
-        <div>
-            <img src={galleryIcon} alt="gallery"/>
-            <p>GALLERY</p>
-        </div>
-        <div>
-            <img src={coinIcon} alt="coins"/>
-            <p>COINS</p>
-        </div>
-        <div>
-            <img src={chatIcon} alt="chat"/>
-            <p>CHAT</p>
-        </div>
-        <div>
-            <img src={settingsIcon} alt="settings"/>
-            <p>SETTINGS</p>
-        </div>
-    </Container>
- )
+
+    const history = useHistory()
+
+    const handleUserClick = () => {
+        history.push("/profile")
+    }
+
+    return(
+        <Container>
+            <div onClick={handleUserClick}>
+                <img src={userIcon} alt="user"/>
+                <p>USER</p>
+            </div>
+            <div>
+                <img src={hashIcon} alt="hash"/>
+                <p>HASH</p>
+            </div>
+            <div>
+                <img src={transactionIcon} alt="transaction"/>
+                <p>TRANSACTION</p>
+            </div>
+            <div>
+                <img src={galleryIcon} alt="gallery"/>
+                <p>GALLERY</p>
+            </div>
+            <div>
+                <img src={coinIcon} alt="coins"/>
+                <p>COINS</p>
+            </div>
+            <div>
+                <img src={chatIcon} alt="chat"/>
+                <p>CHAT</p>
+            </div>
+            <div>
+                <img src={settingsIcon} alt="settings"/>
+                <p>SETTINGS</p>
+            </div>
+        </Container>
+    )
 }
 
 export default Sidebar

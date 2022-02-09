@@ -1,0 +1,5 @@
+export const SELECT_HOME = "SELECT_HOME"
+export const SELECT_PROFILE = "SELECT_PROFILE"
+export const SELECT_NFTs = "SELECT_NFTs"
+export const SELECT_FOLLOWERS = "SELECT_FOLLOWERS"
+export const SELECT_EXPLORE = "SELECT_EXPLORE"
