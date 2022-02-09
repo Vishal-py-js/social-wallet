@@ -24,9 +24,6 @@ const topCollection7 = "/assets/icons/top-collection7.svg"
 const Container = styled.div`
     padding: 0 8rem 0 8rem;
     height: fit-content;
-    // display: flex;
-    // flex-direction: column;
-    // line-height;
 `
 
 const Header = styled.div`
@@ -63,8 +60,6 @@ const Sellers = styled.div`
 const Bids = styled.div`
     display: flex;
     flex-direction: column;
-    //gap: 2rem;
-    //margin-top: 4rem;
 `
 const BidsDetail = styled.div`
     display: flex;
@@ -76,8 +71,7 @@ const CardContainer = styled.div`
     justify-content: space-between;
     border: 1px solid rgba(108, 255, 119, 1);
 
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.03) 5.21%, rgba(108, 255, 119, 0.0) 97.96%);
+    padding: 0.8rem 0.8rem 0.8rem 0.8rem;
     background: linear-gradient(97.02deg, rgba(242, 194, 195, 0.12) 5.21%, rgba(242, 194, 195, 0) 97.96%);
 
     h4{
@@ -120,7 +114,6 @@ const SellerDetails = styled.div`
         line-height: 0;
         border: 1px solid #FB258B;
         padding: 1rem 2rem 1rem 2rem;
-        //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.03) 5.21%, rgba(108, 255, 119, 0.0) 97.96%);
         background: linear-gradient(97.02deg, rgba(242, 194, 195, 0.12) 5.21%, rgba(242, 194, 195, 0) 97.96%);
 
         h4{
@@ -136,9 +129,7 @@ const SellerDetails = styled.div`
 const Navigation = styled.div`
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
-    //margin-right: 3rem;
-    
+    justify-content: flex-end;    
 `
 
 const Explore = (props) => {

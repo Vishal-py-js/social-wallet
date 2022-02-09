@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import LineDemo from "./Chart";
 
 const friendIcon1 = '/assets/icons/signup1.svg'
 const friendIcon2 = '/assets/icons/signup2.svg'
@@ -59,10 +60,10 @@ const CoinSelector = styled.div`
 `
 const Graph = styled.div`
     margin-left: 7.5vw;
-    width: 50vw;
-    height: 40vh;
+    width: 60vw;
+    height: fit-content;
     border: 1px solid #C8FDCB;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
 `
 
 const Friends = styled.div`
@@ -121,7 +122,7 @@ const HomeScreen = (props) => {
                     </select>
                 </CoinSelector>
                 <Graph>
-
+                    <LineDemo />
                 </Graph>
                 <Friends>
                     <h4>TOP FRIENDS</h4>

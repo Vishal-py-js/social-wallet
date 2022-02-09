@@ -10,8 +10,8 @@ import HomeScreen from "./HomeScreen";
 
 const Container = styled.div`
     display: flex;
-    // background: #000000;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.09) 97.96%);
+    //height: fit-content;
+    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
     .sidebar{
         flex:1;
     }
