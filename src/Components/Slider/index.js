@@ -20,7 +20,7 @@ width: 77vw;
       }
       .slick-prev{
         //position: relative;
-        left: 77rem;
+        left: 76rem;
         z-index:111 !important;
       }
       .slick-next{

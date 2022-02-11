@@ -5,6 +5,7 @@ import Signup from './Pages/Signup';
 import Home from './Pages/Home';
 import React from 'react';
 import Profile from './Pages/Profile';
+import Transaction from './Pages/Transactions';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/profile' component={Profile} />
+          <Route exact path='/transactions' component={Transaction} />
         </Switch>
       </Router>
     </div>
