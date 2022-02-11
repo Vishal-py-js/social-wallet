@@ -13,7 +13,7 @@ const settingsIcon = "assets/icons/settings-icon.svg"
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     height: 100vh;
-    width: 7vw;
+    width: 114px;
     position: fixed;
     display: flex;
     flex-direction: column;
