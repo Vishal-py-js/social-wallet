@@ -13,11 +13,14 @@ const settingsIcon = "assets/icons/settings-icon.svg"
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     height: 100vh;
-    width: 110px;
+    width: 7vw;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @media (max-width: 768px) {
+        width: 113px;
+    }
 
     div{
         cursor: pointer;

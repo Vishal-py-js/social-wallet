@@ -14,17 +14,27 @@ const Container = styled.div`
     height: 100%;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
     .sidebar{
-        flex:1;
+        //flex:1;
+        width: 7vw;
+        @media (max-width: 768px) {
+            width: 120px;
+            flex:2;
+        }
     }
 `
 
 const Body = styled.div`
-    flex: 15;
+    //flex: 13;
+    width: 93vw;
     color: #fff;
     display: flex;
     gap: 3rem;
     flex-direction: column;
     margin: 4rem 0 4rem 2rem;
+    @media (max-width: 768px) {
+        width: 120px;
+        flex:9;
+    }
 `
 const Tabs = styled.div`
     display: flex;

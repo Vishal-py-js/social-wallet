@@ -42,7 +42,7 @@ const Text = styled.div`
     }
 `
 
-const MultiCard = ({imgSrc}) => {
+const ProfileMultiCard = ({imgSrc}) => {
 
     // const [star, setStar] = useState(false)
     return(
@@ -62,4 +62,4 @@ const MultiCard = ({imgSrc}) => {
     )
 }
 
-export default MultiCard
+export default ProfileMultiCard

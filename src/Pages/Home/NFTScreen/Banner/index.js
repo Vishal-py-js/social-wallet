@@ -24,6 +24,7 @@ flex-direction: column;
         p{
             font-size: 19px;
             letter-spacing: 2px;
+            max-width: 60vw;
         }
         button{
             padding: 10px 20px 10px 20px;

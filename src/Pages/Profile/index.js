@@ -10,12 +10,14 @@ const Container = styled.div`
     background-size: 70% 70%;
     .sidebar{
         flex:1;
+        //width: 7%;
     }
 `
 // rgba(185, 11, 122, 1)
 const Body = styled.div`
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
-    flex: 15;
+    flex: 13;
+    //width: 93%;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.06) 97.96%);
 
     color: #fff;

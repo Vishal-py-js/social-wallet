@@ -14,6 +14,8 @@ function App() {
           <Route exact path='/'>
             <div className='links'>
               <a href='signup'>Signup</a><br/>
+              <a href='home'>Home</a><br/>
+              <a href='profile'>Profile</a><br/>
             </div>
           </Route>
           

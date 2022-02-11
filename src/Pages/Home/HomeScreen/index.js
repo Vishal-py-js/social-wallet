@@ -33,28 +33,31 @@ const Selector = styled.div`
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
         color: #C8FDCB;
         height: 3rem;
-        width: 7vw;
+        border-radius: 5px;
         font-size: 19px;
         text-align: center;
         option{
-            background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
             color: #C8FDCB;
+            background: black;
+            border-radius: 5px;
         }
     }
 `
 
 const CoinSelector = styled.div`
     margin-left: 7.5vw;
+    
     select{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
         color: #C8FDCB;
         height: 3rem;
-        width: 17vw;
-        font-size: 17px;
+        border-radius: 5px;
+        font-size: 19px;
         text-align: center;
         option{
-            background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
             color: #C8FDCB;
+            background: black;
+            border-radius: 5px;
         }
     }
 `

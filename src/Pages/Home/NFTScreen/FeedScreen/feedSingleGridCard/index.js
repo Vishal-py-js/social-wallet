@@ -11,11 +11,11 @@ const user1 = "./assets/icons/nft-card-user1.svg"
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     width: 75vw;
-    padding: 0.5rem 1rem 0rem 0;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     display: flex;
 
-    justify-content: space-around;
-    //flex-direction: column;
+    //justify-content: space-around;
+    flex-direction: column;
     gap: 1rem;
     border: 1px solid #C8FDCB;
 `
@@ -32,7 +32,7 @@ const Image = styled.div`
     .image{
         //position: relative;
         //padding: 0 0 0 3rem;
-        width: 60vw;
+        width: 100%;
         height: 40vh;
     }
 `
@@ -40,20 +40,41 @@ const Image = styled.div`
 const Text = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    //margin-left: 5rem;
-    //position: relative;
-    justify-content: center;
     color: #C8FDCB;
     gap: 1rem;
     
     .user{
         font-size: 26px;
         display: flex;
+        justify-content: space-between;
         gap: 1rem;
+    }
+    .user-action{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        strong{
+            font-size: 22px;
+            font-weight: 400;
+        }
+    }
+    .gem{
+        img{
+            height: 35px;
+        }
+    }
+
+    .likes{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        img{
+            height: 20px;
+        }
     }
     .price{
         display: flex;
+        justify-content: space-between;
         gap: 1.5rem;
         span{
             font-size: 24px;
@@ -78,40 +99,56 @@ const Text = styled.div`
         border: 2px solid rgba(108, 255, 119, 1);
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.0) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     }
+    .like-container{
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        align-items: center;
+        span{
+            font-size: 20px;
+        }
+    }
 `
 
-const SingleCard = ({imgSrc}) => {
+const FeedSingleCard = ({imgSrc}) => {
 
     // const [star, setStar] = useState(false)
     return(
         <Container>
             <Image>
                 <img className="image" src={imgSrc} alt=""/>
-                <img className="star" src={star} alt=""/>
+                {/* <img className="star" src={star} alt=""/> */}
             </Image>
             <Text>
                 <div className="user">
-                    <h4>User#1</h4>
-                    <img src={user1} alt="" />
-                </div>
-                <div className="price">
-                    <span>Price</span>
-                    <div className="sub-price">
-                        <img src={gem} alt=""/>
-                        <strong>11.44</strong>
+                    <div className="user-action">
+                        <img src={user1} alt="user"/>
+                        <strong>User#1 added to their collections</strong>
+                    </div>
+                    <div className="gem">
+                        <img src={gem} alt="" />
                     </div>
                 </div>
-                <div className="dollar-value">
-                    <span>$ 36.566.20</span>
+                <div className="price">
+                    <div className="like-container">
+                        <div className="likes">
+                            <img src={star} alt="star"/>
+                            <span>5k</span>
+                        </div>
+                        <div>
+                            <span>Comment</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span>$ 36.566.20</span>
+                    </div>
                 </div>
-                <br />
-                <br />
-                <div>
-                    <button>SELL NOW</button>
-                </div>
+                
+                
+                
             </Text>
         </Container>
     )
 }
 
-export default SingleCard
+export default FeedSingleCard
