@@ -6,26 +6,32 @@ import Home from './Pages/Home';
 import React from 'react';
 import Profile from './Pages/Profile';
 import Transaction from './Pages/Transactions';
+import Sidebar from './Shared/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <div className='links'>
-              <a href='signup'>Signup</a><br/>
-              <a href='home'>Home</a><br/>
-              <a href='profile'>Profile</a><br/>
-            </div>
-          </Route>
-          
-          <Route exact path='/signup' component={Signup} />
-          <Route exact path='/home' component={Home} />
-          <Route exact path='/profile' component={Profile} />
-          <Route exact path='/transactions' component={Transaction} />
-        </Switch>
-      </Router>
+      <div className='body-content'>
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <div className='links'>
+                <a href='signup'>Signup</a><br/>
+                <a href='home'>Home</a><br/>
+                <a href='profile'>Profile</a><br/>
+              </div>
+            </Route>
+            
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/home' component={Home} />
+            <Route exact path='/profile' component={Profile} />
+            <Route exact path='/transactions' component={Transaction} />
+          </Switch>
+        </Router>
+      </div>
+      {/* <div className='sidebar'> */}
+        <Sidebar />
+      {/* </div> */}
     </div>
   );
 }

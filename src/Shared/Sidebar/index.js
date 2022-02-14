@@ -16,6 +16,9 @@ const Container = styled.div`
     width: 114px;
     position: fixed;
     display: flex;
+    top: 0;
+    left: auto;
+    right: 0;
     flex-direction: column;
     justify-content: space-around;
     @media (max-width: 768px) {

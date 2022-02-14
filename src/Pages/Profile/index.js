@@ -8,17 +8,17 @@ const Container = styled.div`
     background-image: url('assets/images/signup-bg.png');
     background-repeat: no-repeat;
     background-size: 70% 70%;
-    .sidebar{
-        flex:1;
-        //width: 7%;
-    }
+    // .sidebar{
+    //     flex:1;
+    //     //width: 7%;
+    // }
 `
 // rgba(185, 11, 122, 1)
 const Body = styled.div`
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
-    flex: 13;
     //width: 93%;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.06) 97.96%);
+    width: 100%;
+    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.5) 97.96%);
 
     color: #fff;
     display: flex;
@@ -115,9 +115,9 @@ const Profile = (props) => {
                 </div>
             </Body>
 
-            <div className="sidebar">
+            {/* <div className="sidebar">
                 <Sidebar />
-            </div>
+            </div> */}
         </Container>
     )
 }

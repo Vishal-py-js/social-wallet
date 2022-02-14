@@ -1,5 +1,27 @@
 .App {
   /* text-align: center; */  
+  display: flex;
+  
+}
+
+.body-content{
+  width: 100vw;
+  position: relative;
+}
+@media (max-width: 868px) {
+  .body-content{
+    
+  }
+}
+
+.sidebar{
+  z-index: 111 !important;
+}
+@media (max-width: 868px) {
+  .sidebar{
+    z-index: 111 !important;
+    width: 120px;
+  }
 }
 
 

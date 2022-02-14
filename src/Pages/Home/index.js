@@ -13,19 +13,20 @@ const Container = styled.div`
     display: flex;
     height: 100%;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
-    .sidebar{
-        //flex:1;
-        width: 7vw;
-        @media (max-width: 768px) {
-            width: 120px;
-            flex:2;
-        }
-    }
+    // .sidebar{
+    //     //flex:1;
+    //     width: 7vw;
+    //     display: none;
+    //     @media (max-width: 768px) {
+    //         width: 120px;
+    //         flex:2;
+    //     }
+    // }
 `
 
 const Body = styled.div`
     //flex: 13;
-    width: 93vw;
+    //width: 93vw;
     color: #fff;
     display: flex;
     gap: 3rem;
@@ -103,9 +104,9 @@ const Home = () => {
                 }
             </Body>
 
-            <div className="sidebar">
+            {/* <div className="sidebar">
                 <Sidebar />
-            </div>
+            </div> */}
             
         </Container>
     )
