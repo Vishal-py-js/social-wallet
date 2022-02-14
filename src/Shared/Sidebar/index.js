@@ -1,5 +1,7 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import Chat from "../Chat";
 
 
 const userIcon = "assets/icons/signup1.svg"
@@ -10,6 +12,12 @@ const coinIcon = "assets/icons/coin-icon.svg"
 const chatIcon = "assets/icons/chat-icon.svg"
 const settingsIcon = "assets/icons/settings-icon.svg"
 
+const Main = styled.div`
+display: flex;
+line-height: 0;
+flex-direction: column;
+`
+
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     height: 100vh;
@@ -17,12 +25,12 @@ const Container = styled.div`
     position: fixed;
     display: flex;
     top: 0;
-    left: auto;
-    right: 0;
+    //left: auto;
+    right: 30vw;
     flex-direction: column;
     justify-content: space-around;
     @media (max-width: 768px) {
-        width: 113px;
+        width: 85px;
     }
 
     div{
@@ -40,6 +48,8 @@ const Container = styled.div`
 
 const Sidebar = (props) => {
 
+    const chatDisplay = useSelector(state=>state.chat)
+
     const history = useHistory()
 
     const handleUserClick = () => {
@@ -47,7 +57,8 @@ const Sidebar = (props) => {
     }
 
     return(
-        <Container>
+        // <Main>
+        <Container chatDisplay={chatDisplay}>
             <div onClick={handleUserClick}>
                 <img src={userIcon} alt="user"/>
                 <p>USER</p>
@@ -77,6 +88,7 @@ const Sidebar = (props) => {
                 <p>SETTINGS</p>
             </div>
         </Container>
+        // </Main>
     )
 }
 

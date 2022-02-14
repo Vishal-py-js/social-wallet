@@ -9,6 +9,8 @@ const friendIcon4 = '/assets/icons/friend2.svg'
 const friendIcon5 = '/assets/icons/friend3.svg'
 const arrowIcon = "assets/icons/arrow-icon.svg"
 
+
+
 const Selector = styled.div`
     display: flex;
     flex-direction: column;
@@ -45,7 +47,7 @@ const Selector = styled.div`
 `
 
 const CoinSelector = styled.div`
-    margin-left: 7.5vw;
+    margin: 1rem 0 2rem 7.5vw;
     
     select{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
@@ -63,8 +65,8 @@ const CoinSelector = styled.div`
 `
 const Graph = styled.div`
     margin-left: 7.5vw;
-    width: 60vw;
-    height: fit-content;
+    width: fit-content;
+    //height: fit-content;
     border: 1px solid #C8FDCB;
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
 `

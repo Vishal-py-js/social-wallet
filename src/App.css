@@ -5,7 +5,8 @@
 }
 
 .body-content{
-  width: 100vw;
+  /* width: 70.7vw; */
+  width: 68.7vw;
   position: relative;
 }
 @media (max-width: 868px) {
@@ -15,7 +16,8 @@
 }
 
 .sidebar{
-  z-index: 111 !important;
+  display: flex;
+  flex-direction: row;
 }
 @media (max-width: 868px) {
   .sidebar{
@@ -24,13 +26,14 @@
   }
 }
 
-
-.App .links{
-  font-size: 21px;
-  font-weight: 700;
-  margin: 5rem 0 0 5rem; 
-  align-items: center;
+.chat{
+  display: flex;
+  align-self: flex-end;
+  width: 28vw;
 }
+
+
+
 
 body{
   background-color: #000000;

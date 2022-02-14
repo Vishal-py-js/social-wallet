@@ -10,6 +10,7 @@ const layout2 = "/assets/icons/nft-layout2.svg"
 const Container = styled.div`
     height: 100%;
     display: flex;
+    //width: 60vw;
     flex-direction: column;
     gap: 5rem;
     margin: 0 5rem 0 5rem;

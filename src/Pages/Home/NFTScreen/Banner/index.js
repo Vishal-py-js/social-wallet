@@ -7,7 +7,7 @@ align-items: center;
 display: flex;
 flex-direction: column;
     img{
-        width: 80vw;
+        width: 70vw;
         height: 45vh;
     }
     div{

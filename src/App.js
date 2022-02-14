@@ -7,8 +7,13 @@ import React from 'react';
 import Profile from './Pages/Profile';
 import Transaction from './Pages/Transactions';
 import Sidebar from './Shared/Sidebar';
+import Chat from './Shared/Chat';
+import { useSelector } from 'react-redux';
 
 function App() {
+
+  const chatDisplay = useSelector(state=>state.chat)
+
   return (
     <div className="App">
       <div className='body-content'>
@@ -29,9 +34,17 @@ function App() {
           </Switch>
         </Router>
       </div>
-      {/* <div className='sidebar'> */}
+      <div className='sidebar'>
         <Sidebar />
-      {/* </div> */}
+      </div>
+
+      {
+        chatDisplay?
+        <div className='chat'>
+          <Chat />
+        </div>:""
+      }
+
     </div>
   );
 }
