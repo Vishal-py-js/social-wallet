@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { shareModalOn } from "../../../../../Redux/Modal/ShareModal/Actions";
 
 
 const cardImg1 = "./assets/images/nft-card1.png"
 const star = "./assets/icons/star.svg"
 const starTransparent = "./assets/icons/star-transparent.svg"
 const gem = "./assets/icons/gem.svg"
+const share = "./assets/icons/share-icon.svg"
 
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
@@ -35,14 +38,29 @@ const Text = styled.div`
     align-items: center;
     //position: relative;
     justify-content: space-between;
+    //gap: 8px;
     color: #C8FDCB;
-    font-size: 19px;
+    font-size: 17px;
     div{
         display: flex;
+        align-items: center;
+    }
+    p{
+        font-weight: 300;
+    }
+    img{
+        height: 17px;
+        cursor: pointer;
     }
 `
 
 const ProfileMultiCard = ({imgSrc}) => {
+
+    const dispatch = useDispatch()
+
+    const shareModalHandler = () => {
+        dispatch(shareModalOn())
+    }
 
     // const [star, setStar] = useState(false)
     return(
@@ -53,6 +71,7 @@ const ProfileMultiCard = ({imgSrc}) => {
             </Image>
             <Text>
                 <p>COMMENT</p>
+                <img onClick={shareModalHandler} src={share} alt="" />
                 <div>
                     <img src={gem} alt=""/>
                     <span>11.44</span>

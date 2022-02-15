@@ -1,0 +1,2 @@
+export const SHARE_MODAL_ON = "SHARE_MODAL_ON"
+export const SHARE_MODAL_OFF = "SHARE_MODAL_OFF"
