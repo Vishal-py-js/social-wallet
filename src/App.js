@@ -9,14 +9,20 @@ import Transaction from './Pages/Transactions';
 import Sidebar from './Shared/Sidebar';
 import Chat from './Shared/Chat';
 import { useSelector } from 'react-redux';
+import HashModal from './Shared/HashModal';
 
 function App() {
 
   const chatDisplay = useSelector(state=>state.chat)
+  const hashDisplay = useSelector(state=>state.hash)
 
   return (
     <div className="App">
       <div className='body-content'>
+      <Sidebar />
+      {
+        hashDisplay?<HashModal />:""
+      }
         <Router>
           <Switch>
             <Route exact path='/'>
@@ -34,15 +40,12 @@ function App() {
           </Switch>
         </Router>
       </div>
-      <div className='sidebar'>
-        <Sidebar />
-      </div>
-
       {
         chatDisplay?
         <div className='chat'>
           <Chat />
-        </div>:""
+        </div>
+        :""
       }
 
     </div>

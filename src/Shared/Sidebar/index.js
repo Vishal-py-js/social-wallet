@@ -1,7 +1,9 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Chat from "../Chat";
+import { showChat, hideChat } from "../../Redux/Chat/Actions"
+import { hashModalOff, hashModalOn } from "../../Redux/Modal/HashModal/Actions";
 
 
 const userIcon = "assets/icons/signup1.svg"
@@ -12,11 +14,6 @@ const coinIcon = "assets/icons/coin-icon.svg"
 const chatIcon = "assets/icons/chat-icon.svg"
 const settingsIcon = "assets/icons/settings-icon.svg"
 
-const Main = styled.div`
-display: flex;
-line-height: 0;
-flex-direction: column;
-`
 
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
@@ -24,9 +21,9 @@ const Container = styled.div`
     width: 114px;
     position: fixed;
     display: flex;
-    top: 0;
+    //top: 0;
     //left: auto;
-    right: 30vw;
+    //right: 30vw;
     flex-direction: column;
     justify-content: space-around;
     @media (max-width: 768px) {
@@ -49,6 +46,8 @@ const Container = styled.div`
 const Sidebar = (props) => {
 
     const chatDisplay = useSelector(state=>state.chat)
+    const hashModal = useSelector(state=>state.hash)
+    const dispatch = useDispatch()
 
     const history = useHistory()
 
@@ -56,15 +55,33 @@ const Sidebar = (props) => {
         history.push("/profile")
     }
 
+    const handleChatClick = () => {
+        if(chatDisplay) {
+            dispatch(hideChat())
+            console.log("hidden");
+        } else {
+            dispatch(showChat())
+            console.log("showing");
+        }
+    }
+
+    const handleHashClick = () => {
+        if(hashModal) {
+            dispatch(hashModalOff())
+        } else {
+            dispatch(hashModalOn())
+        }
+    }
+
     return(
         // <Main>
         <Container chatDisplay={chatDisplay}>
-            <div onClick={handleUserClick}>
-                <img src={userIcon} alt="user"/>
+            <div>
+                <img onClick={handleUserClick} src={userIcon} alt="user"/>
                 <p>USER</p>
             </div>
             <div>
-                <img src={hashIcon} alt="hash"/>
+                <img onClick={handleHashClick} src={hashIcon} alt="hash"/>
                 <p>HASH</p>
             </div>
             <div>
@@ -79,7 +96,7 @@ const Sidebar = (props) => {
                 <img src={coinIcon} alt="coins"/>
                 <p>COINS</p>
             </div>
-            <div>
+            <div onClick={handleChatClick}>
                 <img src={chatIcon} alt="chat"/>
                 <p>CHAT</p>
             </div>

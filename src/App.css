@@ -6,8 +6,8 @@
 
 .body-content{
   /* width: 70.7vw; */
-  width: 68.7vw;
-  position: relative;
+  width: 100vw;
+  position: absolute;
 }
 @media (max-width: 868px) {
   .body-content{
@@ -28,11 +28,17 @@
 
 .chat{
   display: flex;
-  align-self: flex-end;
-  width: 28vw;
+  /* align-self: right; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* left: auto; */
 }
 
-
+.links{
+  padding: 4rem 0 0 12rem;
+  font-size: 25px;
+}
 
 
 body{

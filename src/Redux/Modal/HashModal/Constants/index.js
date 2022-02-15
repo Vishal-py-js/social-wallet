@@ -1,0 +1,2 @@
+export const HASH_MODAL_ON = "HASH_MODAL_ON"
+export const HASH_MODAL_OFF = "HASH_MODAL_OFF"

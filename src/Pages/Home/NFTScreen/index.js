@@ -13,13 +13,14 @@ const Container = styled.div`
     //width: 60vw;
     flex-direction: column;
     gap: 5rem;
-    margin: 0 5rem 0 5rem;
+    margin: 0 5rem 0 10rem;
 `
 
 const Body = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    
 `
 
 const Selector = styled.div`

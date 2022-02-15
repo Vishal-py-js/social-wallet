@@ -65,7 +65,7 @@ const CoinSelector = styled.div`
 `
 const Graph = styled.div`
     margin-left: 7.5vw;
-    width: fit-content;
+    //width: 50vw;
     //height: fit-content;
     border: 1px solid #C8FDCB;
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);

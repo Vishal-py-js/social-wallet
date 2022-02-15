@@ -9,17 +9,20 @@ const inputIcon = "assets/icons/msg-input-icon.svg"
 const Container = styled.div`
     position: fixed;
     z-index: 111 !important;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.05) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.05) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+    background: black;
+    opacity: 0.95;
     height: 100vh;
     color: white;
-    bottom: auto;
     display: flex;
+    padding-right: 1rem;
     flex-direction: column;
     gap: 1rem;
-    width: 30rem;
+    max-width: 35rem;
+    transition: width 2s;
     top: 0;
     left: auto;
-    right: auto;
+    right: 0;
     hr{
         width: 29rem;
         color: gray;
@@ -36,8 +39,12 @@ const RecentChats = styled.div`
     gap: 0rem;
    
     .friend-card{
-        border: 2px solid green;
+        //border: 2px solid green;
         padding: 10px 30px 0 30px;
+        box-shadow: inset 0 6px 5px -5px rgba(108, 255, 119, 1),
+              inset -5px 0 6px -5px rgba(108, 255, 119, 1), 
+              inset 5px 0 6px -5px rgba(108, 255, 119, 1);
+        //box-shadow: -1px -1px 1px 0px rgba(108, 255, 119, 1);
     }
 `
 
@@ -73,15 +80,14 @@ const Messages = styled.div`
 
 const MessageInput = styled.div`
     display: flex;
-    justify-content: space-around;
-    padding: 10px 30px 10px 0;
+    justify-content: space-between;
+    padding: 10px 10px 10px 10px;
     margin-left: 2em;
     margin-bottom: 2rem;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.06) 97.96%);
     border: 1px solid #6CFF77; 
     div{
         display: flex;
-        padding: 0 0 0 2rem;
         gap: 1.5rem;
         input{
             width: 20rem;
@@ -97,8 +103,9 @@ const MessageInput = styled.div`
 `
 
 const Chat = () => {
+    
     return(
-        <Container>
+        <Container id="myChat">
             <RecentChats>
                 <h3>CHAT</h3>
                 <CardContainer>

@@ -33,6 +33,19 @@ flex-direction: column;
         line-height: 0;
         height: fit-content;
     }
+    .selected{
+        box-shadow: inset 0 7px 0px -5px #FB258B,
+        inset -5px 0 6px -5px #FB258B, 
+        inset 5px 0 6px -5px #FB258B;
+
+        transition-duration: 0.3s;
+        transform: scale(1.07);
+        //border: 3px solid;
+
+        //border-image-source: linear-gradient(107.63deg, #F079C5 59.66%, rgba(0, 0, 0, 0) 112.84%);
+
+
+    }
 `
 
 const Header = styled.div`
@@ -60,6 +73,20 @@ const Header = styled.div`
 `
 
 const Explore = (props) => {
+    const x = document.getElementsByClassName("seller-cont")
+    console.log(x);
+    console.log(x.length);
+    for(let i=0; i<x.length;i++) {
+        console.log(x[i]);
+        x[i].addEventListener("click", function(){
+            const selectedOne = document.querySelector(".selected")
+            if(selectedOne){
+                selectedOne.classList.remove("selected")
+            }
+            this.classList.add("selected")
+        }, false)
+    }
+    
     return(
         <Container>
             <div className="seller-slider">
@@ -75,8 +102,8 @@ const Explore = (props) => {
                 </Header>
                 <Slider1 show={4} size="small">
                     <SellerCard imgSrc={seller1} />
-                    <SellerCard imgSrc={seller2} />
-                    <SellerCard imgSrc={seller3} />
+                    <SellerCard  imgSrc={seller2} />
+                    <SellerCard  imgSrc={seller3} />
                     <SellerCard imgSrc={seller4} />
                     <SellerCard imgSrc={seller1} />
                     <SellerCard imgSrc={seller2} />
