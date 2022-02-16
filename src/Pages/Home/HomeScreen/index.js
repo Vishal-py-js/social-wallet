@@ -64,7 +64,7 @@ const CoinSelector = styled.div`
     }
 `
 const Graph = styled.div`
-    margin-left: 7.5vw;
+    margin: 0 5rem 0 7.5vw;
     //width: 50vw;
     //height: fit-content;
     border: 1px solid #C8FDCB;

@@ -1,14 +1,14 @@
 .App {
   /* text-align: center; */  
   display: flex;
+  overflow-x: hidden;
   
 }
 
-.body-content{
-  /* width: 70.7vw; */
-  width: 100vw;
+/* .body-content{
+  width: 65vw;
   position: absolute;
-}
+} */
 @media (max-width: 868px) {
   .body-content{
     
@@ -29,7 +29,7 @@
 .chat{
   display: flex;
   /* align-self: right; */
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   /* left: auto; */

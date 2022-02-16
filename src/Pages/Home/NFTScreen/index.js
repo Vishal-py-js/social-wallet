@@ -17,7 +17,7 @@ const Container = styled.div`
     //opacity: 0.4;
     flex-direction: column;
     gap: 5rem;
-    margin: 0 5rem 0 10rem;
+    margin: 0 5rem 0 5rem;
     .share-modal{
         position: fixed;
         z-index: 111 !important;

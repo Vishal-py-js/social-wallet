@@ -10,7 +10,7 @@ const user1 = "./assets/icons/nft-card-user1.svg"
 
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-    width: 75vw;
+    width: 98%;
     padding: 0.5rem 1rem 0rem 0;
     display: flex;
 
@@ -32,7 +32,7 @@ const Image = styled.div`
     .image{
         //position: relative;
         //padding: 0 0 0 3rem;
-        width: 60vw;
+        //width: 60vw;
         height: 40vh;
     }
 `

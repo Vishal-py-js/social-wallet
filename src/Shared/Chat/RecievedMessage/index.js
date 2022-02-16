@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
-const userIcon = "assets/icons/signup1.svg"
+const userIcon = "assets/icons/signup2.svg"
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    .msg-content{
+width: 20vw;
+display: flex;
+flex-direction: column;
+
+padding-left: 1rem;
+    .content-msg{
         display: flex;
         gap: 5px;
-        padding-left: 10rem;
     }
     .rec-message{
         color: black;
-        padding: 0 0 0 8px;
-        background: #6CFF77;
-        border: 1px solid #6CFF77;
+        padding: 0 0px 0 8px;
+        background: rgba(255, 87, 167, 1);
+        border: 1px solid #FF57A7;
         flex-direction: row;
             word-wrap: break-word;
         p{
@@ -22,21 +24,19 @@ const Container = styled.div`
         }
     }
     small{
-        display: flex;
-        align-self: flex-end;
         color: gray;
-        padding-right: 2.7rem;
+        padding-left: 2.6rem;
     }
 `
 
-const RecievedMessage = () => {
+const RecievedMessage = ({text}) => {
     return(
         <Container>
-            <div className="msg-content">
-                <div className="rec-message">
-                    <p>Lorem ipsum dolor sit amet. Qui galisum dolorem et consectetur voluptatibus qui nostrum quasi et mollitia sapiente.</p>
-                </div>
+            <div className="content-msg">
                 <img src={userIcon} />
+                <div className="rec-message">
+                    <p>{text}</p>
+                </div>
             </div>
             <small>11:59PM</small>
         </Container>

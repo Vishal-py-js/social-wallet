@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom'
 // import Button from './Shared/Button';
+import styled from "styled-components";
 import Signup from './Pages/Signup';
 import Home from './Pages/Home';
 import React from 'react';
@@ -11,6 +12,15 @@ import Chat from './Shared/Chat';
 import { useSelector } from 'react-redux';
 import HashModal from './Shared/HashModal';
 
+const Container = styled.div`
+  width: ${
+    props=>props.chatDisplay?"65vw":"100vw"
+  };
+  //width: 65vw;
+  position: absolute;
+  overflow-x: hidden;
+`
+
 function App() {
 
   const chatDisplay = useSelector(state=>state.chat)
@@ -18,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='body-content'>
+      <Container chatDisplay={chatDisplay}>
       <Sidebar />
       {
         hashDisplay?<HashModal />:""
@@ -39,7 +49,7 @@ function App() {
             <Route exact path='/transactions' component={Transaction} />
           </Switch>
         </Router>
-      </div>
+      </Container>
       {
         chatDisplay?
         <div className='chat'>

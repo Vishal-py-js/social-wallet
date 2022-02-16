@@ -15,23 +15,27 @@ const bids2 = "/assets/images/bids2.png"
 
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-    padding: 0 6rem 0 8rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 5%;
     height: fit-content;
     .seller-slider{
         height: 39vh;
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        padding-right: 2%;
     }
     .bidder-slider{
-        line-height: 0;
+        //line-height: 0;
         height: 50vh;
+        padding-right: 2%;
     }
     .collection-slider{
-        line-height: 0;
+        //line-height: 0;
         height: fit-content;
+        padding-right: 2%;
     }
     .selected{
         box-shadow: inset 0 7px 0px -5px #FB258B,
@@ -51,17 +55,17 @@ flex-direction: column;
 const Header = styled.div`
     display: flex;
     justify-content: space-between;
+    padding-right: 9%;
     align-items: center;
     h2{
         color: rgba(108, 255, 119, 1);
-        font
+        //font
     }
     select{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
         color: #C8FDCB;
         height: 3rem;
         border-radius: 5px;
-        width: 7vw;
         font-size: 19px;
         text-align: center;
         option{
@@ -116,7 +120,7 @@ const Explore = (props) => {
                 <Header>
                     <h2>Hot Bids</h2> 
                 </Header>
-                <Slider1 show={4} size="big">
+                <Slider1 show={3} size="big">
                     <BidCard imgSrc={bids1}/>
                     <BidCard imgSrc={bids2}/>
                     <BidCard imgSrc={bids1}/>
@@ -130,7 +134,7 @@ const Explore = (props) => {
                 <Header>
                     <h2>Top Collections</h2> 
                 </Header>
-                <Slider1 show={4} size="bigger">
+                <Slider1 show={3} size="bigger">
                     <CollectionCard imgSrc={bids1}/>
                     <CollectionCard imgSrc={bids2}/>
                     <CollectionCard imgSrc={bids1}/>

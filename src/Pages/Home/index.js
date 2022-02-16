@@ -12,7 +12,7 @@ import NFT from "./NFTScreen";
 const Container = styled.div`
     display: flex;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
     // .sidebar{
     //     //flex:1;
@@ -27,12 +27,12 @@ const Container = styled.div`
 
 const Body = styled.div`
     //flex: 13;
-    width: 93vw;
+    width: 95%;
     color: #fff;
     display: flex;
     gap: 3rem;
     flex-direction: column;
-    margin: 4rem 0 4rem 2rem;
+    margin: 4rem 0 4rem 0rem;
     @media (max-width: 768px) {
         width: 120px;
         flex:9;

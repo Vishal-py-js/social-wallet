@@ -7,11 +7,12 @@ align-items: center;
 display: flex;
 flex-direction: column;
     img{
-        width: 80vw;
+        width: 100%;
         height: 45vh;
     }
     div{
         position: absolute;
+        width: 70%;
         margin-top: 6rem;
         z-index: 1;
         display: flex;

@@ -6,7 +6,7 @@ import Arrow from "./Arrow";
 import styled from 'styled-components'
 
 const SliderStyle= styled.div`
-width: 77vw;
+width: 90%;
 //height: 30vh;
 //padding: 0;
     .slick-next:before, .slick-prev:before{
@@ -20,7 +20,7 @@ width: 77vw;
       }
       .slick-prev{
         //position: relative;
-        left: 76rem;
+        left: 92%;
         z-index:111 !important;
       }
       .slick-next{

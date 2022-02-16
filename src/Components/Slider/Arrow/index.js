@@ -1,13 +1,15 @@
 import styled from "styled-components"; 
 import { useState } from "react";
+import { useSelector } from "react-redux";
 const arrow = '/assets/icons/next-arrow.svg'
 
 const Arrow = (props) => {
     const [transition, setTransition] = useState('')
 
+    const chatDisplay = useSelector(state=>state.chat)
+
     const handleTransition = () => {
         setTransition('maketransition')
-        
     }
 
     const ArrowButton = styled.button`
@@ -15,10 +17,15 @@ const Arrow = (props) => {
     position: absolute;
     //bottom: 25rem;
     bottom: ${
-        props.size==="small"?"6rem":props.size==="big"?"21rem":"26rem"
+        props.size==="small"?"6rem":
+        props.size==="big"&&chatDisplay?"21.8rem":
+        props.size==="big"&&chatDisplay==false?"11.5rem":
+        props.size==="bigger"&&chatDisplay?"26.3rem":
+        props.size==="bigger"&&chatDisplay==false?"13.8rem":
+        ""
     };
     background: none;
-    right: 20px;
+    right: 10px;
     width:50px;
     height:50px;
     display: flex;
@@ -73,7 +80,11 @@ const Arrow = (props) => {
           }
     `
 
-    return <ArrowButton><img src={arrow} alt="arrow" /></ArrowButton>
+  return (
+    <ArrowButton>
+      <img src={arrow} alt="arrow" />
+    </ArrowButton>
+  )
 }
 
 

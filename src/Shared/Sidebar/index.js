@@ -22,8 +22,11 @@ const Container = styled.div`
     position: fixed;
     display: flex;
     //top: 0;
-    //left: auto;
-    //right: 30vw;
+    //left: ;
+    //right: 33.6vw;
+    right: ${
+        props=>props.chatDisplay?"33.6vw":"0"
+    };
     flex-direction: column;
     justify-content: space-around;
     @media (max-width: 768px) {

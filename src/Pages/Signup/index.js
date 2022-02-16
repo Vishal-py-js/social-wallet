@@ -9,7 +9,7 @@ const arrowIcon = "assets/icons/arrow-icon.svg"
 
 const Container = styled.div`
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-image: url('assets/images/signup-bg.png');
     background-repeat: no-repeat;
     background-size: 70% 70%;

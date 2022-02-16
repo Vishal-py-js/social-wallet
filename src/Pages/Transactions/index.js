@@ -7,6 +7,7 @@ import TransactionCard from "./TransactionCard";
 const Container = styled.div`
     display: flex;
     flex-direction: row;
+    width: 100%;
     height: fit-content;
     //padding: 3rem 0 4rem 0;
     background: linear-gradient(97.02deg, rgba(185, 11, 122, 0.12) 5.21%, rgba(108, 255, 119, 0.09) 97.96%);
@@ -15,6 +16,7 @@ const Container = styled.div`
 const Body = styled.div`
     padding: 3rem 5rem 3rem 5rem;
     color: white;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,9 +105,9 @@ const Transaction = () => {
                 </TransactionList>
             </Body>
 
-            <SideBar>
+            {/* <SideBar>
                 <Sidebar />
-            </SideBar>
+            </SideBar> */}
         </Container>
     )
 }
