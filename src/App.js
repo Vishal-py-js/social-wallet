@@ -31,11 +31,12 @@ function App() {
   return (
     <div className="App">
       <Container chatDisplay={chatDisplay}>
-      <Sidebar />
+          
       {
         hashDisplay?<HashModal />:""
       }
         <Router>
+          <Sidebar />
           <Switch>
             <Route exact path='/'>
               <div className='links'>

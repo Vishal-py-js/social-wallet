@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components";
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import RecievedMessage from "./RecievedMessage";
 import SentMessage from "./SentMessage";
 import {messages} from "./messages"
@@ -115,9 +115,14 @@ const Chat = () => {
     const [text, setText] = useState("")
     const [textMsgs, setTextMsgs] = useState(messages)
 
-    // useEffect(() => {
-    //     //setTextMsgs
-    // }, [textMsgs])
+    const scrollToBottom = () => {
+        const chatComp = document.getElementById("chat-list");
+        chatComp.scrollTop = chatComp.scrollHeight
+    }
+    
+    useEffect(() => {
+        scrollToBottom()
+    }, [textMsgs])
 
     
     console.log(textMsgs);
@@ -153,7 +158,7 @@ const Chat = () => {
                 
             </RecentChats>
             <hr />
-            <Messages>
+            <Messages id="chat-list">
                 {
                     textMsgs.map(message=>(
                         message.type==="sent"? <SentMessage text={message.text} />:

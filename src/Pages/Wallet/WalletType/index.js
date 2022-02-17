@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 65%;
-    color: white;
+    //color: white;
     //gap: 10px;
     padding: 1rem 0rem 1rem 14%;
     //padding-right: 5rem;
@@ -19,6 +19,7 @@ const Wrapper = styled.div`
         //padding-left: 13%;
         align-items: center;
         gap: 10px;
+        color: #fff;
         font-size: 18px;
         font-weight: 500;
     }

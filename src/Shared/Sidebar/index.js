@@ -8,7 +8,6 @@ import { hashModalOff, hashModalOn } from "../../Redux/Modal/HashModal/Actions";
 
 const userIcon = "assets/icons/signup1.svg"
 const hashIcon = "assets/icons/hash-icon.svg"
-const transactionIcon = "assets/icons/transaction-icon.svg"
 const galleryIcon = "assets/icons/gallery-icon.svg"
 const coinIcon = "assets/icons/coin-icon.svg"
 const chatIcon = "assets/icons/chat-icon.svg"
@@ -76,6 +75,10 @@ const Sidebar = (props) => {
         }
     }
 
+    const handleCoinsClick = () => {
+        history.push("/wallet")
+    }
+
     return(
         // <Main>
         <Container chatDisplay={chatDisplay}>
@@ -88,15 +91,11 @@ const Sidebar = (props) => {
                 <p>HASH</p>
             </div>
             <div>
-                <img src={transactionIcon} alt="transaction"/>
-                <p>TRANSACTION</p>
-            </div>
-            <div>
                 <img src={galleryIcon} alt="gallery"/>
                 <p>GALLERY</p>
             </div>
-            <div>
-                <img src={coinIcon} alt="coins"/>
+            <div onClick={handleCoinsClick}>
+                <img  src={coinIcon} alt="coins"/>
                 <p>COINS</p>
             </div>
             <div onClick={handleChatClick}>
