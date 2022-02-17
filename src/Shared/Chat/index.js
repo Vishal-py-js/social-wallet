@@ -64,6 +64,8 @@ const Messages = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
+    scroll-snap-align: end;
+    //scroll-snap-type: y proximity;
     ::-webkit-scrollbar{
         display: none;
     }

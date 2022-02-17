@@ -1,4 +1,5 @@
 import './App.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom'
 // import Button from './Shared/Button';
 import styled from "styled-components";
@@ -11,6 +12,7 @@ import Sidebar from './Shared/Sidebar';
 import Chat from './Shared/Chat';
 import { useSelector } from 'react-redux';
 import HashModal from './Shared/HashModal';
+import Wallet from './Pages/Wallet';
 
 const Container = styled.div`
   width: ${
@@ -47,6 +49,7 @@ function App() {
             <Route exact path='/home' component={Home} />
             <Route exact path='/profile' component={Profile} />
             <Route exact path='/transactions' component={Transaction} />
+            <Route exact path='/wallet' component={Wallet} />
           </Switch>
         </Router>
       </Container>

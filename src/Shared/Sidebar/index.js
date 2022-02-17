@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch, useSelector } from "react-redux";
-import Chat from "../Chat";
 import { showChat, hideChat } from "../../Redux/Chat/Actions"
 import { hashModalOff, hashModalOn } from "../../Redux/Modal/HashModal/Actions";
 

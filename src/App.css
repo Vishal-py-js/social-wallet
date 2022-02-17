@@ -1,8 +1,19 @@
+/* *{
+  margin: 0;
+  padding: 0;
+} */
 .App {
   /* text-align: center; */  
   display: flex;
   overflow-x: hidden;
   
+}
+
+:root{
+  --purple: #5B22FF;
+  --secondary: #111111 ;
+  --primary: #252525; 
+  --primary-gradient: linear-gradient( #22BDFF -2.29%, #0075FF 119.18%);
 }
 
 /* .body-content{
