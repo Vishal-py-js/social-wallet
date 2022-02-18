@@ -91,6 +91,10 @@ const ProfileDetail = styled.div`
         font-size: 19px;
         width: 57%;
         padding-left: 8px;
+        :focus{
+            outline: 0.001rem solid #6CFF77;
+            border-radius: 3px;
+        }
     }
     @media (max-width: 868px) {
         //display: grid;

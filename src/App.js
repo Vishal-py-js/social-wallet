@@ -43,6 +43,7 @@ function App() {
                 <a href='signup'>Signup</a><br/>
                 <a href='home'>Home</a><br/>
                 <a href='profile'>Profile</a><br/>
+                <a href='wallet'>Wallet</a><br/>
               </div>
             </Route>
             
@@ -56,7 +57,7 @@ function App() {
       </Container>
       {
         chatDisplay?
-        <div className='chat'>
+        <div className='chat' id="idOne">
           <Chat />
         </div>
         :""

@@ -4,8 +4,15 @@ import {useState, useEffect} from "react"
 import RecievedMessage from "./RecievedMessage";
 import SentMessage from "./SentMessage";
 import {messages} from "./messages"
+import Slider1 from "../../Components/Slider";
 
 const userIcon = "assets/icons/signup1.svg"
+const userIcon2 = "assets/icons/signup2.svg"
+
+const friendIcon3 = '/assets/icons/friend1.svg'
+const friendIcon4 = '/assets/icons/friend2.svg'
+const friendIcon5 = '/assets/icons/friend3.svg'
+
 const plusIcon = "assets/icons/plus-icon.svg"
 const inputIcon = "assets/icons/msg-input-icon.svg"
 
@@ -19,12 +26,15 @@ const Container = styled.div`
     height: 100vh;
     color: white;
     width: 33%;
+    //width: 0;
+    //display: none;
     display: flex;
+    
     padding-right: 1rem;
     flex-direction: column;
     gap: 1rem;
     //max-width: 35rem;
-    transition: width 2s;
+    //transition: width 2s;
     border-left: 3px solid rgba(108, 255, 119, 1);
     top: 0;
     left: auto;
@@ -35,6 +45,10 @@ const Container = styled.div`
         height:1px;
         border-width:0;
         background-color:gray;
+    }
+    .chat-select{
+        width: 33%;
+        transition: 0.8s;
     }
 `
 
@@ -57,6 +71,7 @@ const RecentChats = styled.div`
 const CardContainer = styled.div`
     display: flex;
     gap: 1rem;
+    padding: 0 4rem 0rem 0;
 `
 
 const Messages = styled.div`
@@ -124,7 +139,6 @@ const Chat = () => {
         scrollToBottom()
     }, [textMsgs])
 
-    
     console.log(textMsgs);
 
     const textHandler = (e) => {
@@ -136,24 +150,34 @@ const Chat = () => {
         setTextMsgs(textMsgs => [...textMsgs, {type:"sent", text:text}])
         setText("")
     }
+
+    //document.getElementById("myChat").classList.add("chat-select");
+
+    const FriendCard = ({imgSrc, title}) => {
+        return(
+            <div className="friend-card">
+                <img src={imgSrc} alt="user"/>
+                <p>{title}</p>
+            </div>
+        )
+    }
     
     return(
         <Container id="myChat">
             <RecentChats>
                 <h3>CHAT</h3>
                 <CardContainer>
-                    <div className="friend-card">
-                        <img src={userIcon} alt="user"/>
-                        <p>USER</p>
-                    </div>
-                    <div className="friend-card">
-                        <img src={userIcon} alt="user"/>
-                        <p>USER</p>
-                    </div>
-                    <div className="friend-card">
-                        <img src={userIcon} alt="user"/>
-                        <p>USER</p>
-                    </div>
+                    <Slider1 show={2} size="chat">
+                        <FriendCard imgSrc={userIcon} title="User#1"/>
+                        <FriendCard imgSrc={userIcon2} title="User#2"/>
+                        <FriendCard imgSrc={friendIcon3} title="User#3"/>
+                        <FriendCard imgSrc={friendIcon4} title="User#4"/>
+                        <FriendCard imgSrc={friendIcon5} title="User#5"/>
+                        <FriendCard imgSrc={userIcon2} title="User#6"/>
+                        <FriendCard imgSrc={userIcon} title="User#7"/>
+                        <FriendCard imgSrc={friendIcon3} title="User#8"/>
+                        <FriendCard imgSrc={friendIcon5} title="User#9"/>
+                    </Slider1>
                 </CardContainer>
                 
             </RecentChats>

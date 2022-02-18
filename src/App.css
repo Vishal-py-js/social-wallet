@@ -37,6 +37,11 @@
   }
 }
 
+.chat-select{
+  width: 33%;
+  transition: 0.8s;
+}
+
 .chat{
   display: flex;
   /* align-self: right; */

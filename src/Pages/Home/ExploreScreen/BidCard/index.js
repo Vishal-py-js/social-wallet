@@ -48,8 +48,23 @@ const CardContainer = styled.div`
 `
 
 const BidCard = ({imgSrc}) => {
+
+    const x = document.getElementsByClassName("bid-cont")
+    console.log(x);
+    console.log(x.length);
+    for(let i=0; i<x.length;i++) {
+        console.log(x[i]);
+        x[i].addEventListener("click", function(){
+            const selectedOne = document.querySelector(".selected-bid")
+            if(selectedOne){
+                selectedOne.classList.remove("selected-bid")
+            }
+            this.classList.add("selected-bid")
+        }, false)
+    }
+
     return(
-        <CardContainer>
+        <CardContainer className="bid-cont">
             <img src={imgSrc} alt=""/>
             <div className="card-content">
                 <div>

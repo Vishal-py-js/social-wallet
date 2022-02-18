@@ -9,14 +9,10 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 65%;
-    //color: white;
-    //gap: 10px;
     padding: 1rem 0rem 1rem 14%;
-    //padding-right: 5rem;
     
     .title{
         display: flex;
-        //padding-left: 13%;
         align-items: center;
         gap: 10px;
         color: #fff;
@@ -27,8 +23,6 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        //margin-left: 2.6%;
-        //gap: 29%;
         .hash{
             display: flex;
             align-items: center;
@@ -84,7 +78,8 @@ const Wrapper = styled.div`
     }
     .img-cont{
         //height: 15px;
-        transform: rotate(180deg);
+        transition: 0.5s;
+        transform: rotate(-180deg);
     }
 `
 

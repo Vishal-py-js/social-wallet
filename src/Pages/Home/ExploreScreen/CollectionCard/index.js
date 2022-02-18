@@ -56,8 +56,23 @@ const CardContainer = styled.div`
 `
 
 const CollectionCard = ({imgSrc}) => {
+
+    const x = document.getElementsByClassName("collection-cont")
+    console.log(x);
+    console.log(x.length);
+    for(let i=0; i<x.length;i++) {
+        console.log(x[i]);
+        x[i].addEventListener("click", function(){
+            const selectedOne = document.querySelector(".selected-collection")
+            if(selectedOne){
+                selectedOne.classList.remove("selected-collection")
+            }
+            this.classList.add("selected-collection")
+        }, false)
+    }
+
     return(
-        <CardContainer>
+        <CardContainer className="collection-cont">
             <img src={imgSrc} alt=""/>
             <div className="card-content">
                 <div>

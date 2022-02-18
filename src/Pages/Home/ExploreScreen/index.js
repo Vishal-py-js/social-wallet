@@ -37,18 +37,26 @@ const Container = styled.div`
         height: fit-content;
         padding-right: 2%;
     }
-    .selected{
+    .selected-seller{
         box-shadow: inset 0 7px 0px -5px #FB258B,
-        inset -5px 0 6px -5px #FB258B, 
-        inset 5px 0 6px -5px #FB258B;
-
+                    inset -5px 0 6px -5px #FB258B, 
+                    inset 5px 0 6px -5px #FB258B;
         transition-duration: 0.3s;
         transform: scale(1.07);
-        //border: 3px solid;
-
-        //border-image-source: linear-gradient(107.63deg, #F079C5 59.66%, rgba(0, 0, 0, 0) 112.84%);
-
-
+    }
+    .selected-bid{
+        box-shadow: inset 0 8px 0px -5px rgba(108, 255, 119, 1),
+                    inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
+                    inset 5px 0 5px -3px rgba(108, 255, 119, 1);
+        transition-duration: 0.3s;
+        transform: scale(1.03);
+    }
+    .selected-collection{
+        box-shadow: inset 0 7px 0px -5px rgba(108, 255, 119, 1),
+                    inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
+                    inset 5px 0 5px -3px rgba(108, 255, 119, 1);
+        transition-duration: 0.3s;
+        transform: scale(1.03);
     }
 `
 
@@ -68,6 +76,7 @@ const Header = styled.div`
         border-radius: 5px;
         font-size: 19px;
         text-align: center;
+        cursor: pointer;
         option{
             color: #C8FDCB;
             background: black;
@@ -77,19 +86,19 @@ const Header = styled.div`
 `
 
 const Explore = (props) => {
-    const x = document.getElementsByClassName("seller-cont")
-    console.log(x);
-    console.log(x.length);
-    for(let i=0; i<x.length;i++) {
-        console.log(x[i]);
-        x[i].addEventListener("click", function(){
-            const selectedOne = document.querySelector(".selected")
-            if(selectedOne){
-                selectedOne.classList.remove("selected")
-            }
-            this.classList.add("selected")
-        }, false)
-    }
+    // const x = document.getElementsByClassName("seller-cont")
+    // console.log(x);
+    // console.log(x.length);
+    // for(let i=0; i<x.length;i++) {
+    //     console.log(x[i]);
+    //     x[i].addEventListener("click", function(){
+    //         const selectedOne = document.querySelector(".selected")
+    //         if(selectedOne){
+    //             selectedOne.classList.remove("selected")
+    //         }
+    //         this.classList.add("selected")
+    //     }, false)
+    // }
     
     return(
         <Container>
@@ -106,8 +115,8 @@ const Explore = (props) => {
                 </Header>
                 <Slider1 show={4} size="small">
                     <SellerCard imgSrc={seller1} />
-                    <SellerCard  imgSrc={seller2} />
-                    <SellerCard  imgSrc={seller3} />
+                    <SellerCard imgSrc={seller2} />
+                    <SellerCard imgSrc={seller3} />
                     <SellerCard imgSrc={seller4} />
                     <SellerCard imgSrc={seller1} />
                     <SellerCard imgSrc={seller2} />

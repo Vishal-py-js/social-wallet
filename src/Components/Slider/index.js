@@ -20,6 +20,7 @@ width: 90%;
       }
       .slick-prev{
         //position: relative;
+        //display: none;
         left: 92%;
         z-index:111 !important;
       }
@@ -49,10 +50,10 @@ width: 90%;
       function PrevArrow(props) {
         const {style, onClick } = props;
         return (
-          <SliderStyle>  
+          <SliderStyle chat={props.size}>  
          <div 
             className="slick-prev" 
-            style={{...style,display:'block', transform: 'scaleX(-1)'}}
+            style={{...style, display:`${props.size==="chat"?"none":"block"}`, transform: 'scaleX(-1)'}}
             onClick={onClick}>
                 <Arrow size={props.size}/>
               </div>

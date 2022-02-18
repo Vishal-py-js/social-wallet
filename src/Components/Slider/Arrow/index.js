@@ -24,6 +24,12 @@ const Arrow = (props) => {
         props.size==="bigger"&&chatDisplay==false?"13.8rem":
         ""
     };
+    left: ${
+      props.size==="chat"?"1rem":""
+    };
+    top: ${
+      props.size==="chat"?"-20px":""
+    };
     background: none;
     right: 10px;
     width:50px;
