@@ -5,6 +5,7 @@ import RecievedMessage from "./RecievedMessage";
 import SentMessage from "./SentMessage";
 import {messages} from "./messages"
 import Slider1 from "../../Components/Slider";
+import FriendCard from "./FriendCard";
 
 const userIcon = "assets/icons/signup1.svg"
 const userIcon2 = "assets/icons/signup2.svg"
@@ -50,6 +51,13 @@ const Container = styled.div`
         width: 33%;
         transition: 0.8s;
     }
+    .selected-friend-card{
+        box-shadow: inset 0 6px 0px -5px rgba(108, 255, 119, 1),
+                    inset -4px 0 4px -2px rgba(108, 255, 119, 1), 
+                    inset 5px 0 0px -3px rgba(108, 255, 119, 1);
+        transition-duration: 0.3s;
+        transform: scale(1.05);
+    }
 `
 
 const RecentChats = styled.div`
@@ -57,15 +65,6 @@ const RecentChats = styled.div`
     flex-direction: column;
     margin: 3rem 0 0 4rem;
     gap: 0rem;
-   
-    .friend-card{
-        //border: 2px solid green;
-        padding: 10px 30px 0 30px;
-        box-shadow: inset 0 6px 5px -5px rgba(108, 255, 119, 1),
-              inset -5px 0 6px -5px rgba(108, 255, 119, 1), 
-              inset 5px 0 6px -5px rgba(108, 255, 119, 1);
-        //box-shadow: -1px -1px 1px 0px rgba(108, 255, 119, 1);
-    }
 `
 
 const CardContainer = styled.div`
@@ -152,15 +151,6 @@ const Chat = () => {
     }
 
     //document.getElementById("myChat").classList.add("chat-select");
-
-    const FriendCard = ({imgSrc, title}) => {
-        return(
-            <div className="friend-card">
-                <img src={imgSrc} alt="user"/>
-                <p>{title}</p>
-            </div>
-        )
-    }
     
     return(
         <Container id="myChat">
