@@ -51,14 +51,6 @@ const HashModal = () => {
         console.log(item.innerHtml);
     }
 
-    //const copyToClipboard = () => {
-        // const ele = document.getElementsByClassName("hash-code")
-        // console.log(ele);
-        // for(let i=0; i<=ele.length;i++){
-        //     console.log(ele[i]);
-        //     //copyToClipboard(ele[i])
-        // }
-    //}
 
     return(
         <Container chatDisplay={chatDisplay}>

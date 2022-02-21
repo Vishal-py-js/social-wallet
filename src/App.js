@@ -19,6 +19,7 @@ const Container = styled.div`
     props=>props.chatDisplay?"65vw":"100vw"
   };
   //width: 65vw;
+  transition: width 0.4s;
   position: absolute;
   overflow-x: hidden;
 `
@@ -55,13 +56,16 @@ function App() {
           </Switch>
         </Router>
       </Container>
-      {
+      {/* {
         chatDisplay?
         <div className='chat' id="idOne">
           <Chat />
         </div>
         :""
-      }
+      } */}
+        {/* <div className='chat' id="idOne"> */}
+          <Chat />
+        {/* </div> */}
 
     </div>
   );

@@ -76,13 +76,21 @@ const Sidebar = (props) => {
         history.push("/wallet")
     }
 
+    // const doc = document.getElementsByClassName("chat-sec")
+    // console.log(doc);
+    // doc.addEventListener("click", function(){
+    //     const itm = document.querySelector("#myChat")
+    //     itm.classList.add("chat-select")
+    //     //this.classList.add("chat-select")
+    // })
+
     return(
         <Container chatDisplay={chatDisplay}>
             <SideBarItem imgSrc={userIcon} title="USER" onClick={handleUserClick}/>
             <SideBarItem imgSrc={hashIcon} title="HASH" onClick={handleHashClick}/>
             {/* <SideBarItem imgSrc={galleryIcon} title="GALLERY"/> */}
             <SideBarItem imgSrc={coinIcon} title="WALLET" onClick={handleCoinsClick}/>
-            <SideBarItem imgSrc={chatIcon} title="CHAT" onClick={handleChatClick}/>
+            <SideBarItem className="chat-sec" imgSrc={chatIcon} title="CHAT" onClick={handleChatClick}/>
             <SideBarItem imgSrc={settingsIcon} title="SETTINGS"/>
         </Container>
     )

@@ -6,6 +6,7 @@ import SentMessage from "./SentMessage";
 import {messages} from "./messages"
 import Slider1 from "../../Components/Slider";
 import FriendCard from "./FriendCard";
+import { useSelector } from "react-redux";
 
 const userIcon = "assets/icons/signup1.svg"
 const userIcon2 = "assets/icons/signup2.svg"
@@ -25,17 +26,20 @@ const Container = styled.div`
     background: black;
     opacity: 0.95;
     height: 100vh;
+    height: ${
+        props=>props.chatDisplay?"100vh": "0"
+    };
     color: white;
-    width: 33%;
-    //width: 0;
-    //display: none;
+    width: ${
+        props=>props.chatDisplay?"33%":"0"
+    };
     display: flex;
     
     padding-right: 1rem;
     flex-direction: column;
     gap: 1rem;
     //max-width: 35rem;
-    //transition: width 2s;
+    transition: width 0.7s;
     border-left: 3px solid rgba(108, 255, 119, 1);
     top: 0;
     left: auto;
@@ -46,10 +50,6 @@ const Container = styled.div`
         height:1px;
         border-width:0;
         background-color:gray;
-    }
-    .chat-select{
-        width: 33%;
-        transition: 0.8s;
     }
     .selected-friend-card{
         box-shadow: inset 0 6px 0px -5px rgba(108, 255, 119, 1),
@@ -69,6 +69,7 @@ const RecentChats = styled.div`
 
 const CardContainer = styled.div`
     display: flex;
+    //flex-direction: row;
     gap: 1rem;
     padding: 0 4rem 0rem 0;
 `
@@ -129,6 +130,8 @@ const Chat = () => {
     const [inputtext, setinputText] = useState("")
     const [textMsgs, setTextMsgs] = useState(messages)
 
+    const chatDisplay=useSelector(state=>state.chat)
+
     const scrollToBottom = () => {
         const chatComp = document.getElementById("chat-list");
         chatComp.scrollTop = chatComp.scrollHeight
@@ -143,6 +146,13 @@ const Chat = () => {
         setinputText(e.target.value)
     }
 
+    // const doc = document.getElementsByClassName("chat-sec")
+    // console.log(doc);
+    // doc.addEventListener("click", function(){
+    //     const itm = document.querySelector("#myChat")
+    //     itm.classList.add("chat-select")
+    //     //this.classList.add("chat-select")
+    // })
 
     const messageHandler = (e) => {
         e.preventDefault()
@@ -153,7 +163,7 @@ const Chat = () => {
     
     console.log(textMsgs);
     return(
-        <Container id="myChat">
+        <Container chatDisplay={chatDisplay} id="myChat">
             <RecentChats>
                 <h3>CHAT</h3>
                 <CardContainer>
