@@ -21,7 +21,6 @@ const Tabs = styled.div`
         display: flex;
         font-size: 18px;
         line-height: 0;
-        //font-weight: 400;
         flex-direction: column;
         align-items: center;
         hr{

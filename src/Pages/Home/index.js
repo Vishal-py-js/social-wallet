@@ -92,7 +92,7 @@ const Home = () => {
             <Body>
                 <Tabs>
                     <h3 className={active==="Home"?"activate":""} onClick={handleHome}>Home</h3>
-                    <h3 className={active==="Profile"?"activate":""} onClick={handleProfile}>Profile</h3>
+                    <h3 className={active==="Profile"?"activate":""}>Profile</h3>
                     <h3 className={active==="NFTs"?"activate":""} onClick={handleNFTs}>NFTs</h3>
                     <h3 className={active==="Followers"?"activate":""} onClick={handleFollowers}>Followers</h3>
                     <h3 className={active==="Explore"?"activate":""} onClick={handleExplore}>Explore</h3>

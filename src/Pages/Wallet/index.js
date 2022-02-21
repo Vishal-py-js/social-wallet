@@ -35,17 +35,17 @@ const Wallet = () => {
         <Container>
             <h1>WALLETS</h1>
             <WalletContainer>
-                <WalletType imgSrc={metamask} title="Metamask"/>
+                <WalletType imgSrc={metamask} title="Metamask" hashCode="avgtr345red"/>
                 <hr/>
-                <WalletType imgSrc={solana} title="Solana"/>
+                <WalletType imgSrc={solana} title="Solana" hashCode="avgtr345gfh"/>
                 <hr/>
-                <WalletType imgSrc={metamask} title="Metamask"/>
+                <WalletType imgSrc={metamask} title="Metamask" hashCode="avgtr345kju"/>
                 <hr/>
-                <WalletType imgSrc={solana} title="Solana"/>
+                <WalletType imgSrc={solana} title="Solana" hashCode="avgtr345qse"/>
                 <hr/>
-                <WalletType imgSrc={metamask} title="Metamask"/>
+                <WalletType imgSrc={metamask} title="Metamask" hashCode="avgtr345okl"/>
                 <hr/>
-                <WalletType imgSrc={solana} title="Solana"/>
+                <WalletType imgSrc={solana} title="Solana" hashCode="avgtr345ytu"/>
                 <hr/>
             </WalletContainer>
         </Container>

@@ -6,6 +6,7 @@ const Container = styled.div`
 width: 20vw;
 display: flex;
 flex-direction: column;
+max-width: 100%;
 
 padding-left: 1rem;
     .content-msg{

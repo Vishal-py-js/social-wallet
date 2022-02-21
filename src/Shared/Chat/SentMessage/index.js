@@ -6,6 +6,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-self: flex-end;
+    max-width: 100%;
     .msg-content{
         display: flex;
         gap: 5px;
@@ -31,6 +32,14 @@ const Container = styled.div`
 `
 
 const SentMessage = ({text}) => {
+    var date = new Date
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
     return(
         <Container>
             <div className="msg-content">
@@ -39,7 +48,7 @@ const SentMessage = ({text}) => {
                 </div>
                 <img src={userIcon} />
             </div>
-            <small>11:59PM</small>
+            <small>{strTime}</small>
         </Container>
     )
 }

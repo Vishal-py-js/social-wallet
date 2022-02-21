@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { hashModalOff } from "../../Redux/Modal/HashModal/Actions";
+import WalletName from "./WalletName";
 
 const close = "assets/icons/close-icon.svg"
 const metamask = "assets/icons/metamask.svg"
 const solana = "assets/icons/solana.svg"
-const copy = "assets/icons/copy-icon.svg"
 
 const Container = styled.div`
     display: flex;
@@ -27,9 +27,7 @@ const Container = styled.div`
     box-shadow: inset 0 4px 5px -5px rgba(108, 255, 119, 1),
               inset -5px 0 4px -5px rgba(108, 255, 119, 1), 
               inset 5px 0 4px -5px rgba(108, 255, 119, 1);
-    // box-shadow: inset 0 3px 5px -5px rgba(108, 255, 119, 1),
-    //           inset -5px 0 3px -5px rgba(108, 255, 119, 1), 
-    //           inset 5px 0 2px -5px rgba(108, 255, 119, 1);
+    
     .close{
         position: absolute;
         top: 0.3rem;
@@ -38,25 +36,7 @@ const Container = styled.div`
         margin-bottom: 7px;
     }
 `
-const Wallet = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-top: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    div{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        strong{
-            font-size: 18px;
-            font-weight: 500;
-        }
-        span{
-            font-size: 17px;
-        }
-    }
-`
+
 
 const HashModal = () => {
 
@@ -67,30 +47,24 @@ const HashModal = () => {
         dispatch(hashModalOff())
     }
 
+    const copyToClipboard = (item) => {
+        console.log(item.innerHtml);
+    }
+
+    //const copyToClipboard = () => {
+        // const ele = document.getElementsByClassName("hash-code")
+        // console.log(ele);
+        // for(let i=0; i<=ele.length;i++){
+        //     console.log(ele[i]);
+        //     //copyToClipboard(ele[i])
+        // }
+    //}
+
     return(
         <Container chatDisplay={chatDisplay}>
             <img onClick={handleClose} className="close" src={close} alt="close" />
-            <Wallet className="wallet">
-                <div >
-                    <img src={metamask} alt="metamask"/>
-                    <strong>Metamask</strong>
-                </div>
-                <div>
-                    <span>2313ewru57ytt</span>
-                    <img src={copy} alt="copy" />
-                </div>
-            </Wallet>
-
-            <Wallet className="wallet">
-                <div >
-                    <img src={solana} alt="solana"/>
-                    <strong>Solana</strong>
-                </div>
-                <div>
-                    <span>2313ewru57ytt</span>
-                    <img src={copy} alt="copy" />
-                </div>
-            </Wallet>
+            <WalletName imgSrc={metamask} title="Metamask" hashCode="sft23322ifhfg45trr"/>
+            <WalletName imgSrc={solana} title="Solana" hashCode="ett23322ifhfg45ruy"/>
         </Container>
     )
 }

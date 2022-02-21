@@ -18,10 +18,10 @@ const Container = styled.div`
 const FriendCard = ({imgSrc, title}) => {
 
     const x = document.getElementsByClassName("friend-card")
-    console.log(x);
-    console.log(x.length);
+    // console.log(x);
+    // console.log(x.length);
     for(let i=0; i<x.length;i++) {
-        console.log(x[i]);
+        // console.log(x[i]);
         x[i].addEventListener("click", function(){
             const selectedOne = document.querySelector(".selected-friend-card")
             if(selectedOne){

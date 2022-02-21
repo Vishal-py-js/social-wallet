@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import Slider1 from "../../../Components/Slider";
 import LineDemo from "./Chart";
+import FriendCardHome from "./FriendCardHome";
 import AnimatedNumber from "react-animated-number"
 
 const friendIcon1 = '/assets/icons/signup1.svg'
@@ -11,7 +12,15 @@ const friendIcon4 = '/assets/icons/friend2.svg'
 const friendIcon5 = '/assets/icons/friend3.svg'
 const arrowIcon = "assets/icons/arrow-icon.svg"
 
-
+const Container = styled.div`
+    .selected-friend-card{
+        box-shadow: inset 0 6px 0px -5px rgba(108, 255, 119, 1),
+                    inset -4px 0 4px -2px rgba(108, 255, 119, 1), 
+                    inset 5px 0 0px -3px rgba(108, 255, 119, 1);
+        transition-duration: 0.3s;
+        transform: scale(1.05);
+    }
+`
 
 const Selector = styled.div`
     display: flex;
@@ -74,10 +83,7 @@ const CoinSelector = styled.div`
 `
 const Graph = styled.div`
     margin: 0 5rem 0 7.5vw;
-    //width: 50vw;
-    //height: fit-content;
     border: 1px solid #C8FDCB;
-    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%);
 `
 
 const Friends = styled.div`
@@ -85,29 +91,9 @@ const Friends = styled.div`
 `
 
 const ImageContainer = styled.div`
-    //display: flex;
-    //flex-direction: column;
     gap: 2vw;
     margin-right: 55%;
-    //align-items: center;
-    .friend-card{
-        //border: 1px solid #C8FDCB;
-        padding: 12px 16px;
-        box-shadow: inset 0 6px 5px -6px rgba(108, 255, 119, 1),
-              inset -5px 0 6px -5px rgba(108, 255, 119, 1), 
-              inset 5px 0 6px -5px rgba(108, 255, 119, 1);
-    }
-    .friend-cont{
-        display: flex;
-        flex-direction: column;
-        line-height: 0;
-        align-items: center;
-    }
-    .arrow{
-        border: none;
-        margin-bottom: 2rem;
-    }
-
+    
 `
 
 const HomeScreen = (props) => {
@@ -119,16 +105,9 @@ const HomeScreen = (props) => {
         setCurrency(e.target.value)
     }
 
-    const FriendCard = ({imgSrc, title}) => {
-        return(
-            <div className="friend-cont">
-                <img className="friend-card" src={imgSrc} />
-                <h4>{title}</h4>
-            </div>
-        )
-    }
+    
     return(
-        <React.Fragment>
+        <Container>
             <Selector>
                     <h3>WALLET VALUE</h3>
                     <div>
@@ -162,20 +141,20 @@ const HomeScreen = (props) => {
                     <h4>TOP FRIENDS</h4>
                     <ImageContainer>
                         <Slider1 show={3} size="chat">
-                            <FriendCard imgSrc={friendIcon1} title="User#01"/>
-                            <FriendCard imgSrc={friendIcon2} title="User#02"/>
-                            <FriendCard imgSrc={friendIcon3} title="User#03"/>
-                            <FriendCard imgSrc={friendIcon4} title="User#04"/>
-                            <FriendCard imgSrc={friendIcon5} title="User#05"/>
-                            <FriendCard imgSrc={friendIcon1} title="User#06"/>
-                            <FriendCard imgSrc={friendIcon2} title="User#07"/>
-                            <FriendCard imgSrc={friendIcon3} title="User#08"/>
-                            <FriendCard imgSrc={friendIcon4} title="User#09"/>
+                            <FriendCardHome imgSrc={friendIcon1} title="User#01"/>
+                            <FriendCardHome imgSrc={friendIcon2} title="User#02"/>
+                            <FriendCardHome imgSrc={friendIcon3} title="User#03"/>
+                            <FriendCardHome imgSrc={friendIcon4} title="User#04"/>
+                            <FriendCardHome imgSrc={friendIcon5} title="User#05"/>
+                            <FriendCardHome imgSrc={friendIcon1} title="User#06"/>
+                            <FriendCardHome imgSrc={friendIcon2} title="User#07"/>
+                            <FriendCardHome imgSrc={friendIcon3} title="User#08"/>
+                            <FriendCardHome imgSrc={friendIcon4} title="User#09"/>
                         </Slider1>
                         {/* <img className="arrow" src src={arrowIcon} /> */}
                     </ImageContainer>
                 </Friends>  
-        </React.Fragment>
+        </Container>
     )
 }
 

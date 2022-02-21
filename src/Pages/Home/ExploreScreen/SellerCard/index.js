@@ -34,10 +34,10 @@ const SellerCard = ({imgSrc}) => {
     }
 
     const x = document.getElementsByClassName("seller-cont")
-    console.log(x);
-    console.log(x.length);
+    // console.log(x);
+    // console.log(x.length);
     for(let i=0; i<x.length;i++) {
-        console.log(x[i]);
+        // console.log(x[i]);
         x[i].addEventListener("click", function(){
             const selectedOne = document.querySelector(".selected-seller")
             if(selectedOne){

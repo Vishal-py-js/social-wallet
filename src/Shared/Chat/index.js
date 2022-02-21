@@ -126,7 +126,7 @@ const MessageInput = styled.form`
 
 const Chat = () => {
         
-    const [text, setText] = useState("")
+    const [inputtext, setinputText] = useState("")
     const [textMsgs, setTextMsgs] = useState(messages)
 
     const scrollToBottom = () => {
@@ -138,20 +138,20 @@ const Chat = () => {
         scrollToBottom()
     }, [textMsgs])
 
-    console.log(textMsgs);
 
     const textHandler = (e) => {
-        setText(e.target.value)
+        setinputText(e.target.value)
     }
+
 
     const messageHandler = (e) => {
         e.preventDefault()
-        setTextMsgs(textMsgs => [...textMsgs, {type:"sent", text:text}])
-        setText("")
+        //setTextMsgs(textMsgs => [...textMsgs, {type:"sent", text:inputtext}])
+        setTextMsgs([...textMsgs, {type:"sent", text:inputtext}])
+        setinputText("")
     }
-
-    //document.getElementById("myChat").classList.add("chat-select");
     
+    console.log(textMsgs);
     return(
         <Container id="myChat">
             <RecentChats>
@@ -176,20 +176,14 @@ const Chat = () => {
                 {
                     textMsgs.map(message=>(
                         message.type==="sent"? <SentMessage text={message.text} />:
-                        message.type==="recieved"? <RecievedMessage text={message.text} />:""
+                        message.type==="recieved"? <RecievedMessage text={message.      text} />:""
                     ))
-                    // textMsgs.map(message=>(
-                    //     <React.Fragment>
-                    //     <SentMessage text={message.text} />
-                    //     <RecievedMessage text={message.text} />
-                    //     </React.Fragment>
-                    // ))
                 }
             </Messages>
-            <MessageInput onSubmit={(e)=>messageHandler(e)}>
+            <MessageInput onSubmit={messageHandler}>
                 <div>
                     <img src={plusIcon} alt="" />
-                    <input onChange={(e)=>textHandler(e)} value={text} placeholder="Type message" />
+                    <input onChange={textHandler} type="text" value={inputtext} placeholder="Type message" />
                 </div>
                 <img src={inputIcon} alt=""/>
             </MessageInput>

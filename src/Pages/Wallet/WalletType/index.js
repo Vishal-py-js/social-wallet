@@ -83,9 +83,14 @@ const Wrapper = styled.div`
     }
 `
 
-const WalletType = ({imgSrc, title}) => {
+const WalletType = ({imgSrc, title, hashCode}) => {
 
     const [moreDetails, setMoreDetails] = useState(false);
+
+    const copyToClipboard = (hashC) => {
+        navigator.clipboard.writeText(hashC)
+        alert("Copied")
+    }
 
     const dropDownHandler = () => {
         const element = document.getElementById("dropd")
@@ -110,8 +115,8 @@ const WalletType = ({imgSrc, title}) => {
                 <div className="details2">
                     <span>Account 1</span>
                     <div className="hash">
-                        <small>fdgdgsh4321452</small                    >
-                        <img src={copy} alt=""/>
+                        <small>{hashCode}</small                    >
+                        <img onClick={()=>copyToClipboard(hashCode)} src={copy} alt=""/>
                     </div>
                 </div>
                 <div className="value">
