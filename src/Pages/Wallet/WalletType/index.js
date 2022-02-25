@@ -95,7 +95,6 @@ const WalletType = ({imgSrc, title, hashCode}) => {
     const dropDownHandler = () => {
         const element = document.getElementById("dropd")
         element.addEventListener("click", function(){
-            ///element.className = "img"
             if(moreDetails){
                 element.classList.add("img-cont")
             }else{

@@ -19,7 +19,7 @@ const Container = styled.div`
     props=>props.chatDisplay?"65vw":"100vw"
   };
   //width: 65vw;
-  transition: width 0.4s;
+  transition: width 0.8s;
   position: absolute;
   overflow-x: hidden;
 `

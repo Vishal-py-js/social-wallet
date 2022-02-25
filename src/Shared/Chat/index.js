@@ -40,6 +40,7 @@ const Container = styled.div`
     gap: 1rem;
     //max-width: 35rem;
     transition: width 0.7s;
+    //transition: width 0.8s;
     border-left: 3px solid rgba(108, 255, 119, 1);
     top: 0;
     left: auto;
@@ -79,6 +80,7 @@ const Messages = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
+    //transition: height 1s;
     scroll-snap-align: end;
     //scroll-snap-type: y proximity;
     ::-webkit-scrollbar{
@@ -182,7 +184,7 @@ const Chat = () => {
                 
             </RecentChats>
             <hr />
-            <Messages id="chat-list">
+            <Messages chatDisplay={chatDisplay} id="chat-list">
                 {
                     textMsgs.map(message=>(
                         message.type==="sent"? <SentMessage text={message.text} />:

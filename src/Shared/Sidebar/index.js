@@ -27,6 +27,7 @@ const Container = styled.div`
     right: ${
         props=>props.chatDisplay?"33.6vw":"0"
     };
+    transition: 0.7s;
     flex-direction: column;
     justify-content: space-around;
     .selected-item{

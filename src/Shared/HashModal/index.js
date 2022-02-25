@@ -23,6 +23,7 @@ const Container = styled.div`
     right: ${
         props=>props.chatDisplay?"43.2rem":"7.3rem"
     };
+    transition: 0.7s;
     //border: 1px solid rgba(108, 255, 119, 1);
     box-shadow: inset 0 4px 5px -5px rgba(108, 255, 119, 1),
               inset -5px 0 4px -5px rgba(108, 255, 119, 1), 
