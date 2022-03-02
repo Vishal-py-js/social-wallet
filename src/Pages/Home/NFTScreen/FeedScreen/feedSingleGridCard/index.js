@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 
@@ -10,7 +11,11 @@ const user1 = "./assets/icons/nft-card-user1.svg"
 
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-    width: 75vw;
+    width: ${
+        props=>props.chatDisplay?"50vw":"75vw"
+    };
+    transition: 0.7s;
+    margin-left: 1vw;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     display: flex;
 
@@ -112,9 +117,10 @@ const Text = styled.div`
 
 const FeedSingleCard = ({imgSrc}) => {
 
+    const chatDisplay=useSelector(state=>state.chat)
     // const [star, setStar] = useState(false)
     return(
-        <Container>
+        <Container chatDisplay={chatDisplay}>
             <Image>
                 <img className="image" src={imgSrc} alt=""/>
                 {/* <img className="star" src={star} alt=""/> */}

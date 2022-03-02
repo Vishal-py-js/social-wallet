@@ -26,7 +26,7 @@ const Container = styled.div`
 const WalletContainer = styled.div`
     hr{
         width: 78%;
-        opacity: 0.1;
+        opacity: 0.4;
     }
 `
 

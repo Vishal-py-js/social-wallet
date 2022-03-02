@@ -37,6 +37,7 @@ const CardContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 5px;
     box-shadow: inset 0 3px 0px -2px rgba(108, 255, 119, 1),
                     inset -4px 0 3px -3px rgba(108, 255, 119, 1), 
                     inset 4px 0 0px -3px rgba(108, 255, 119, 1);

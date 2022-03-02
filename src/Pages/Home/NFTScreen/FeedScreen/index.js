@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 // import FeedMultiCard from "../ProfileScreen/multiGridCard";
 // import FeedSingleCard from "../ProfileScreen/singleGridCard";
@@ -20,14 +21,16 @@ const Content = styled.div`
     //align-items: center;
     grid-gap: 2rem;
     grid-template-columns: ${
-        props=>props.gridView==="MV"?"repeat(5, minmax(0, 1fr))":
+        props=>props.gridView==="MV"&&props.chatDisplay==false?"repeat(5, minmax(0, 1fr))":
+        props.gridView==="MV"&&props.chatDisplay?"repeat(3, minmax(0, 1fr))":
         "repeat(1, minmax(0, 1fr))"
     };
 `
 
 const FeedScreen = ({gridView}) => {
+    const chatDisplay = useSelector(state=>state.chat)
     return(
-        <Content gridView={gridView}>
+        <Content chatDisplay={chatDisplay} gridView={gridView}>
                     {
                         gridView==="MV"?
                         <React.Fragment>
