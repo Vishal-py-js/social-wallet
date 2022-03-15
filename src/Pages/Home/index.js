@@ -104,7 +104,8 @@ const Home = () => {
                     tabSelector==="Home"?<HomeScreen />:
                     tabSelector==="Explore"?<Explore />:
                     tabSelector==="NFTs"?<NFT />:
-                    tabSelector==="Followers"?<Followers />:""
+                    tabSelector==="Followers"?<Followers />:
+                    ""
                 }
             </Body>
 
