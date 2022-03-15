@@ -20,7 +20,7 @@ const Container = styled.div`
     gap: 1rem;
     //padding: 1rem 2rem 0 1rem;
     padding: ${
-        props=>props.chatDisplay?"1rem 0.3rem 0 0rem":"1rem 2rem 0 1rem"
+        props=>props.chatDisplay?"1rem 0.3rem 0 4rem":"1rem 2rem 0 4rem"
     };
     .title{
         display: flex;

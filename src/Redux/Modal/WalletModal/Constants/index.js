@@ -1,0 +1,2 @@
+export const WALLET_MODAL_ON = "WALLET_MODAL_ON"
+export const WALLET_MODAL_OFF = "WALLET_MODAL_OFF"

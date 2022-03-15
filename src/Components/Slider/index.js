@@ -26,6 +26,7 @@ width: 90%;
       }
       .slick-next{
         //position: absolute;
+        //right: 0.01rem;
         margin-top: 0.6rem;
         //left: 5px;
         z-index:111 !important;
@@ -64,45 +65,48 @@ width: 90%;
     const settings = {
       dots: false,
       speed: 500,
-      variableWidth: true,
+      variableWidth: false,
       slidesToShow: props.show,
       slidesToScroll: 1,
       prevArrow: <PrevArrow size={props.size}/>,
       nextArrow: <NextArrow size={props.size}/>,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 4,
+      responsive: false,
+      centerMode: true,
+      //infinite: true,
+      // responsive: [
+      //   {
+      //     breakpoint: 1024,
+      //     settings: {
+      //       slidesToShow: 4,
+      //       slidesToScroll: 4,
             
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+      //     }
+      //   },
+      //   {
+      //     breakpoint: 600,
+      //     settings: {
+      //       slidesToShow: 2,
+      //       slidesToScroll: 2,
+      //       initialSlide: 2
+      //     }
+      //   },
+      //   {
+      //     breakpoint: 480,
+      //     settings: {
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1
+      //     }
+      //   }
+      // ]
     }
      return(
-          <SliderStyle>      
-            <div>
+          // <SliderStyle>      
+          //   <div>
               <Slider {...settings}>
                       {props.children}
               </Slider>
-            </div>
-          </SliderStyle>
+            //</div>
+          //</SliderStyle>
 
     );
   }

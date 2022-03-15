@@ -10,6 +10,7 @@ const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 15rem;
     //border: 1px solid rgba(108, 255, 119, 1);
     box-shadow: inset 0 -5px 5px -5px rgba(108, 255, 119, 1), 
               inset 0 5px 5px -5px rgba(108, 255, 119, 1), 

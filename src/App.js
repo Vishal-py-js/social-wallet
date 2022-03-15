@@ -16,7 +16,7 @@ import Wallet from './Pages/Wallet';
 
 const Container = styled.div`
   width: ${
-    props=>props.chatDisplay?"65vw":"100vw"
+    props=>props.chatDisplay?"65.9vw":"100vw"
   };
   //width: 65vw;
   transition: width 0.8s;

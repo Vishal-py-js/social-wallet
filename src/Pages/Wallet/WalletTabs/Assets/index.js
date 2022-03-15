@@ -1,3 +1,5 @@
+import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const cardImg1 = "assets/images/asset-card1.png"
@@ -11,7 +13,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-left: 2rem;
+    padding-left: 4rem;
     padding-right: 2rem;
 `
 
@@ -70,6 +72,7 @@ const CardContainer = styled.div`
             line-height: 0;
             gap: 0;
             .usd{
+                height: 2.5rem;
                 display: flex;
                 align-items: center;
                 //margin-top: 1rem;
@@ -95,6 +98,7 @@ const CardContainer = styled.div`
                 }
             }
             .eth{
+                height: 2.5rem;
                 display: flex;
                 align-items: center;
                 //margin-bottom: 1rem;
@@ -164,12 +168,16 @@ const AssetCard = ({imgSrc, title}) => {
 }
 
 const Assets = () => {
+    const NFTs = useSelector(state => state.nfts.nfts)
+
     return(
         <Container>
-            <AssetCard imgSrc={cardImg1} title="Illusion links"/>
-            <AssetCard imgSrc={cardImg2} title="Blastbubbles"/>
-            <AssetCard imgSrc={cardImg3} title="Crystal Pink"/>
-            
+            {
+                NFTs.length===0?<h3 style={{color: "white"}}>You don't have any NFT yet</h3>:
+                NFTs.map(nft=>(
+                    <AssetCard title={nft.meta.name} imgSrc={nft.meta.content[1].url}/>
+                ))
+            }
         </Container>
     )
 }

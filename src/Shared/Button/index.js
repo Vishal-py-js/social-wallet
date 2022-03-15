@@ -61,7 +61,7 @@ const ButtonContainer = styled.button`
 
 const Button = (props) => {
     return(
-        <ButtonContainer>
+        <ButtonContainer onClick={props.onClick}>
             <img src={props.imageSrc} />
             {props.text}
             <img src={props.arrowIcon} />

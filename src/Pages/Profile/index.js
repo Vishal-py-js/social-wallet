@@ -90,6 +90,7 @@ const ProfileDetail = styled.div`
         color: #fff;
         font-size: 19px;
         width: 57%;
+        transition: 0.7s;
         padding-left: 8px;
         :focus{
             outline: 0.001rem solid #6CFF77;

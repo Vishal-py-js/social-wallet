@@ -3,6 +3,7 @@ import BidCard from "./BidCard";
 import CollectionCard from "./CollectionCard";
 import SellerCard from "./SellerCard";
 import Slider1 from "../../../Components/Slider";
+import { useSelector } from "react-redux";
 
 const seller1 = "/assets/icons/seller1.svg"
 const seller2 = "/assets/icons/seller2.svg"
@@ -17,25 +18,31 @@ const bids2 = "/assets/images/bids2.png"
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding-left: 5%;
+    width: 90%;
+    padding-left: 3%;
+    //padding-right: 2rem;
+    //gap: 3rem;
     height: fit-content;
     .seller-slider{
         height: 39vh;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        padding-right: 2%;
+        gap: 3rem;
+        //padding-right: 10%;
     }
     .bidder-slider{
         //line-height: 0;
+        display: flex;
+        flex-direction: column;
         height: 50vh;
-        padding-right: 2%;
+        //padding-right: 2%;
     }
     .collection-slider{
         //line-height: 0;
+        display: flex;
+        flex-direction: column;
         height: fit-content;
-        padding-right: 2%;
+        //padding-right: 2%;
     }
     .selected-seller{
         box-shadow: inset 0 7px 0px -5px #FB258B,
@@ -63,7 +70,7 @@ const Container = styled.div`
 const Header = styled.div`
     display: flex;
     justify-content: space-between;
-    padding-right: 9%;
+    //padding-right: 9%;
     align-items: center;
     h2{
         color: rgba(108, 255, 119, 1);
@@ -99,6 +106,8 @@ const Explore = (props) => {
     //         this.classList.add("selected")
     //     }, false)
     // }
+
+    const chatDisplay = useSelector(state=>state.chat)
     
     return(
         <Container>
@@ -113,7 +122,7 @@ const Explore = (props) => {
                         <option>2 WEEKS</option>
                     </select>
                 </Header>
-                <Slider1 show={4} size="small">
+                <Slider1 show={chatDisplay?5:8} size="small">
                     <SellerCard imgSrc={seller1} />
                     <SellerCard imgSrc={seller2} />
                     <SellerCard imgSrc={seller3} />
@@ -122,6 +131,9 @@ const Explore = (props) => {
                     <SellerCard imgSrc={seller2} />
                     <SellerCard imgSrc={seller2} />
                     <SellerCard imgSrc={seller4} />
+                    <SellerCard imgSrc={seller2} />
+                    <SellerCard imgSrc={seller3} />
+                    <SellerCard imgSrc={seller4} />
                 </Slider1>
             </div> 
 
@@ -129,7 +141,7 @@ const Explore = (props) => {
                 <Header>
                     <h2>Hot Bids</h2> 
                 </Header>
-                <Slider1 show={3} size="big">
+                <Slider1 show={chatDisplay?3:5} size="big">
                     <BidCard imgSrc={bids1}/>
                     <BidCard imgSrc={bids2}/>
                     <BidCard imgSrc={bids1}/>
@@ -143,7 +155,7 @@ const Explore = (props) => {
                 <Header>
                     <h2>Top Collections</h2> 
                 </Header>
-                <Slider1 show={3} size="bigger">
+                <Slider1 show={chatDisplay?2:4} size="bigger">
                     <CollectionCard imgSrc={bids1}/>
                     <CollectionCard imgSrc={bids2}/>
                     <CollectionCard imgSrc={bids1}/>

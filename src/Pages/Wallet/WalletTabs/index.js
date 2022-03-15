@@ -5,6 +5,7 @@ import styled from "styled-components"
 import React, { useState } from "react";
 import Assets from "./Assets";
 import Activity from "./Activity";
+import { useSelector } from "react-redux";
 
 const Container = styled.div`
     
@@ -15,6 +16,7 @@ const Tabs = styled.div`
     display: flex;
     justify-content: space-around;
     margin-top: 3rem;
+    margin-right: 5rem;
     color: #fff;
     div{
         width: 50%;
@@ -25,6 +27,7 @@ const Tabs = styled.div`
         align-items: center;
         hr{
             width: 100%;
+            transition: 0.7s;
         }
         h4{
             cursor: pointer;
@@ -53,9 +56,11 @@ const WalletTabs = () => {
         setActive("Activity")
     }
 
+    const chatDisplay = useSelector(state=>state.chat)
+
     return(
         <Container>
-            <Tabs>
+            <Tabs chatDisplay={chatDisplay}>
                 <div className={active==="Assets"?"selected":""} onClick={handleAssets} >
                     <h4>ASSETS</h4>
                     <hr />

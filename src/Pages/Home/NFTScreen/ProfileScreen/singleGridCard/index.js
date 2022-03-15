@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 
@@ -10,8 +11,8 @@ const user1 = "./assets/icons/nft-card-user1.svg"
 
 const Container = styled.div`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-    width: 98%;
-    padding: 0.5rem 1rem 0rem 0;
+    width: 93%;
+    padding: 0.5rem 1rem 0.3rem 0.5rem;
     display: flex;
 
     justify-content: space-around;
@@ -25,14 +26,21 @@ const Image = styled.div`
     .star{
         z-index: 1;
         position: absolute;
-        right: 37.7rem;
+        //right: 25.7rem;
+        right: ${
+            props=>props.chatDisplay?"25rem":"29.3rem"
+        };
         //margin: 0 5rem 3rem 0rem;
         padding: 10px 0px 0 0;
     }
     .image{
         //position: relative;
         //padding: 0 0 0 3rem;
-        //width: 60vw;
+        //width: 40vw;
+        width: ${
+            props=>props.chatDisplay?"37vw":"68vw"
+        };
+        transition: 0.7s;
         height: 40vh;
     }
 `
@@ -74,6 +82,7 @@ const Text = styled.div`
         padding: 15px 30px 15px 30px;
         font-size: 24px;
         font-weight: 500;
+        white-space: nowrap;
         color: rgba(108, 255, 119, 1);
         border: 2px solid rgba(108, 255, 119, 1);
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.0) 5.21%, rgba(108, 255, 119, 0) 97.96%);
@@ -83,9 +92,10 @@ const Text = styled.div`
 const ProfileSingleCard = ({imgSrc}) => {
 
     // const [star, setStar] = useState(false)
+    const chatDisplay = useSelector(state=>state.chat)
     return(
         <Container>
-            <Image>
+            <Image chatDisplay={chatDisplay}>
                 <img className="image" src={imgSrc} alt=""/>
                 <img className="star" src={star} alt=""/>
             </Image>

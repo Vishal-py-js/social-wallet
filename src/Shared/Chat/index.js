@@ -69,10 +69,10 @@ const RecentChats = styled.div`
 `
 
 const CardContainer = styled.div`
-    display: flex;
+    //display: flex;
     //flex-direction: row;
-    gap: 1rem;
-    padding: 0 4rem 0rem 0;
+    //gap: 0rem;
+    padding: 0 6rem 0rem 0;
 `
 
 const Messages = styled.div`
@@ -169,7 +169,7 @@ const Chat = () => {
             <RecentChats>
                 <h3>CHAT</h3>
                 <CardContainer>
-                    <Slider1 show={2} size="chat">
+                    <Slider1 show={3} size="chat">
                         <FriendCard imgSrc={userIcon} title="User#1"/>
                         <FriendCard imgSrc={userIcon2} title="User#2"/>
                         <FriendCard imgSrc={friendIcon3} title="User#3"/>

@@ -7,6 +7,7 @@ import Sidebar from "../../Shared/Sidebar";
 import Explore from "./ExploreScreen";
 import HomeScreen from "./HomeScreen";
 import NFT from "./NFTScreen";
+import Followers from "./FollowerScreen";
 
 
 const Container = styled.div`
@@ -87,6 +88,7 @@ const Home = () => {
         dispatch(selectExplore()) 
     }
 
+    console.log(window.location.href);
     return(
         <Container>
             <Body>
@@ -101,7 +103,8 @@ const Home = () => {
                 {
                     tabSelector==="Home"?<HomeScreen />:
                     tabSelector==="Explore"?<Explore />:
-                    tabSelector==="NFTs"?<NFT />:""
+                    tabSelector==="NFTs"?<NFT />:
+                    tabSelector==="Followers"?<Followers />:""
                 }
             </Body>
 

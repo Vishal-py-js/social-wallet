@@ -36,7 +36,10 @@ const Container = styled.div`
                     inset -5px 0 7px -5px #C8FDCB, 
                     inset 5px 0px 7px -5px #C8FDCB;
         padding: 10px 0px 0 0px;
-        margin: 0 7px 0 7px;
+        margin: 0 17px 0 7px;
+        margin: ${
+            props=>props.chatDisplay?"0 17px 0 7px":"0 7px 0 7px"
+        };
         border-radius: 10px;
     }
     @media (max-width: 768px) {

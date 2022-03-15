@@ -1,5 +1,17 @@
 import styled from "styled-components";
 import Button from "../../Shared/Button";
+import { useEthers, useEtherBalance } from "@usedapp/core";
+import * as solanaWeb3 from '@solana/web3.js';
+
+import React, { FC, useEffect, useMemo } from 'react';
+import { useDispatch } from "react-redux";
+import { setBalance } from "../../Redux/Wallets/MetaMask/Actions";
+import MetaMaskAuth from "./MetaMask";
+import axios from "axios";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import SolanaAuth from "./SolanaAuth";
+import { setSolanaBalance } from "../../Redux/Wallets/Solana/Actions";
+import MathWallet from "./MathWallet";
 
 const userIcon1 = "assets/icons/signup1.svg"
 const userIcon2 = "assets/icons/signup2.svg"
@@ -50,10 +62,25 @@ const UserLogin = styled.div`
         gap: 4rem;
     }
 `
+//XmgUWrJJ785RZlEp
 
 const Signup = (props) => {
+
+    const {activateBrowserWallet, account} = useEthers()
+    const history = useHistory()
+    const dispatch = useDispatch()
+        
+    const coinbaseAuth = () => {
+        axios.get("https://www.coinbase.com/oauth/authorize?response_type=code&client_id=a6c624fa2a7eb7b0dbf95a2bbd4afd9bf319be59ea85e88a302ca7db96b9f14a&redirect_uri=http://127.0.0.1:3000/home")
+        .then(()=>{
+            history.push("/home")
+        })
+    }
     return(
         <Container>
+            {/* <button onClick={getInfo}>Create Account</button> */}
+            {/* <button onClick={coinbaseAuth}>Coinbase</button> */}
+            <a style={{fontSize: "20px", color: "white"}} href="https://www.coinbase.com/oauth/authorize?client_id=a6c624fa2a7eb7b0dbf95a2bbd4afd9bf319be59ea85e88a302ca7db96b9f14a&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fhome&response_type=code&scope=wallet%3Auser%3Aread">Connect to Coinbase</a>
             <Header>
                 <h1>WELCOME TO COIN WALLET</h1>
                 <p>Already have an account? <strong>Login</strong></p>
@@ -62,8 +89,11 @@ const Signup = (props) => {
             <UserLogin>
                 <p>Sign up with your wallet or with your social media</p>
                 <div>
-                    <Button text="User#01" imageSrc={userIcon1} arrowIcon={arrowIcon}/>
-                    <Button text="Usertwin" imageSrc={userIcon2} arrowIcon={arrowIcon}/>
+                    <MetaMaskAuth />
+                    <SolanaAuth />
+                    {/* <MathWallet /> */}
+                    {/* <Button text="User#01" imageSrc={userIcon1} arrowIcon={arrowIcon}/> */}
+                    {/* <Button text="Usertwin" imageSrc={userIcon2} arrowIcon={arrowIcon}/> */}
                 </div>
             </UserLogin>
 

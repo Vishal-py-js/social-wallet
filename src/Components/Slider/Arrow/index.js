@@ -17,11 +17,11 @@ const Arrow = (props) => {
     position: absolute;
     //bottom: 25rem;
     bottom: ${
-        props.size==="small"?"6rem":
-        props.size==="big"&&chatDisplay?"21.8rem":
-        props.size==="big"&&chatDisplay==false?"11.5rem":
-        props.size==="bigger"&&chatDisplay?"26.3rem":
-        props.size==="bigger"&&chatDisplay==false?"13.8rem":
+        props.size==="small"?"7rem":
+        props.size==="big"&&chatDisplay?"10.8rem":
+        props.size==="big"&&chatDisplay==false?"10.7rem":
+        props.size==="bigger"&&chatDisplay?"14rem":
+        props.size==="bigger"&&chatDisplay==false?"14rem":
         ""
     };
     left: ${

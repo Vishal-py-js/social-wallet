@@ -1,9 +1,13 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Slider1 from "../../../Components/Slider";
 import LineDemo from "./Chart";
 import FriendCardHome from "./FriendCardHome";
 import AnimatedNumber from "react-animated-number"
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import Searchbar from "../../../Shared/SearchBar";
+import { hideSuggestions } from "../../../Redux/SearchSuggestions/Actions";
 
 const friendIcon1 = '/assets/icons/signup1.svg'
 const friendIcon2 = '/assets/icons/signup2.svg'
@@ -11,6 +15,7 @@ const friendIcon3 = '/assets/icons/friend1.svg'
 const friendIcon4 = '/assets/icons/friend2.svg'
 const friendIcon5 = '/assets/icons/friend3.svg'
 const arrowIcon = "assets/icons/arrow-icon.svg"
+const meta = "/assets/icons/metamask.svg"
 
 const Container = styled.div`
     .selected-friend-card{
@@ -19,6 +24,15 @@ const Container = styled.div`
                     inset 5px 0 0px -3px rgba(108, 255, 119, 1);
         transition-duration: 0.3s;
         transform: scale(1.05);
+    }
+    .search-bar{
+        display: flex;
+        gap: 1rem;
+        margin-left: 8rem;
+        align-items: center;
+        h2{
+            color: rgba(200, 253, 203, 1);
+        }
     }
 `
 
@@ -99,22 +113,69 @@ const ImageContainer = styled.div`
 const HomeScreen = (props) => {
 
     const [currency, setCurrency] = useState("USD")
-
+    const [ETHtoUSD, setETHtoUSD] = useState("")
+    const [exchange, setExchange] = useState({})
+    const [selectedWallet, setSelectedwallet] = useState("Metamask")
 
     const handleChange = (e) => {
         setCurrency(e.target.value)
     }
 
+    const selectWallet = (e) => {
+        setSelectedwallet(e.target.value)
+        console.log(e.target.value);
+    }
+
+    const chatDisplay = useSelector(state=>state.chat)
+    const wallets = useSelector(state=>state.wallets)
+    const metaMaskInfo = useSelector(state=>state.balance)
+    const solanaInfo = useSelector(state=>state.solana)
+    console.log(metaMaskInfo.balance);
+    console.log(solanaInfo.balance);
+    const metaB = metaMaskInfo.balance
+    const solanaB = solanaInfo.balance
+    axios.get("https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR")
+    .then(res=>{
+        console.log(res.data.USD);
+        setETHtoUSD(res.data.USD)
+    })
     
+    const exchangeRates = () => {
+        axios.get("https://api.exchangerate.host/latest?base=USD&symbols=INR,CAD")
+        .then(res=>{
+            console.log(res.data.rates);
+            setExchange(res.data.rates)
+        })
+    }
+
+    const dispatch = useDispatch()
+    const handleSuggestions = () => {
+        dispatch(hideSuggestions())
+    }
+    
+    useEffect(() => {
+        exchangeRates()
+    }, [currency])
+
     return(
         <Container>
+            <div className="search-bar">
+                <h2>Search</h2>
+                <Searchbar />
+            </div>
             <Selector>
                     <h3>WALLET VALUE</h3>
                     <div>
                         <h1>$<AnimatedNumber
-                    value={768}
+                        //value={768}
+                    value={
+                            selectedWallet==="Metamask"&&currency==="USD"?metaMaskInfo.balance*ETHtoUSD:
+                            selectedWallet==="Metamask"&&currency==="CAD"?metaMaskInfo.balance*ETHtoUSD*exchange.CAD:
+                            selectedWallet==="Metamask"&&currency==="INR"?metaMaskInfo.balance*ETHtoUSD*exchange.INR:
+                            selectedWallet==="Phantom"?solanaInfo.balance:""
+                        }
                     duration={1000}
-                    formatValue={(n) => n.toFixed(0)}
+                    formatValue={(n) => n.toFixed(2)}
                     frameStyle={(percentage) =>
                         percentage > 20 && percentage < 80 ? { opacity: 0.5 } : {}
                     }
@@ -127,11 +188,16 @@ const HomeScreen = (props) => {
                     </div>
                 </Selector>
                 <CoinSelector>
-                    <select>
+                    <select onChange={(e)=>selectWallet(e)}>
+                        {
+                            wallets.map(wallet=>(
+                                <option>{wallet}</option>
+                            ))
+                        }
+                        {/* <option>MAIN ETHEREUM NETWORK</option>
                         <option>MAIN ETHEREUM NETWORK</option>
                         <option>MAIN ETHEREUM NETWORK</option>
-                        <option>MAIN ETHEREUM NETWORK</option>
-                        <option>MAIN ETHEREUM NETWORK</option>
+                        <option>MAIN ETHEREUM NETWORK</option> */}
                     </select>
                 </CoinSelector>
                 <Graph>
@@ -140,7 +206,7 @@ const HomeScreen = (props) => {
                 <Friends>
                     <h4>TOP FRIENDS</h4>
                     <ImageContainer>
-                        <Slider1 show={3} size="chat">
+                        <Slider1 show={chatDisplay?3:5} size="chat">
                             <FriendCardHome imgSrc={friendIcon1} title="User#01"/>
                             <FriendCardHome imgSrc={friendIcon2} title="User#02"/>
                             <FriendCardHome imgSrc={friendIcon3} title="User#03"/>

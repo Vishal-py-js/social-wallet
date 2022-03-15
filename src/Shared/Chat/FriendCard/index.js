@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+    width: 2rem;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0;
+    border-radius: 5px;
     padding: 10px 30px 0 30px;
     box-shadow: inset 0 4px 5px -5px rgba(108, 255, 119, 1),
         inset -5px 0 4px -5px rgba(108, 255, 119, 1), 

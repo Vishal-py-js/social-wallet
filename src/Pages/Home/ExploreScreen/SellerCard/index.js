@@ -7,6 +7,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 9rem;
+    width: 6rem;
+    text-align: center;
     line-height: 0;
     //border: 1px solid #FB258B;
     border-radius: 0px;
@@ -18,10 +21,12 @@ const Container = styled.div`
 
     h4{
         color: #C8FDCB;
+        white-space: nowrap;
     }
     h3{
         font-weight: 500;
         font-size: 16px;
+        white-space: nowrap;
     }
     
 `

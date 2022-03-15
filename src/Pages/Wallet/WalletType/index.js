@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import NetworkSwitch from "../NetworkSwitch";
 import WalletTabs from "../WalletTabs";
 
 const copy = "assets/icons/copy-icon.svg"
@@ -18,6 +19,9 @@ const Wrapper = styled.div`
         color: #fff;
         font-size: 18px;
         font-weight: 500;
+        img{
+            max-height: 35px;
+        }
     }
     .details{
         display: flex;
@@ -83,10 +87,10 @@ const Wrapper = styled.div`
     }
 `
 
-const WalletType = ({imgSrc, title, hashCode}) => {
+const WalletType = ({imgSrc, title, hashCode, balance, balanceUSD}) => {
 
     const [moreDetails, setMoreDetails] = useState(false);
-
+    console.log(balance);
     const copyToClipboard = (hashC) => {
         navigator.clipboard.writeText(hashC)
         alert("Copied")
@@ -103,6 +107,7 @@ const WalletType = ({imgSrc, title, hashCode}) => {
         })
         setMoreDetails(!moreDetails)
     }   
+    
 
     return(
         <Wrapper>
@@ -114,19 +119,25 @@ const WalletType = ({imgSrc, title, hashCode}) => {
                 <div className="details2">
                     <span>Account 1</span>
                     <div className="hash">
-                        <small>{hashCode}</small                    >
+                        <small>{hashCode.slice(0, 4)}...{hashCode.slice(
+        hashCode.length - 4,
+        hashCode.length
+        )}</small>
                         <img onClick={()=>copyToClipboard(hashCode)} src={copy} alt=""/>
                     </div>
                 </div>
                 <div className="value">
                     <div>
-                        <h3>$70</h3>
+                        <h3>{balanceUSD.toFixed(2)}</h3>
                         <span>USD</span>
                     </div>
                     <div>
-                        <small>0.00032</small>
-                        <p>ETH</p>
+                        <small>{balance}</small>
+                        {/* <p>ETH</p> */}
                     </div>
+                </div>
+                <div>
+                    <NetworkSwitch />
                 </div>
                 <div className="dropdown">
                     <img id="dropd" onClick={()=>dropDownHandler()} src={dropdown} alt=""/>
