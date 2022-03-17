@@ -8,6 +8,7 @@ import Explore from "./ExploreScreen";
 import HomeScreen from "./HomeScreen";
 import NFT from "./NFTScreen";
 import Followers from "./FollowerScreen";
+import UserProfile from "../UserProfile";
 
 
 const Container = styled.div`
@@ -33,7 +34,7 @@ const Body = styled.div`
     display: flex;
     gap: 3rem;
     flex-direction: column;
-    margin: 4rem 0 4rem 0rem;
+    margin: 4rem 0 4rem 0;
     @media (max-width: 768px) {
         width: 120px;
         flex:9;
@@ -41,7 +42,9 @@ const Body = styled.div`
 `
 const Tabs = styled.div`
     display: flex;
-    justify-content: space-around;
+    width: 90%;
+    justify-content: space-between;
+    padding: 0 0 0 3rem;
     color: #C8FDCB;
     opacity: 0.7;
     h3{
@@ -70,7 +73,7 @@ const Home = () => {
     const handleProfile = () => {
         setActive("Profile") 
         dispatch(selectProfile())
-        history.push("/profile")  
+        //history.push("/profile")  
     }
 
     const handleNFTs = () => {
@@ -94,7 +97,7 @@ const Home = () => {
             <Body>
                 <Tabs>
                     <h3 className={active==="Home"?"activate":""} onClick={handleHome}>Home</h3>
-                    <h3 className={active==="Profile"?"activate":""}>Profile</h3>
+                    <h3 className={active==="Profile"?"activate":""} onClick={handleProfile}>Profile</h3>
                     <h3 className={active==="NFTs"?"activate":""} onClick={handleNFTs}>NFTs</h3>
                     <h3 className={active==="Followers"?"activate":""} onClick={handleFollowers}>Followers</h3>
                     <h3 className={active==="Explore"?"activate":""} onClick={handleExplore}>Explore</h3>
@@ -102,6 +105,7 @@ const Home = () => {
 
                 {
                     tabSelector==="Home"?<HomeScreen />:
+                    tabSelector==="Profile"?<UserProfile />:
                     tabSelector==="Explore"?<Explore />:
                     tabSelector==="NFTs"?<NFT />:
                     tabSelector==="Followers"?<Followers />:

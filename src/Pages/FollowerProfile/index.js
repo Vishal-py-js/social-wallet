@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-const image1 = "assets/icons/user-profile1.svg"
+const image1 = "assets/icons/follower-profile1.svg"
 const edit = "assets/icons/edit.svg"
 const urlIcon = "assets/icons/url-icon.svg"
 
@@ -22,8 +22,7 @@ const Container = styled.div`
     flex-direction: column;
     //align-items: center;
     justify-content: center;
-    padding: 5rem 0 3rem 4rem;
-    //margin-right: 2rem;
+    padding: 5rem 0 3rem 2rem;
     gap: 3rem;
     h2{
         color: #C8FDCB;
@@ -85,6 +84,16 @@ const ProfileDetails = styled.div`
                 font-size: 16px;
             }
         }
+        .followers{
+            display: flex;
+            justify-content: flex-start;
+            gap: 4rem;
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
         button{
             width: fit-content;
             font-weight: 600;
@@ -104,8 +113,8 @@ const ProfileDetails = styled.div`
 
 const Collection = styled.div`
     display: grid;
-    grid-gap: 3rem;
-    padding-right: 2rem;
+    //align-items: center;
+    grid-gap: 2rem;
     //grid-template-columns: repeat(6, minmax(0, 1fr));
     grid-template-columns: ${
         props=>props.chatDisplay?"repeat(4, minmax(0, 1fr))":"repeat(6, minmax(0, 1fr))"
@@ -130,7 +139,7 @@ const NFTCard = ({imgSrc}) => {
     )
 }
 
-const UserProfile = () => {
+const FollowerProfile = () => {
 
     const chatDisplay = useSelector(state=>state.chat)
 
@@ -147,7 +156,7 @@ const UserProfile = () => {
                 </div>
                 <div className="user">
                     <div className="user-name">
-                        <strong>user_alex</strong>
+                        <strong>user_kate</strong>
                         <img src={edit} alt="edit" />
                     </div>
                     <div className="user-bio">
@@ -158,7 +167,17 @@ const UserProfile = () => {
                         <img src={urlIcon} alt=""/>
                         <small>www.nftuser123.com</small>
                     </div>
-                    {/* <button>UPLOAD NFT</button> */}
+                    <div className="followers">
+                        <div>
+                            <strong>1.3k</strong>
+                            <small>Followers</small>
+                        </div>
+                        <div>
+                            <strong>800</strong>
+                            <small>Following</small>
+                        </div>
+                        <button>Follow+</button>
+                    </div>
                 </div>
             </ProfileDetails>
 
@@ -186,4 +205,4 @@ const UserProfile = () => {
     )
 }
 
-export default UserProfile
+export default FollowerProfile

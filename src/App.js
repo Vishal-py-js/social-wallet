@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux';
 import HashModal from './Shared/HashModal';
 import Wallet from './Pages/Wallet';
 import UserProfile from './Pages/UserProfile';
+import FollowerProfile from './Pages/FollowerProfile';
 
 const Container = styled.div`
   width: ${
@@ -47,6 +48,7 @@ function App() {
                 <a href='profile'>Profile</a><br/>
                 <a href='wallet'>Wallet</a><br/>
                 <a href='user'>User Profile</a><br/>
+                <a href='follower'>Follower Profile</a><br/>
               </div>
             </Route>
             
@@ -56,6 +58,7 @@ function App() {
             <Route exact path='/transactions' component={Transaction} />
             <Route exact path='/wallet' component={Wallet} />
             <Route exact path='/user' component={UserProfile} />
+            <Route exact path='/follower' component={FollowerProfile} />
           </Switch>
         </Router>
       </Container>
