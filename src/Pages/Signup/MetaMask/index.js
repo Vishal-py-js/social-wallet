@@ -124,19 +124,6 @@ const MetaMaskAuth = () => {
 
     console.log(walletAddress);
 
-    const getBalance = async() => {
-      const bal = await window.ethereum.request({
-        method: "eth_getBalance",
-        params: [walletAddress, "latest"]
-      })
-      console.log(ethers.utils.formatEther(bal));
-      
-     
-      //console.log(accounts);
-      //dispatch(setNFTs(nfts))
-      dispatch(setBalance(ethers.utils.formatEther(bal)))
-    }
-
     const getNFTdata = async () => {
       if(!walletAddress){
         return
