@@ -56,7 +56,7 @@ const Sidebar = (props) => {
     const history = useHistory()
 
     const handleUserClick = () => {
-        history.push("/profile")
+        history.push("/editprofile")
     }
 
     const handleChatClick = () => {

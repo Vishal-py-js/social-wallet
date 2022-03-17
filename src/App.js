@@ -15,6 +15,7 @@ import HashModal from './Shared/HashModal';
 import Wallet from './Pages/Wallet';
 import UserProfile from './Pages/UserProfile';
 import FollowerProfile from './Pages/FollowerProfile';
+import EditProfile from './Pages/EditProfile';
 
 const Container = styled.div`
   width: ${
@@ -45,7 +46,8 @@ function App() {
               <div className='links'>
                 <a href='signup'>Signup</a><br/>
                 <a href='home'>Home</a><br/>
-                <a href='profile'>Profile</a><br/>
+                <a href='editprofile'>Profile</a><br/>
+                {/* <a href='profile'>Profile</a><br/> */}
                 <a href='wallet'>Wallet</a><br/>
                 <a href='user'>User Profile</a><br/>
                 <a href='follower'>Follower Profile</a><br/>
@@ -54,7 +56,8 @@ function App() {
             
             <Route exact path='/signup' component={Signup} />
             <Route exact path='/home' component={Home} />
-            <Route exact path='/profile' component={Profile} />
+            {/* <Route exact path='/profile' component={Profile} /> */}
+            <Route exact path='/editprofile' component={EditProfile} />
             <Route exact path='/transactions' component={Transaction} />
             <Route exact path='/wallet' component={Wallet} />
             <Route exact path='/user' component={UserProfile} />
