@@ -13,7 +13,7 @@ const FollowerCont = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10rem;
+    gap: 7rem;
     justify-content: space-between;
     .follower-details{
         display: flex;

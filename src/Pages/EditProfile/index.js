@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import SelectAvatar from "./SelectAvatar";
 
 const image1 = "assets/icons/user-profile1.svg"
 const edit = "assets/icons/edit.svg"
@@ -95,7 +97,7 @@ const Bio = styled.div`
             height: 10rem;
             color: #fff;
             font-size: 20px;
-            padding: 12px 0 0 15px;
+            padding: 12px 0px 0 15px;
             background: linear-gradient(97.02deg, rgba(108, 255, 119, 0) 5.21%, rgba(185, 11, 122, 0) 97.96%);
             border: 1px solid rgba(108, 255, 119);
             :focus{
@@ -132,10 +134,19 @@ const Save = styled.div`
 
 const EditProfile = () => {
 
+    const [selectAvatar, setSelectAvatar] = useState(false)
+
     const chatDisplay = useSelector(state=>state.chat)
+
+    const handleAvatarModal = () => {
+        setSelectAvatar(true)
+    }
 
     return(
         <Container chatDisplay={chatDisplay}>
+            {
+                selectAvatar?<SelectAvatar setSelectAvatar={setSelectAvatar}/>:""
+            }
             <h2>EDIT USER PROFILE</h2>
             <UserProfile>
                 <Avatar className="profile-detail">
@@ -144,7 +155,7 @@ const EditProfile = () => {
                             <img src={image1} alt="user"/>
                         </div> 
                     </div>
-                    <button>EDIT AVATAR<img src={edit}/></button>
+                    <button onClick={handleAvatarModal}>EDIT AVATAR<img src={edit}/></button>
                 </Avatar>
                 <UserName>
                     <h3>User Name</h3>
