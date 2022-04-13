@@ -11,6 +11,7 @@ import { walletsReducer } from './WalletList/Reducers';
 import { walletModalReducer } from './Modal/WalletModal/Reducers';
 import { suggestionsReducer } from './SearchSuggestions/Reducers';
 import { networkReducer } from './Wallets/NetworkSwitch/Reducers';
+import { searchModalReducer } from './Modal/SearchModal/Reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
   
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
     wallets: walletsReducer,
     suggestions: suggestionsReducer,
     network: networkReducer,
+    search: searchModalReducer,
 });
  
 

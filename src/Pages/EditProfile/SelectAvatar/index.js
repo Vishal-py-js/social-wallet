@@ -16,6 +16,9 @@ const close = "assets/icons/close-icon.svg"
 
 const Container = styled.div`
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
     z-index: 2;
     //left: 54rem;
     //left: 32.4rem;

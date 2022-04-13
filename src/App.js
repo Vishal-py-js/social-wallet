@@ -12,6 +12,7 @@ import Sidebar from './Shared/Sidebar';
 import Chat from './Shared/Chat';
 import { useSelector } from 'react-redux';
 import HashModal from './Shared/HashModal';
+import Searchbar from './Shared/SearchBar';
 import Wallet from './Pages/Wallet';
 import UserProfile from './Pages/UserProfile';
 import FollowerProfile from './Pages/FollowerProfile';
@@ -31,14 +32,19 @@ function App() {
 
   const chatDisplay = useSelector(state=>state.chat)
   const hashDisplay = useSelector(state=>state.hash)
+  const searchDisplay = useSelector(state=>state.search)
+  console.log(searchDisplay);
 
   return (
     <div className="App">
       <Container chatDisplay={chatDisplay}>
+        {
+          searchDisplay?<Searchbar />:""
+        }
           
-      {
-        hashDisplay?<HashModal />:""
-      }
+        {
+          hashDisplay?<HashModal />:""
+        }
         <Router>
           <Sidebar />
           <Switch>

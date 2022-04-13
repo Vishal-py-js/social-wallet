@@ -1,3 +1,6 @@
+/*global chrome*/
+
+
 import React, { useEffect, useState } from "react"
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
@@ -97,9 +100,20 @@ const MetaMaskAuth = () => {
 
   
     const [walletAddress, setWalletAddress] = useState(null)
+    const [walBalance, setWalBalance] = useState("")
     const [nfts, setnfts] = useState([])
 
-    
+    const sendTokenToChromeExtension = ({ extensionId, address, wallets, name}) => {
+      chrome.runtime.sendMessage(extensionId, { address, wallets, name }, response => {
+        if (!response.success) {
+          console.log('error sending message', response);
+          return response;
+        }
+        console.log('Sucesss ::: ', response.message)
+      });
+    }
+
+    const wallets = useSelector(state=>state.wallets)
 
     const connectWallet = async () =>{
 
@@ -115,12 +129,17 @@ const MetaMaskAuth = () => {
           method: "eth_getBalance",
           params: [acc, "latest"]
         })
+        const balnc = ethers.utils.formatEther(bal)
         dispatch(setBalance(ethers.utils.formatEther(bal)))
+        setWalBalance(ethers.utils.formatEther(bal))
         console.log(ethers.utils.formatEther(bal));
+        sendTokenToChromeExtension({extensionId:"foppbleipkoflnkdmodnjjkhanldfggm", address: accounts[0], wallets:wallets, name:"Metamask"})
         
         //history.push("/home")
       }
     }
+
+    
 
     console.log(walletAddress);
 

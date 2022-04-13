@@ -18,7 +18,7 @@ const Container = styled.div`
     position: fixed;
     width: 20rem;
     height: fit-content;
-    top: 10.4rem;
+    top: 20.4rem;
     //left: 7.5rem;
     right: ${
         props=>props.chatDisplay?"43.2rem":"7.3rem"

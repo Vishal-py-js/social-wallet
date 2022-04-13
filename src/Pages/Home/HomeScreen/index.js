@@ -161,7 +161,7 @@ const HomeScreen = (props) => {
         <Container>
             <div className="search-bar">
                 <h2>Search</h2>
-                <Searchbar />
+                {/* <Searchbar /> */}
             </div>
             <Selector>
                     <h3>WALLET VALUE</h3>

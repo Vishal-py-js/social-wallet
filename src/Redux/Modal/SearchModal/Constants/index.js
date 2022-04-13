@@ -1,0 +1,2 @@
+export const SEARCH_MODAL_ON = "SEARCH_MODAL_ON"
+export const SEARCH_MODAL_OFF = "SEARCH_MODAL_OFF"

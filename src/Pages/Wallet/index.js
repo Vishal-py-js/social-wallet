@@ -57,44 +57,12 @@ const Container = styled.div`
         transition-duration: 0.3s;
         -webkit-transition-duration: 0.2s; /* Safari */
         
-        
-        // &:hover {
-        //     transition-duration: 0.3s;
-        // }
-        
-        // &:after {
-        //     content: "";
-        //     position: absolute;
-        //     border-radius: 4em;
-        //     left: 0;
-        //     top:0;
-        //     width: 100%;
-        //     height: 100%;
-        //     opacity: 0;
-        //     //transition: all 0.2s;
-            
-        // }
-        
-        // &:active:after {
-        //     //position: absolute;
-        //     left: 0;
-        //     top:0;
-        //     opacity: 1;
-        //     //transition: 0.2s;
-        // }
-        
-        // &:active {
-        //     top: 2px;
-        //     //transform: scale(1.05);
-        // }
         }
 `
 
 const WalletContainer = styled.div`
-    //z-index: 1;
     hr{
         width: 84%;
-        //opacity: 0.4;
         margin-left: 3rem;
     }
 `
@@ -108,14 +76,10 @@ const Wallet = () => {
         console.log(res.data.USD);
         setETHtoUSD(res.data.USD)
     })
-    //console.log(USDvalue);
 
     const walletAdd = useSelector(state=>state.nfts.address)
     const solAdd = useSelector(state=>state.solana.address)
-    // `${walletAdd.slice(0, 6)}...${walletAdd.slice(
-    //     walletAdd.length - 4,
-    //     walletAdd.length
-    //       )}`
+    
     const slicedAdd = `${walletAdd.slice(0, 6)}...${walletAdd.slice(
         walletAdd.length - 4,
         walletAdd.length

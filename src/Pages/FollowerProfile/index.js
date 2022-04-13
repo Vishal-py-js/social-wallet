@@ -66,6 +66,7 @@ const ProfileDetails = styled.div`
             }
         }
         .user-bio{
+            
             span{
                 color: #C8FDCB;
                 font-size: 20px;
@@ -152,12 +153,12 @@ const FollowerProfile = () => {
                             <img src={image1} alt="user"/>
                         </div> 
                     </div>
-                    <button>EDIT PROFILE</button>
+                    {/* <button>EDIT PROFILE</button> */}
                 </div>
                 <div className="user">
                     <div className="user-name">
                         <strong>user_kate</strong>
-                        <img src={edit} alt="edit" />
+                        {/* <img src={edit} alt="edit" /> */}
                     </div>
                     <div className="user-bio">
                         <span>Bio</span>
@@ -176,7 +177,7 @@ const FollowerProfile = () => {
                             <strong>800</strong>
                             <small>Following</small>
                         </div>
-                        <button>Follow+</button>
+                        <button>Follow +</button>
                     </div>
                 </div>
             </ProfileDetails>

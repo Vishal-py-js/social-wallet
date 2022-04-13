@@ -6,10 +6,12 @@ import { showChat, hideChat } from "../../Redux/Chat/Actions"
 import { hashModalOff, hashModalOn } from "../../Redux/Modal/HashModal/Actions";
 import SideBarItem from "./SidebarItem";
 import { useEffect } from "react";
+import { searchModalOff, searchModalOn } from "../../Redux/Modal/SearchModal/Actions";
 
 const userIcon = "assets/icons/signup1.svg"
 const hashIcon = "assets/icons/hash-icon.svg"
 const galleryIcon = "assets/icons/gallery-icon.svg"
+const searchIcon = '/assets/icons/magnifier.svg'
 const coinIcon = "assets/icons/coin-icon.svg"
 const chatIcon = "assets/icons/chat-icon.svg"
 const settingsIcon = "assets/icons/settings-icon.svg"
@@ -21,6 +23,7 @@ const Container = styled.div`
     width: 114px;
     position: fixed;
     display: flex;
+    z-index: 3;
     //top: 0;
     //left: ;
     //right: 33.6vw;
@@ -51,12 +54,21 @@ const Sidebar = (props) => {
 
     const chatDisplay = useSelector(state=>state.chat)
     const hashModal = useSelector(state=>state.hash)
+    const searchDisplay = useSelector(state=>state.search)
     const dispatch = useDispatch()
 
     const history = useHistory()
 
     const handleUserClick = () => {
         history.push("/editprofile")
+    }
+
+    const handleSearchClick = () => {
+        if(searchDisplay==false){
+            dispatch(searchModalOn())
+        } else {
+            dispatch(searchModalOff())
+        }
     }
 
     const handleChatClick = () => {
@@ -92,6 +104,7 @@ const Sidebar = (props) => {
     return(
         <Container chatDisplay={chatDisplay}>
             <SideBarItem imgSrc={userIcon} title="USER" onClick={handleUserClick}/>
+            <SideBarItem imgSrc={searchIcon} title="SEARCH" onClick={handleSearchClick}/>
             <SideBarItem imgSrc={hashIcon} title="HASH" onClick={handleHashClick}/>
             {/* <SideBarItem imgSrc={galleryIcon} title="GALLERY"/> */}
             <SideBarItem imgSrc={coinIcon} title="WALLET" onClick={handleCoinsClick}/>

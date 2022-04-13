@@ -158,7 +158,7 @@ const UserProfile = () => {
                         <img src={urlIcon} alt=""/>
                         <small>www.nftuser123.com</small>
                     </div>
-                    {/* <button>UPLOAD NFT</button> */}
+                    <button>UPLOAD NFT</button>
                 </div>
             </ProfileDetails>
 
