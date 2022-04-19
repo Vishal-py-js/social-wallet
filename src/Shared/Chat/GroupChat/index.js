@@ -17,8 +17,11 @@ const friendIcon5 = '/assets/icons/friend3.svg'
 
 const plusIcon = "assets/icons/plus-icon.svg"
 const inputIcon = "assets/icons/msg-input-icon.svg"
+const groupIcon = "assets/icons/group.svg"
 
-const searchIcon = "assets/icons/magnifier.svg"
+const MainContainer = styled.div`
+
+`
 
 const RecentChats = styled.div`
     //display: flex;
@@ -29,14 +32,28 @@ const RecentChats = styled.div`
     margin: 2rem 3rem 0 4rem;
     gap: 0rem;
 `
+const MySlide = styled(Slider1)`
+    display: block;
+    flex-direction: column;
+`
 
 const CardContainer = styled.div`
     //display: flex;
     //flex-direction: row;
-    //gap: 0rem;
     width: 25rem;
     align-self: flex-end;
+    
+    //gap: 0rem;
     //padding: 0 6rem 0rem 0;
+`
+
+
+const Group = styled.div`
+    position: absolute;
+    top: 7.3rem;
+    right: 31rem;
+    border: 2px solid rgba(108, 255, 119, 1);
+    padding: 0.7rem 0.7rem;
 `
 
 const Messages = styled.div`
@@ -67,14 +84,6 @@ const Messages = styled.div`
     }
 `
 
-const Search = styled.div`
-    position: absolute;
-    top: 7.3rem;
-    right: 31rem;
-    border: 2px solid rgba(108, 255, 119, 1);
-    padding: 1rem 1rem;
-`
-
 const MessageInput = styled.form`
     display: flex;
     justify-content: space-between;
@@ -99,7 +108,7 @@ const MessageInput = styled.form`
     }
 `
 
-const PrivateChat = () => {
+const GroupChat = () => {
 
     const [inputtext, setinputText] = useState("")
     const [textMsgs, setTextMsgs] = useState(messages)
@@ -130,20 +139,21 @@ const PrivateChat = () => {
     return(
         <React.Fragment>
             <RecentChats chatDisplay={chatDisplay}>
-                <Search>
-                    <img src={searchIcon} alt=""/>
-                </Search>
+                <Group>
+                    <img src={groupIcon} alt=""/>
+                </Group>
                 <CardContainer>
+                    
                     <Slider1 show={3} size="chat">
-                        <FriendCard imgSrc={userIcon} title="User#1"/>
-                        <FriendCard imgSrc={userIcon2} title="User#2"/>
-                        <FriendCard imgSrc={friendIcon3} title="User#3"/>
-                        <FriendCard imgSrc={friendIcon4} title="User#4"/>
-                        <FriendCard imgSrc={friendIcon5} title="User#5"/>
-                        <FriendCard imgSrc={userIcon2} title="User#6"/>
-                        <FriendCard imgSrc={userIcon} title="User#7"/>
-                        <FriendCard imgSrc={friendIcon3} title="User#8"/>
-                        <FriendCard imgSrc={friendIcon5} title="User#9"/>
+                        <FriendCard imgSrc={userIcon} title="GroupA"/>
+                        <FriendCard imgSrc={userIcon2} title="GroupB"/>
+                        <FriendCard imgSrc={friendIcon3} title="GroupC"/>
+                        <FriendCard imgSrc={friendIcon4} title="GroupD"/>
+                        <FriendCard imgSrc={friendIcon5} title="GroupE"/>
+                        <FriendCard imgSrc={userIcon2} title="GroupF"/>
+                        <FriendCard imgSrc={userIcon} title="GroupG"/>
+                        <FriendCard imgSrc={friendIcon3} title="GroupH"/>
+                        <FriendCard imgSrc={friendIcon5} title="GroupI"/>
                     </Slider1>
                 </CardContainer>
                 
@@ -168,4 +178,4 @@ const PrivateChat = () => {
     )
 }
 
-export default PrivateChat
+export default GroupChat

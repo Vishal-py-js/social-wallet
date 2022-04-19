@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import {messages} from "./messages"
 import { useSelector } from "react-redux";
 import PrivateChat from "./PrivateChat";
+import GroupChat from "./GroupChat";
 
 
 const Container = styled.div`
@@ -66,7 +67,10 @@ const ToggleContainer = styled.div`
         color: rgba(200, 253, 203, 0.8);
     }
     div{
-        width: 3px;
+        width: ${
+            props=>props.chatDisplay?"3px":"0px"
+        };
+        //width: 3px;
         background: #6CFF77;
     }
 `
@@ -103,7 +107,7 @@ const Chat = () => {
             </ToggleContainer>
 
             {
-                active==="Private"?<PrivateChat />: ""
+                active==="Private"?<PrivateChat />:<GroupChat />
             }
             
         </Container>
