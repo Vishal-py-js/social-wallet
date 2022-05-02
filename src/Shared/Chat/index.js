@@ -12,6 +12,7 @@ const Container = styled.div`
     z-index: 111 !important;
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.05) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     background: black;
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
     opacity: 0.95;
     height: ${
         props=>props.chatDisplay?"100vh": "0"

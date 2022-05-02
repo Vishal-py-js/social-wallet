@@ -7,6 +7,7 @@ import {messages} from "../messages"
 import Slider1 from "../../../Components/Slider";
 import FriendCard from "../FriendCard";
 import { useSelector } from "react-redux";
+import ChatSearch from "./ChatSearch";
 
 const userIcon = "assets/icons/signup1.svg"
 const userIcon2 = "assets/icons/signup2.svg"
@@ -19,6 +20,7 @@ const plusIcon = "assets/icons/plus-icon.svg"
 const inputIcon = "assets/icons/msg-input-icon.svg"
 
 const searchIcon = "assets/icons/magnifier.svg"
+const back = "assets/icons/back.svg"
 
 const RecentChats = styled.div`
     //display: flex;
@@ -68,11 +70,39 @@ const Messages = styled.div`
 `
 
 const Search = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     top: 7.3rem;
-    right: 31rem;
+    //right: 31rem;
+    width: ${
+        props=>props.chatSearch?"31rem":""
+    };
+    right: ${
+        props=>props.chatSearch?"1.6rem":"31rem"
+    };
+    //transition: 0.7s;
     border: 2px solid rgba(108, 255, 119, 1);
     padding: 1rem 1rem;
+    background: black;
+    .back-arrow{
+        display: ${
+            props=>props.chatSearch?"flex":"none"
+        };
+    }
+    input{
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #C8FDCB;
+        display: ${
+            props=>props.chatSearch?"flex":"none"
+        };
+        :focus{
+            outline: none;
+        }
+    }
 `
 
 const MessageInput = styled.form`
@@ -103,6 +133,7 @@ const PrivateChat = () => {
 
     const [inputtext, setinputText] = useState("")
     const [textMsgs, setTextMsgs] = useState(messages)
+    const [chatSearch, setChatSearch] = useState(false)
 
     const chatDisplay=useSelector(state=>state.chat)
 
@@ -112,12 +143,24 @@ const PrivateChat = () => {
     }
     
     useEffect(() => {
-        scrollToBottom()
+        if(chatSearch==false){
+            scrollToBottom()
+        } else {
+
+        }
     }, [textMsgs])
 
 
     const textHandler = (e) => {
         setinputText(e.target.value)
+    }
+
+    const chatShowhHandler = () => {
+        setChatSearch(true)
+    }
+
+    const chatHideHandler = () => {
+        setChatSearch(false)
     }
 
     const messageHandler = (e) => {
@@ -130,25 +173,31 @@ const PrivateChat = () => {
     return(
         <React.Fragment>
             <RecentChats chatDisplay={chatDisplay}>
-                <Search>
-                    <img src={searchIcon} alt=""/>
+                <Search chatSearch={chatSearch}>
+                    <img onClick={chatHideHandler} className="back-arrow" src={back} style={{height: "25px"}}/>
+                    <input placeholder="Search the user to chat" />
+                    <img onClick={chatShowhHandler} src={searchIcon} alt=""/>
                 </Search>
-                <CardContainer>
-                    <Slider1 show={3} size="chat">
-                        <FriendCard imgSrc={userIcon} title="User#1"/>
-                        <FriendCard imgSrc={userIcon2} title="User#2"/>
-                        <FriendCard imgSrc={friendIcon3} title="User#3"/>
-                        <FriendCard imgSrc={friendIcon4} title="User#4"/>
-                        <FriendCard imgSrc={friendIcon5} title="User#5"/>
-                        <FriendCard imgSrc={userIcon2} title="User#6"/>
-                        <FriendCard imgSrc={userIcon} title="User#7"/>
-                        <FriendCard imgSrc={friendIcon3} title="User#8"/>
-                        <FriendCard imgSrc={friendIcon5} title="User#9"/>
-                    </Slider1>
-                </CardContainer>
-                
+                {
+                    chatSearch==false?
+                    <CardContainer>
+                        <Slider1 show={3} size="chat">
+                            <FriendCard imgSrc={userIcon} title="User#1"/>
+                            <FriendCard imgSrc={userIcon2} title="User#2"/>
+                            <FriendCard imgSrc={friendIcon3} title="User#3"/>
+                            <FriendCard imgSrc={friendIcon4} title="User#4"/>
+                            <FriendCard imgSrc={friendIcon5} title="User#5"/>
+                            <FriendCard imgSrc={userIcon2} title="User#6"/>
+                            <FriendCard imgSrc={userIcon} title="User#7"/>
+                            <FriendCard imgSrc={friendIcon3} title="User#8"/>
+                            <FriendCard imgSrc={friendIcon5} title="User#9"/>
+                        </Slider1>
+                    </CardContainer>
+                    :""
+                }   
             </RecentChats>
             <hr />
+            <ChatSearch chatSearch={chatSearch}/>   
             <Messages chatDisplay={chatDisplay} id="chat-list">
                 {
                     textMsgs.map(message=>(
