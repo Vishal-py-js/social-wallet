@@ -27,11 +27,18 @@ const Container = styled.div`
     padding: 0rem 0rem 0rem 2rem;
     //margin: 1rem 4rem 0 0;
     bottom: 0;
+    hr{
+        width: 95%;
+        height: 0.2px;
+        margin: 2rem 0rem 1rem 0rem;
+        // border: 0.1px solid;
+        // border-image-source: linear-gradient(270deg, rgba(255, 247, 247, 0.38) 0%, #FFF7F7 51.04%, rgba(255, 247, 247, 0.62) 100%);
+    }
 `
 
 const Header = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     align-items: center;
     visibility: ${
@@ -78,28 +85,27 @@ const Users = styled.div`
     overflow-y: scroll;
 `
 
-const PrivateChatSearch = ({chatSearch}) => {
+const GroupChatSearch = ({chatSearch}) => {
     return(
         <Container chatSearch={chatSearch}>
+            <hr />
             <Header chatSearch={chatSearch}>
-                <span>You have <strong>10 chat members</strong></span>
-                <button>INVITE FRIEND</button>
+                <span>You have <strong>7 groups</strong></span>
             </Header>
             <Users>
-                <FriendCardChat imgSrc={friendIcon1} title="User#1"/>
-                <FriendCardChat imgSrc={friendIcon2} title="User#2"/>
-                <FriendCardChat imgSrc={friendIcon3} title="User#3"/>
-                <FriendCardChat imgSrc={friendIcon4} title="User#4"/>
-                <FriendCardChat imgSrc={friendIcon1} title="User#5"/>
-                <FriendCardChat imgSrc={friendIcon2} title="User#6"/>
-                <FriendCardChat imgSrc={friendIcon3} title="User#7"/>
-                <FriendCardChat imgSrc={friendIcon4} title="User#8"/>
-                <FriendCardChat imgSrc={friendIcon2} title="User#2"/>
-                <FriendCardChat imgSrc={friendIcon3} title="User#3"/>
-                <FriendCardChat imgSrc={friendIcon4} title="User#4"/>
+                <FriendCardChat imgSrc={friendIcon1} title="Ethereum collectors"/>
+                <FriendCardChat imgSrc={friendIcon2} title="Only NFTs"/>
+                <FriendCardChat imgSrc={friendIcon3} title="All NFT collections"/>
+                <FriendCardChat imgSrc={friendIcon4} title="Bitcoin users"/>
+                <FriendCardChat imgSrc={friendIcon1} title="New updates on NFTs"/>
+                <FriendCardChat imgSrc={friendIcon2} title="NFT Avatars"/>
+                <FriendCardChat imgSrc={friendIcon3} title="Ethereum collectors"/>
+                <FriendCardChat imgSrc={friendIcon4} title="Only NFTs"/>
+                <FriendCardChat imgSrc={friendIcon2} title="NFT Avatars"/>
+                <FriendCardChat imgSrc={friendIcon3} title="All NFT collections"/>
             </Users>
         </Container>
     )
 }
 
-export default PrivateChatSearch
+export default GroupChatSearch

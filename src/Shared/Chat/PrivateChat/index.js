@@ -7,7 +7,7 @@ import {messages} from "../messages"
 import Slider1 from "../../../Components/Slider";
 import FriendCard from "../FriendCard";
 import { useSelector } from "react-redux";
-import ChatSearch from "./ChatSearch";
+import PrivateChatSearch from "./ChatSearch";
 
 const userIcon = "assets/icons/signup1.svg"
 const userIcon2 = "assets/icons/signup2.svg"
@@ -74,7 +74,7 @@ const Search = styled.div`
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    top: 7.3rem;
+    top: 7.2rem;
     //right: 31rem;
     width: ${
         props=>props.chatSearch?"31rem":""
@@ -102,6 +102,9 @@ const Search = styled.div`
         :focus{
             outline: none;
         }
+    }
+    img{
+        height: 30px;
     }
 `
 
@@ -197,7 +200,7 @@ const PrivateChat = () => {
                 }   
             </RecentChats>
             <hr />
-            <ChatSearch chatSearch={chatSearch}/>   
+            <PrivateChatSearch chatSearch={chatSearch}/>   
             <Messages chatDisplay={chatDisplay} id="chat-list">
                 {
                     textMsgs.map(message=>(

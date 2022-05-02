@@ -19,11 +19,10 @@ const meta = "/assets/icons/metamask.svg"
 
 const Container = styled.div`
     .selected-friend-card{
-        box-shadow: inset 0 6px 0px -5px rgba(108, 255, 119, 1),
-                    inset -4px 0 4px -2px rgba(108, 255, 119, 1), 
-                    inset 5px 0 0px -3px rgba(108, 255, 119, 1);
-        transition-duration: 0.3s;
-        transform: scale(1.05);
+        border: 1px solid;
+        border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 100%);
+        border-image-slice: 1;
+        transition: 0.5s;
     }
     .search-bar{
         display: flex;

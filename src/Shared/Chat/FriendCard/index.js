@@ -9,17 +9,9 @@ const Container = styled.div`
     line-height: 0;
     border-radius: 5px;
     padding: 10px 30px 0 30px;
-    box-shadow: inset 0 4px 5px -5px rgba(108, 255, 119, 1),
-        inset -5px 0 4px -5px rgba(108, 255, 119, 1), 
-        inset 5px 0 4px -5px rgba(108, 255, 119, 1);
-    //box-shadow: -1px -1px 1px 0px rgba(108, 255, 119, 1);
-    // .selected-friend-card{
-    //     box-shadow: inset 0 8px 0px -5px rgba(108, 255, 119, 1),
-    //                 inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
-    //                 inset 5px 0 5px -3px rgba(108, 255, 119, 1);
-    //     transition-duration: 0.3s;
-    //     transform: scale(1.03);
-    // }
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 80%);
+    border-image-slice: 1;
 `
 
 const FriendCard = ({imgSrc, title}) => {

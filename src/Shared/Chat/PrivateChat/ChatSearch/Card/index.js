@@ -10,16 +10,16 @@ const Container = styled.div`
     .friend-card-img{
         //border: 1px solid #C8FDCB;
         padding: 12px 16px;
-        box-shadow: inset 0 6px 5px -6px rgba(108, 255, 119, 1),
-              inset -5px 0 4px -6px rgba(108, 255, 119, 1), 
-              inset 5px 0 4px -6px rgba(108, 255, 119, 1);
+        border: 1px solid;
+        border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 80%);
+        border-image-slice: 1;
+        transition: 0.4s;
     }
     .selected-friend-card{
-        box-shadow: inset 0 6px 0px -5px rgba(108, 255, 119, 1),
-                    inset -3px 0 4px -2px rgba(108, 255, 119, 1), 
-                    inset 6px 0 0px -3px rgba(108, 255, 119, 1);
-        transition-duration: 0.3s;
-        transform: scale(1.05);
+        border: 1.5px solid;
+        border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 100%);
+        border-image-slice: 1;
+        transition: 0.7s;
     }
     h4{
         font-weight: 400;
@@ -30,10 +30,7 @@ const Container = styled.div`
 const FriendCardChat = ({imgSrc, title}) => {
 
     const x = document.getElementsByClassName("friend-card-img")
-    // console.log(x);
-    // console.log(x.length);
     for(let i=0; i<x.length;i++) {
-        // console.log(x[i]);
         x[i].addEventListener("click", function(){
             const selectedOne = document.querySelector(".selected-friend-card")
             if(selectedOne){
