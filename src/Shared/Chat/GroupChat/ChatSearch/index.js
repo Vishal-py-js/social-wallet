@@ -1,5 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
-import FriendCardChat from "./Card";
+import CardGroupChat from "./Card";
+import GroupMembers from "./Card/GroupMembers";
 
 const friendIcon1 = '/assets/icons/signup1.svg'
 const friendIcon2 = '/assets/icons/signup2.svg'
@@ -86,23 +88,27 @@ const Users = styled.div`
 `
 
 const GroupChatSearch = ({chatSearch}) => {
+
+    const [members, setshowMembers] = useState(false)
+
     return(
         <Container chatSearch={chatSearch}>
             <hr />
+            <GroupMembers members={members} setshowMembers={setshowMembers}/>
             <Header chatSearch={chatSearch}>
-                <span>You have <strong>7 groups</strong></span>
+                <span>You have <strong>10 groups</strong></span>
             </Header>
             <Users>
-                <FriendCardChat imgSrc={friendIcon1} title="Ethereum collectors"/>
-                <FriendCardChat imgSrc={friendIcon2} title="Only NFTs"/>
-                <FriendCardChat imgSrc={friendIcon3} title="All NFT collections"/>
-                <FriendCardChat imgSrc={friendIcon4} title="Bitcoin users"/>
-                <FriendCardChat imgSrc={friendIcon1} title="New updates on NFTs"/>
-                <FriendCardChat imgSrc={friendIcon2} title="NFT Avatars"/>
-                <FriendCardChat imgSrc={friendIcon3} title="Ethereum collectors"/>
-                <FriendCardChat imgSrc={friendIcon4} title="Only NFTs"/>
-                <FriendCardChat imgSrc={friendIcon2} title="NFT Avatars"/>
-                <FriendCardChat imgSrc={friendIcon3} title="All NFT collections"/>
+                <CardGroupChat imgSrc={friendIcon1} title="Ethereum collectors" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon2} title="Only NFTs" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon3} title="All NFT collections" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon4} title="Bitcoin users" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon1} title="New updates on NFTs" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon2} title="NFT Avatars" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon3} title="Ethereum collectors" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon4} title="Only NFTs" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon2} title="NFT Avatars" setshowMembers={setshowMembers}/>
+                <CardGroupChat imgSrc={friendIcon3} title="All NFT collections" setshowMembers={setshowMembers}/>
             </Users>
         </Container>
     )

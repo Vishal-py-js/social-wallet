@@ -34,7 +34,17 @@ const RecentChats = styled.div`
     flex-direction: column;
     margin: 2rem 3rem 0 4rem;
     gap: 0rem;
-    
+    span{
+        display: ${
+            props=>props.chatSearch?"none":"flex"
+        };
+        position: absolute;
+        align-self: flex-end;
+        right: 0;
+        top: 10.4rem;
+        color: rgba(108, 255, 119, 1);
+        cursor: pointer;
+    }
 `
 const MySlide = styled(Slider1)`
     display: block;
@@ -42,13 +52,19 @@ const MySlide = styled(Slider1)`
 `
 
 const CardContainer = styled.div`
-    //display: flex;
-    //flex-direction: row;
+    display: flex;
+    flex-direction: column;
     width: 25rem;
     align-self: flex-end;
     
     //gap: 0rem;
     //padding: 0 6rem 0rem 0;
+    span{
+        display: ${
+            props=>props.chatSearch?"none":"flex"
+        };
+        align-self: flex-end;
+    }
 `
 
 
@@ -182,11 +198,11 @@ const GroupChat = () => {
 
     return(
         <React.Fragment>
-            <RecentChats chatDisplay={chatDisplay}>
+            <RecentChats chatSearch={chatSearch} chatDisplay={chatDisplay}>
                 <Group chatSearch={chatSearch}>
                     <img onClick={chatHideHandler} className="back-arrow" src={back} style={{height: "25px"}}/>
                     <input placeholder="Search the group to chat" />
-                    <img onClick={chatShowhHandler} src={groupIcon} alt=""/>
+                    <img src={groupIcon} alt=""/>
                 </Group>
                 
                 {
@@ -206,7 +222,7 @@ const GroupChat = () => {
                     </CardContainer>
                     :""
                 } 
-                
+                <span onClick={chatShowhHandler}>SEE ALL</span>
             </RecentChats>
             <hr />
             <GroupChatSearch chatSearch={chatSearch}/>

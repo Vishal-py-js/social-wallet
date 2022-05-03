@@ -7,12 +7,10 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    .title{
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-    }
+    gap: 3rem;
+    width: 44%;
+    padding: 0 0.6rem;
+    
     .friend-card-img{
         //border: 1px solid #C8FDCB;
         border: 1px solid;
@@ -20,12 +18,12 @@ const Container = styled.div`
         border-image-slice: 1;
         padding: 12px 16px;
     }
-    .selected-friend-card{
-        border: 1.5px solid;
-        border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 100%);
-        border-image-slice: 1;
-        transition: 0.5s;
-    }
+    // .selected-friend-card{
+    //     border: 1.5px solid;
+    //     border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 100%);
+    //     border-image-slice: 1;
+    //     transition: 0.5s;
+    // }
     h4{
         font-weight: 400;
         font-size: 18px;
@@ -36,7 +34,7 @@ const Container = styled.div`
     }
     .dropdown {
         position: absolute;
-        right: 7rem;
+        right: 9.4rem;
         //top: 9rem;
         border: 1px solid;
         padding: 0 1rem;
@@ -54,46 +52,44 @@ const Container = styled.div`
       }
 `
 
-const CardGroupChat = ({imgSrc, title, setshowMembers}) => {
+const GroupMemberCard = ({imgSrc, title}) => {
 
     const [showDropdown, setShowDropdown] = useState(false);
 
-    const x = document.getElementsByClassName("friend-card-img")
-    for(let i=0; i<x.length;i++) {
-        x[i].addEventListener("click", function(){
-            const selectedOne = document.querySelector(".selected-friend-card")
-            if(selectedOne){
-                selectedOne.classList.remove("selected-friend-card")
-            }
-            this.classList.add("selected-friend-card")
-        }, false)
-    }
+    // const x = document.getElementsByClassName("friend-card-img")
+    // for(let i=0; i<x.length;i++) {
+    //     x[i].addEventListener("click", function(){
+    //         const selectedOne = document.querySelector(".selected-friend-card")
+    //         if(selectedOne){
+    //             selectedOne.classList.remove("selected-friend-card")
+    //         }
+    //         this.classList.add("selected-friend-card")
+    //     }, false)
+    // }
 
     const dropDownHandler = () => {
         setShowDropdown(!showDropdown)
     }
 
-    const handleMembers = () => {
-        setshowMembers(true)
-    }
+    // const handleMembers = () => {
+    //     setshowMembers(true)
+    // }
 
     return(
         <Container className="friend-card-home">
-            <div className="title">
-                <img className="friend-card-img" src={imgSrc} />
-                <h4>{title}</h4>
-            </div>
+            <img className="friend-card-img" src={imgSrc} />
+            <h4>{title}</h4>
             <img onClick={dropDownHandler} src={dropdown} alt=""/>
             {
                 showDropdown?
                     <div className="dropdown">
-                        <p>Delete group</p>
-                        <p onClick={handleMembers}>View group members</p>
-                        <p>Add new member</p>
+                        <p>Remove User</p>
+                        <p>Chat with user</p>
+                        <p>Block user</p>
                     </div>:""
             }
         </Container>
     )
 }
 
-export default CardGroupChat
+export default GroupMemberCard

@@ -25,10 +25,10 @@ const Arrow = (props) => {
         ""
     };
     left: ${
-      props.size==="chat"?"1rem":""
+      props.size==="chat"?"0.5rem":""
     };
     top: ${
-      props.size==="chat"?"-20px":""
+      props.size==="chat"?"-35px":""
     };
     background: none;
     right: 10px;
