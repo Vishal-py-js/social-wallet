@@ -8,6 +8,7 @@ import Slider1 from "../../../Components/Slider";
 import FriendCard from "../FriendCard";
 import { useSelector } from "react-redux";
 import GroupChatSearch from "./ChatSearch";
+import CreateGroup from "./CreateGroupChat";
 
 const userIcon = "assets/icons/signup1.svg"
 const userIcon2 = "assets/icons/signup2.svg"
@@ -164,6 +165,7 @@ const GroupChat = () => {
     const [inputtext, setinputText] = useState("")
     const [textMsgs, setTextMsgs] = useState(messages)
     const [chatSearch, setChatSearch] = useState(false)
+    const [createGroup, setCreateGroup] = useState(false)
 
     const chatDisplay=useSelector(state=>state.chat)
 
@@ -196,17 +198,21 @@ const GroupChat = () => {
         setChatSearch(false)
     }
 
+    const createGroupHandler = () => {
+        setCreateGroup(true)
+    }
+
     return(
         <React.Fragment>
             <RecentChats chatSearch={chatSearch} chatDisplay={chatDisplay}>
                 <Group chatSearch={chatSearch}>
                     <img onClick={chatHideHandler} className="back-arrow" src={back} style={{height: "25px"}}/>
                     <input placeholder="Search the group to chat" />
-                    <img src={groupIcon} alt=""/>
+                    <img onClick={createGroupHandler} src={groupIcon} alt=""/>
                 </Group>
                 
                 {
-                    chatSearch==false?
+                    chatSearch==false && createGroup==false?
                     <CardContainer>
                         <Slider1 show={3} size="chat">
                             <FriendCard imgSrc={userIcon} title="User#1"/>
@@ -226,6 +232,7 @@ const GroupChat = () => {
             </RecentChats>
             <hr />
             <GroupChatSearch chatSearch={chatSearch}/>
+            <CreateGroup createGroup={createGroup} setCreateGroup={setCreateGroup}/>
             <Messages chatDisplay={chatDisplay} id="chat-list">
                 {
                     textMsgs.map(message=>(

@@ -102,7 +102,7 @@ const GroupMembers = ({members, setshowMembers}) => {
                 <div className="group">
                     <img src={groupIcon} alt=""/>
                 </div>
-                <h5>ADD new members to NFT Avatars</h5>
+                <h5>Add new members to NFT Avatars</h5>
             </Component1>
             
             <Members>

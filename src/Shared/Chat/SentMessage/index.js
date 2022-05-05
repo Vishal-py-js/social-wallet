@@ -20,7 +20,7 @@ const Container = styled.div`
         flex-direction: row;
             word-wrap: break-word;
         p{
-
+            max-width: 21rem;
         }
     }
     small{
