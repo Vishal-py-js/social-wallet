@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import FriendCardChat from "./Card";
 
@@ -10,13 +11,16 @@ const friendIcon5 = '/assets/icons/friend3.svg'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     max-height: ${
-        props=>props.chatSearch?"80vh":"0vh"
+        props=>props.chatSearch&&props.fullScreen?"75.2vh":
+        props.chatSearch&&props.fullScreen==false?"80vh":"0vh"
     };
     transition: max-height 0.5s ease-in-out;
     position: absolute;
     //opacity: 0.5;
-    width: 100%
+    //width: 100%
+    //width: 40vh;
     z-index: 222;
     height: 176vh;
     background: black;
@@ -24,15 +28,15 @@ const Container = styled.div`
     width: ${
         props=>props.chatSearch==false?"0px":"32vw"
     };
-    padding: 0rem 0rem 0rem 2rem;
+    
+    padding: 1.5rem 0rem 0rem 2rem;
     //margin: 1rem 4rem 0 0;
-    bottom: 0;
+    bottom: 0px;
 `
 
 const Header = styled.div`
     display: flex;
     justify-content: space-between;
-
     align-items: center;
     visibility: ${
         props=>props.chatSearch?"visible":"hidden"
@@ -79,8 +83,9 @@ const Users = styled.div`
 `
 
 const PrivateChatSearch = ({chatSearch}) => {
+    const fullScreen = useSelector(state=>state.fullScreenChat)
     return(
-        <Container chatSearch={chatSearch}>
+        <Container fullScreen={fullScreen} chatSearch={chatSearch}>
             <Header chatSearch={chatSearch}>
                 <span>You have <strong>10 chat members</strong></span>
                 <button>INVITE FRIEND</button>

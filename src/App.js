@@ -20,7 +20,12 @@ import EditProfile from './Pages/EditProfile';
 
 const Container = styled.div`
   width: ${
-    props=>props.chatDisplay?"65.9vw":"100vw"
+    props=>props.chatDisplay&&props.fullScreen?"65.9vw":"100vw"
+  };
+  width: ${
+    props=>props.chatDisplay&&props.fullScreen?"0":
+            props.chatDisplay==true&&props.fullScreen==false?"65.9vw":
+            "100vw"
   };
   //width: 65vw;
   transition: width 0.8s;
@@ -33,11 +38,12 @@ function App() {
   const chatDisplay = useSelector(state=>state.chat)
   const hashDisplay = useSelector(state=>state.hash)
   const searchDisplay = useSelector(state=>state.search)
+  const fullScreen = useSelector(state=>state.fullScreenChat)
   console.log(searchDisplay);
 
   return (
     <div className="App">
-      <Container chatDisplay={chatDisplay}>
+      <Container fullScreen={fullScreen} chatDisplay={chatDisplay}>
         {
           searchDisplay?<Searchbar />:""
         }

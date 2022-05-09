@@ -2,9 +2,12 @@ import React from "react"
 import styled from "styled-components";
 import {useState, useEffect} from "react"
 import {messages} from "./messages"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PrivateChat from "./PrivateChat";
 import GroupChat from "./GroupChat";
+import { hideFullScreenChat, showFullScreenChat } from "../../Redux/FullScreenChat/Actions";
+
+const expand = "assets/icons/expand.svg"
 
 
 const Container = styled.div`
@@ -15,14 +18,18 @@ const Container = styled.div`
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
     opacity: 0.95;
     height: ${
-        props=>props.chatDisplay?"100vh": "0"
+        props=>props.chatDisplay?"100vh":"0"
     };
     color: white;
     width: ${
-        props=>props.chatDisplay?"33%":"0"
+        props=>
+        props.chatDisplay&&props.fullScreen?"100%":
+        props.chatDisplay?"33%":"0"
     };
     display: flex;
-    
+    ::-webkit-scrollbar{
+        display: none;
+    }
     padding-right: 1rem;
     padding-top: 1rem;
     flex-direction: column;
@@ -48,6 +55,17 @@ const Container = styled.div`
         transition: 0.5s;
         //transform: scale(1.05);
     }
+    .expand2{
+        filter: invert(74%) sepia(68%) saturate(370%) hue-rotate(67deg) brightness(100%) contrast(108%);
+        height: 50px;
+    }
+    .expand{
+        position: absolute;
+        height: 50px;
+        right: 30px;
+        cursor: pointer;
+        filter: invert(74%) sepia(68%) saturate(370%) hue-rotate(67deg) brightness(100%) contrast(108%);
+    }
 `
 
 const ToggleContainer = styled.div`
@@ -62,6 +80,7 @@ const ToggleContainer = styled.div`
     };
     
     transition: 0.7s;
+    align-items: center;
     .activate{
         //background: rgba(255, 158, 205, 0.15);
         border: 2px solid #C8FDCB;
@@ -73,6 +92,17 @@ const ToggleContainer = styled.div`
         };
         //width: 3px;
         background: #6CFF77;
+    }
+    .expand2{
+        filter: invert(74%) sepia(68%) saturate(370%) hue-rotate(67deg) brightness(100%) contrast(108%);
+        height: 50px;
+    }
+    .expand{
+        position: absolute;
+        height: 50px;
+        right: 30px;
+        cursor: pointer;
+        filter: invert(74%) sepia(68%) saturate(370%) hue-rotate(67deg) brightness(100%) contrast(108%);
     }
 `
 
@@ -89,26 +119,74 @@ const Button = styled.button`
     border: 2px solid rgba(200, 253, 203, 0.15);
 `
 
+const FullScreenContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    
+    overflow: scroll;
+    justify-content: space-around;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+`
+
+const PlaceHolder = styled.div`
+    display: flex;
+    flex-direction: row;
+
+    overflow: scroll;
+    justify-content: space-around;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+`
+
 
 const Chat = () => {
 
     const [active, setActive] = useState("Private")    
     const chatDisplay=useSelector(state=>state.chat)
+    const fullScreen = useSelector(state=>state.fullScreenChat)
+
+    const dispatch = useDispatch()
 
     const handleActive = (clickedComp) => {
         setActive(clickedComp)
     }
+
+    const showFullScreen = () => {
+        dispatch(showFullScreenChat())
+    }
+
+    const hideFullScreen = () => {
+        dispatch(hideFullScreenChat())
+    }
     
     return(
-        <Container chatDisplay={chatDisplay} id="myChat">
-            <ToggleContainer chatDisplay={chatDisplay}>
+        <Container chatDisplay={chatDisplay} fullScreen={fullScreen} id="myChat">
+            {/* <img onClick={hideFullScreen} className="expand2" src={expand} alt=""/>
+            <img onClick={showFullScreen} className="expand" src={expand} alt=""/> */}
+            <ToggleContainer chatDisplay={chatDisplay} fullScreen={fullScreen}>
+            
                 <Button className={active==="Private"?"activate":""} onClick={()=>handleActive("Private")}>CHAT</Button>
                 <div></div>
+                <img onClick={hideFullScreen} className="expand2" src={expand} alt=""/>
+                <img onClick={showFullScreen} className="expand" src={expand} alt=""/>
                 <Button className={active==="Group"?"activate":""} active={active} onClick={()=>handleActive("Group")}>GROUP CHAT</Button>
+                
             </ToggleContainer>
+            
 
             {
-                active==="Private"?<PrivateChat />:<GroupChat />
+                active==="Private"&&fullScreen==false?<PlaceHolder><PrivateChat /></PlaceHolder>
+                :active==="Group"&&fullScreen==false?<PlaceHolder><GroupChat /></PlaceHolder>:""
+            }
+            {
+                fullScreen?
+                <FullScreenContainer>
+                    <PrivateChat />
+                    <GroupChat />
+                </FullScreenContainer>:""
             }
             
         </Container>

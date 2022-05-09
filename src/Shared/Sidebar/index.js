@@ -55,6 +55,7 @@ const Sidebar = (props) => {
     const chatDisplay = useSelector(state=>state.chat)
     const hashModal = useSelector(state=>state.hash)
     const searchDisplay = useSelector(state=>state.search)
+    const fullScreen = useSelector(state=>state.fullScreenChat)
     const dispatch = useDispatch()
 
     const history = useHistory()
@@ -102,7 +103,7 @@ const Sidebar = (props) => {
     // })
 
     return(
-        <Container chatDisplay={chatDisplay}>
+        <Container fullScreen={fullScreen} chatDisplay={chatDisplay}>
             <SideBarItem imgSrc={userIcon} title="USER" onClick={handleUserClick}/>
             <SideBarItem imgSrc={searchIcon} title="SEARCH" onClick={handleSearchClick}/>
             <SideBarItem imgSrc={hashIcon} title="HASH" onClick={handleHashClick}/>

@@ -12,6 +12,7 @@ import { walletModalReducer } from './Modal/WalletModal/Reducers';
 import { suggestionsReducer } from './SearchSuggestions/Reducers';
 import { networkReducer } from './Wallets/NetworkSwitch/Reducers';
 import { searchModalReducer } from './Modal/SearchModal/Reducers';
+import { fullScreenchatReducer } from './FullScreenChat/Reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
   
@@ -22,6 +23,7 @@ const enhancer = composeEnhancers(applyMiddleware(
 const rootReducer = combineReducers({ 
     homeTab: homeTabreducer,
     chat: chatReducer,
+    fullScreenChat: fullScreenchatReducer,
     hash: hashModalReducer,
     share: shareModalReducer,
     wallet: walletModalReducer,

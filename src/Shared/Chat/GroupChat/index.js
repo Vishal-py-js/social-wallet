@@ -24,7 +24,8 @@ const back = "assets/icons/back.svg"
 
 
 const MainContainer = styled.div`
-
+    display: flex;
+    flex-direction: column;
 `
 
 const RecentChats = styled.div`
@@ -73,14 +74,18 @@ const Group = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 7.2rem;
+    position: ${
+        props=>props.fullScreen?"relative":"absolute"
+    };
+    top: ${
+        props=>props.fullScreen?"4.5rem":"7.3rem"
+    };
     //right: 31rem;
     width: ${
-        props=>props.chatSearch?"31rem":""
+        props=>props.chatSearch?"31rem":"2rem"
     };
     right: ${
-        props=>props.chatSearch?"1.6rem":"31rem"
+        props=>props.chatSearch?"1.6rem":"2.5rem"
     };
     //transition: 0.7s;
     border: 2px solid rgba(108, 255, 119, 1);
@@ -113,6 +118,7 @@ const Messages = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
+    overflow: scroll;
     //transition: height 1s;
     scroll-snap-align: end;
     //scroll-snap-type: y proximity;
@@ -144,6 +150,9 @@ const MessageInput = styled.form`
     margin-bottom: 2rem;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.06) 97.96%);
     border: 1px solid #6CFF77; 
+    img{
+        height: 30px;
+    }
     div{
         display: flex;
         gap: 1.5rem;
@@ -168,6 +177,7 @@ const GroupChat = () => {
     const [createGroup, setCreateGroup] = useState(false)
 
     const chatDisplay=useSelector(state=>state.chat)
+    const fullScreen = useSelector(state=>state.fullScreenChat)
 
     const scrollToBottom = () => {
         const chatComp = document.getElementById("chat-list");
@@ -203,9 +213,9 @@ const GroupChat = () => {
     }
 
     return(
-        <React.Fragment>
+        <MainContainer>
             <RecentChats chatSearch={chatSearch} chatDisplay={chatDisplay}>
-                <Group chatSearch={chatSearch}>
+                <Group fullScreen={fullScreen} chatSearch={chatSearch}>
                     <img onClick={chatHideHandler} className="back-arrow" src={back} style={{height: "25px"}}/>
                     <input placeholder="Search the group to chat" />
                     <img onClick={createGroupHandler} src={groupIcon} alt=""/>
@@ -215,15 +225,15 @@ const GroupChat = () => {
                     chatSearch==false && createGroup==false?
                     <CardContainer>
                         <Slider1 show={3} size="chat">
-                            <FriendCard imgSrc={userIcon} title="User#1"/>
-                            <FriendCard imgSrc={userIcon2} title="User#2"/>
-                            <FriendCard imgSrc={friendIcon3} title="User#3"/>
-                            <FriendCard imgSrc={friendIcon4} title="User#4"/>
-                            <FriendCard imgSrc={friendIcon5} title="User#5"/>
-                            <FriendCard imgSrc={userIcon2} title="User#6"/>
-                            <FriendCard imgSrc={userIcon} title="User#7"/>
-                            <FriendCard imgSrc={friendIcon3} title="User#8"/>
-                            <FriendCard imgSrc={friendIcon5} title="User#9"/>
+                            <FriendCard imgSrc={userIcon} title="GroupA"/>
+                            <FriendCard imgSrc={userIcon2} title="GroupB"/>
+                            <FriendCard imgSrc={friendIcon3} title="GroupC"/>
+                            <FriendCard imgSrc={friendIcon4} title="GroupD"/>
+                            <FriendCard imgSrc={friendIcon5} title="GroupE"/>
+                            <FriendCard imgSrc={userIcon2} title="GroupF"/>
+                            <FriendCard imgSrc={userIcon} title="GroupG"/>
+                            <FriendCard imgSrc={friendIcon3} title="GroupH"/>
+                            <FriendCard imgSrc={friendIcon5} title="GroupI"/>
                         </Slider1>
                     </CardContainer>
                     :""
@@ -248,7 +258,7 @@ const GroupChat = () => {
                 </div>
                 <img src={inputIcon} alt=""/>
             </MessageInput>
-        </React.Fragment>
+        </MainContainer>
     )
 }
 
