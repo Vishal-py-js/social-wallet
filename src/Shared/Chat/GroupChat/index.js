@@ -26,6 +26,12 @@ const back = "assets/icons/back.svg"
 const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
+    //overflow: none;
+    hr{
+        visibility: ${
+            props=> props.chatSearch || props.createGroup?"hidden":"visible"
+        };
+    }
 `
 
 const RecentChats = styled.div`
@@ -33,17 +39,24 @@ const RecentChats = styled.div`
     display: ${
         props=>props.chatDisplay?"flex":"none"
     };
+    visibility: ${
+        props=>props.createGroup?"hidden":"visible"
+    };
+    //transition: visibility 0.6s;
     flex-direction: column;
-    margin: 2rem 3rem 0 4rem;
+    
+    margin: 0rem 3rem 0 4rem;
     gap: 0rem;
     span{
         display: ${
             props=>props.chatSearch?"none":"flex"
         };
-        position: absolute;
+        position: relative;
         align-self: flex-end;
-        right: 0;
-        top: 10.4rem;
+        left: 4rem;
+        height: 0px;
+        bottom: 1.7rem;
+        //margin-left: 3rem;
         color: rgba(108, 255, 119, 1);
         cursor: pointer;
     }
@@ -74,23 +87,26 @@ const Group = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    visibility: ${
+        props=>props.createGroup?"hidden":"visible"
+    };
     position: ${
-        props=>props.fullScreen?"relative":"absolute"
+        props=>props.fullScreen?"relative":"relative"
     };
     top: ${
-        props=>props.fullScreen?"4.5rem":"7.3rem"
+        props=>props.fullScreen?"4.5rem":"4.3rem"
     };
-    //right: 31rem;
+    //right: 0rem;
     width: ${
         props=>props.chatSearch?"31rem":"2rem"
     };
     right: ${
-        props=>props.chatSearch?"1.6rem":"2.5rem"
+        props=>props.chatSearch?"":"3rem"
     };
     //transition: 0.7s;
     border: 2px solid rgba(108, 255, 119, 1);
     padding: 1rem 1rem;
-    background: black;
+    background: none;
     .back-arrow{
         display: ${
             props=>props.chatSearch?"flex":"none"
@@ -111,14 +127,25 @@ const Group = styled.div`
     img{
         height: 30px;
     }
+    .group-icon{
+        //position: relative;
+        //padding-right: 1rem;
+        // padding: 10px 20px;
+        // position: relative;
+        // border: 2px solid rgba(108, 255, 119, 1);
+    }
 `
 
 const Messages = styled.div`
     padding: 2rem 0rem 0 0rem;
     display: flex;
     flex-direction: column;
+    visibility: ${
+        props=>props.chatSearch || props.createGroup?"hidden":"visible"
+    };
     padding-bottom: 1rem;
     overflow: scroll;
+    margin: 1.5rem 0 0 0;
     //transition: height 1s;
     scroll-snap-align: end;
     //scroll-snap-type: y proximity;
@@ -143,7 +170,10 @@ const Messages = styled.div`
 `
 
 const MessageInput = styled.form`
-    display: flex;
+    //display: flex;
+    display: ${
+        props=>props.chatSearch || props.createGroup?"none":"flex"
+    };
     justify-content: space-between;
     padding: 10px 10px 10px 10px;
     margin-left: 2em;
@@ -178,9 +208,10 @@ const GroupChat = () => {
 
     const chatDisplay=useSelector(state=>state.chat)
     const fullScreen = useSelector(state=>state.fullScreenChat)
+    const groupMembers = useSelector(state=>state.groupMembers)
 
     const scrollToBottom = () => {
-        const chatComp = document.getElementById("chat-list");
+        const chatComp = document.getElementById("grp-chat-list");
         chatComp.scrollTop = chatComp.scrollHeight
     }
     
@@ -188,6 +219,13 @@ const GroupChat = () => {
         scrollToBottom()
     }, [textMsgs])
 
+    // useEffect(() => {
+    //     if(chatSearch==false){
+    //         scrollToBottom()
+    //     } else {
+
+    //     }
+    // }, [textMsgs])
 
     const textHandler = (e) => {
         setinputText(e.target.value)
@@ -213,12 +251,12 @@ const GroupChat = () => {
     }
 
     return(
-        <MainContainer>
-            <RecentChats chatSearch={chatSearch} chatDisplay={chatDisplay}>
-                <Group fullScreen={fullScreen} chatSearch={chatSearch}>
+        <MainContainer createGroup={createGroup} fullScreen={fullScreen} chatSearch={chatSearch}>
+            <RecentChats chatSearch={chatSearch} createGroup={createGroup} chatDisplay={chatDisplay}>
+                <Group createGroup={createGroup} fullScreen={fullScreen} chatSearch={chatSearch}>
                     <img onClick={chatHideHandler} className="back-arrow" src={back} style={{height: "25px"}}/>
                     <input placeholder="Search the group to chat" />
-                    <img onClick={createGroupHandler} src={groupIcon} alt=""/>
+                    <img className="group-icon" onClick={createGroupHandler} src={groupIcon} alt=""/>
                 </Group>
                 
                 {
@@ -241,9 +279,12 @@ const GroupChat = () => {
                 <span onClick={chatShowhHandler}>SEE ALL</span>
             </RecentChats>
             <hr />
+            
             <GroupChatSearch chatSearch={chatSearch}/>
+        
+            {/* <GroupChatSearch chatSearch={chatSearch}/> */}
             <CreateGroup createGroup={createGroup} setCreateGroup={setCreateGroup}/>
-            <Messages chatDisplay={chatDisplay} id="chat-list">
+            <Messages chatSearch={chatSearch} createGroup={createGroup} chatDisplay={chatDisplay} id="grp-chat-list">
                 {
                     textMsgs.map(message=>(
                         message.type==="sent"? <SentMessage text={message.text} />:
@@ -251,7 +292,7 @@ const GroupChat = () => {
                     ))
                 }
             </Messages>
-            <MessageInput onSubmit={messageHandler}>
+            <MessageInput createGroup={createGroup} chatSearch={chatSearch} onSubmit={messageHandler}>
                 <div>
                     <img src={plusIcon} alt="" />
                     <input onChange={textHandler} type="text" value={inputtext} placeholder="Type message" />

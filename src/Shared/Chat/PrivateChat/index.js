@@ -35,7 +35,7 @@ const RecentChats = styled.div`
     //remove width
     //width: 50%;
     flex-direction: column;
-    margin: 2rem 3rem 0 4rem;
+    margin: 0rem 3rem 0 4rem;
     gap: 0rem;
 `
 
@@ -53,6 +53,9 @@ const Messages = styled.div`
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
+    visibility: ${
+        props=>props.chatSearch?"hidden":"visible"
+    };
     //overflow: scroll;
     //transition: height 1s;
     scroll-snap-align: end;
@@ -82,10 +85,10 @@ const Search = styled.div`
     justify-content: space-between;
     align-items: center;
     position: ${
-        props=>props.fullScreen?"relative":"absolute"
+        props=>props.fullScreen?"relative":"relative"
     };
     top: ${
-        props=>props.fullScreen?"4.5rem":"7.3rem"
+        props=>props.fullScreen?"4.5rem":"4.3rem"
     };
     //right: 0;
     //left: 20rem;
@@ -96,12 +99,12 @@ const Search = styled.div`
         props=>props.chatSearch?"31rem":"2rem"
     };
     right: ${
-        props=>props.chatSearch?"1.6rem":"31rem"
+        props=>props.chatSearch?"0rem":"3rem"
     };
     //transition: 0.7s;
     border: 2px solid rgba(108, 255, 119, 1);
     padding: 1rem 1rem;
-    background: black;
+    background: none;
     .back-arrow{
         display: ${
             props=>props.chatSearch?"flex":"none"
@@ -125,7 +128,10 @@ const Search = styled.div`
 `
 
 const MessageInput = styled.form`
-    display: flex;
+    //display: flex;
+    display: ${
+        props=>props.chatSearch?"none":"flex"
+    };
     justify-content: space-between;
     padding: 10px 10px 10px 10px;
     margin-left: 2em;
@@ -221,7 +227,7 @@ const PrivateChat = () => {
             </RecentChats>
             <hr />
             <PrivateChatSearch chatSearch={chatSearch}/>   
-            <Messages chatDisplay={chatDisplay} id="chat-list">
+            <Messages chatSearch={chatSearch} chatDisplay={chatDisplay} id="chat-list">
                 {
                     textMsgs.map(message=>(
                         message.type==="sent"? <SentMessage text={message.text} />:
@@ -229,7 +235,7 @@ const PrivateChat = () => {
                     ))
                 }
             </Messages>
-            <MessageInput onSubmit={messageHandler}>
+            <MessageInput chatSearch={chatSearch} onSubmit={messageHandler}>
                 <div>
                     <img src={plusIcon} alt="" />
                     <input onChange={textHandler} type="text" value={inputtext} placeholder="Type message" />

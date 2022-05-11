@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import CardGroupChat from "./Card";
 import GroupMembers from "./Card/GroupMembers";
@@ -12,19 +13,27 @@ const friendIcon5 = '/assets/icons/friend3.svg'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    top: 5rem;
+    visibility: ${
+        props=>props.members?"hidden":"visible"
+    };
     max-height: ${
         props=>props.chatSearch?"80vh":"0vh"
     };
     transition: max-height 0.5s ease-in-out;
-    position: absolute;
+    position: relative;
     //opacity: 0.5;
-    width: 100%
+    width: 50vw;
     z-index: 222;
     height: 176vh;
-    background: black;
+    background: none;
+    //top: 4rem;
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
     width: ${
         props=>props.chatSearch==false?"0px":"32vw"
+    };
+    left: ${
+        props=>props.fullScreen?"":"2rem"
     };
     padding: 0rem 0rem 0rem 2rem;
     //margin: 1rem 4rem 0 0;
@@ -43,9 +52,7 @@ const Header = styled.div`
     justify-content: center;
 
     align-items: center;
-    visibility: ${
-        props=>props.chatSearch?"visible":"hidden"
-    };
+    
     opacity: ${
         props=>props.chatSearch?"1":"0"
     };
@@ -54,7 +61,7 @@ const Header = styled.div`
         color: #C8FDCB;
         font-size: 19px;
     }
-    padding: 1rem 2rem 0 0;
+    padding: 0rem 2rem 0 0;
     button{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
 
@@ -73,6 +80,7 @@ const Users = styled.div`
     flex-direction: column;
     gap: 2rem;
     
+    
     ::-webkit-scrollbar{
         background: black;
         width: 6px;
@@ -81,6 +89,7 @@ const Users = styled.div`
         background: #C8FDCB;
         height: 3rem;
     }
+    padding: 1rem 0 2rem 0;
     margin: 2rem 2rem 2rem 0;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -90,15 +99,17 @@ const Users = styled.div`
 const GroupChatSearch = ({chatSearch}) => {
 
     const [members, setshowMembers] = useState(false)
+    
+    const membersScreen = useSelector(state=>state.groupMembers)
 
     return(
-        <Container chatSearch={chatSearch}>
+        <Container  chatSearch={chatSearch}>
             <hr />
             <GroupMembers members={members} setshowMembers={setshowMembers}/>
             <Header chatSearch={chatSearch}>
                 <span>You have <strong>10 groups</strong></span>
             </Header>
-            <Users>
+            <Users membersScreen={membersScreen}>
                 <CardGroupChat imgSrc={friendIcon1} title="Ethereum collectors" setshowMembers={setshowMembers}/>
                 <CardGroupChat imgSrc={friendIcon2} title="Only NFTs" setshowMembers={setshowMembers}/>
                 <CardGroupChat imgSrc={friendIcon3} title="All NFT collections" setshowMembers={setshowMembers}/>

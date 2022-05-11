@@ -32,8 +32,8 @@ const Container = styled.div`
     width: 100%
     z-index: 222;
     height: 176vh;
-    background: black;
-    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
+    background: none;
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119) 5.21%, rgba(108, 255, 119) 97.96%);
     width: ${
         props=>props.createGroup==false?"0px":"32vw"
     };

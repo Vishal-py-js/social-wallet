@@ -13,8 +13,8 @@ const expand = "assets/icons/expand.svg"
 const Container = styled.div`
     position: fixed;
     z-index: 111 !important;
-    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.05) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-    background: black;
+    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(108, 255, 119, 0.03) 97.96%);
+    //background: black;
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
     opacity: 0.95;
     height: ${
@@ -74,7 +74,10 @@ const ToggleContainer = styled.div`
     };
 
     justify-content: center;
-    gap: 2rem;
+    gap: ${
+        props=>props.fullScreen?"24rem":"2rem"
+    };
+    //gap: 24rem;
     width: ${
         props=>props.chatDisplay?"100%":"0px"
     };
@@ -99,6 +102,8 @@ const ToggleContainer = styled.div`
     }
     .expand{
         position: absolute;
+        // right: 0;
+        // left: 2vw;
         height: 50px;
         right: 30px;
         cursor: pointer;
@@ -161,6 +166,14 @@ const Chat = () => {
     const hideFullScreen = () => {
         dispatch(hideFullScreenChat())
     }
+
+    const toggleFullScreen = () => {
+        if(fullScreen==false){
+            dispatch(showFullScreenChat())
+        } else {
+            dispatch(hideFullScreenChat())
+        }
+    }
     
     return(
         <Container chatDisplay={chatDisplay} fullScreen={fullScreen} id="myChat">
@@ -170,10 +183,8 @@ const Chat = () => {
             
                 <Button className={active==="Private"?"activate":""} onClick={()=>handleActive("Private")}>CHAT</Button>
                 <div></div>
-                <img onClick={hideFullScreen} className="expand2" src={expand} alt=""/>
-                <img onClick={showFullScreen} className="expand" src={expand} alt=""/>
                 <Button className={active==="Group"?"activate":""} active={active} onClick={()=>handleActive("Group")}>GROUP CHAT</Button>
-                
+                <img onClick={toggleFullScreen} className="expand" src={expand} alt=""/>
             </ToggleContainer>
             
 

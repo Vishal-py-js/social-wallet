@@ -23,6 +23,9 @@ const Container = styled.div`
     width: 114px;
     position: fixed;
     display: flex;
+    visibility: ${
+        props=>props.fullScreen?"hidden":"visible"
+    };
     z-index: 3;
     //top: 0;
     //left: ;
@@ -30,7 +33,7 @@ const Container = styled.div`
     right: ${
         props=>props.chatDisplay?"33.6vw":"0"
     };
-    transition: 0.7s;
+    transition: right 0.5s;
     flex-direction: column;
     justify-content: space-around;
     .selected-item{

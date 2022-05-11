@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import GroupMemberCard from "./GroupMemberCard";
 
@@ -11,7 +12,10 @@ const friendIcon4 = '/assets/icons/friend2.svg'
 const friendIcon5 = '/assets/icons/friend3.svg'
 
 const Container = styled.div`
-    display: flex;
+    //display: flex;
+    display: ${
+        props=>props.members?"flex":"none"
+    };
     flex-direction: column;
     //justify-content: center;
     position: absolute;
@@ -26,7 +30,9 @@ const Container = styled.div`
     width: 33.7vw;
     transition: max-width 0.5s ease-in-out;
     bottom: 0;
-    right: 0;
+    top: 2rem;
+    //right: -20px;
+    left:1rem;
     background: black;
     z-index: 2;
     span{
@@ -87,6 +93,8 @@ const Members = styled.div`
 `
 
 const GroupMembers = ({members, setshowMembers}) => {
+
+    const groupMembers = useSelector(state=>state.groupMembers)
 
     const handleMembers = () => {
         setshowMembers(false)

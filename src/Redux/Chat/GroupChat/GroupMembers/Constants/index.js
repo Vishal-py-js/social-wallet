@@ -1,0 +1,2 @@
+export const SHOW_MEMBERS = "SHOW_MEMBERS"
+export const HIDE_MEMBERS = "HIDE_MEMBERS"

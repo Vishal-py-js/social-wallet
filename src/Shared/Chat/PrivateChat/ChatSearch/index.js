@@ -14,16 +14,21 @@ const Container = styled.div`
     gap: 1rem;
     max-height: ${
         props=>props.chatSearch&&props.fullScreen?"75.2vh":
-        props.chatSearch&&props.fullScreen==false?"80vh":"0vh"
+        props.chatSearch&&props.fullScreen==false?"75vh":"0vh"
+    };
+    top: 6rem;
+    //left: 2rem;
+    left: ${
+        props=>props.fullScreen?"":"2rem"
     };
     transition: max-height 0.5s ease-in-out;
-    position: absolute;
+    position: relative;
     //opacity: 0.5;
     //width: 100%
     //width: 40vh;
     z-index: 222;
     height: 176vh;
-    background: black;
+    background: none;
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
     width: ${
         props=>props.chatSearch==false?"0px":"32vw"
@@ -49,7 +54,7 @@ const Header = styled.div`
         color: #C8FDCB;
         font-size: 19px;
     }
-    padding: 1rem 2rem 0 0;
+    padding: 1rem 1rem 0 0;
     button{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
 

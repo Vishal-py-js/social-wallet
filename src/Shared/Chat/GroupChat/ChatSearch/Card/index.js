@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { showMembers } from "../../../../../Redux/Chat/GroupChat/GroupMembers/Actions";
 
 const dropdown = "assets/icons/dropdown.svg"
 
 const Container = styled.div`
     display: flex;
+    
     justify-content: space-between;
+
     align-items: center;
     width: 90%;
     .title{
@@ -58,6 +62,8 @@ const CardGroupChat = ({imgSrc, title, setshowMembers}) => {
 
     const [showDropdown, setShowDropdown] = useState(false);
 
+    const dispatch = useDispatch()
+
     const x = document.getElementsByClassName("friend-card-img")
     for(let i=0; i<x.length;i++) {
         x[i].addEventListener("click", function(){
@@ -75,7 +81,9 @@ const CardGroupChat = ({imgSrc, title, setshowMembers}) => {
 
     const handleMembers = () => {
         setshowMembers(true)
+        dispatch(showMembers())
     }
+
 
     return(
         <Container className="friend-card-home">

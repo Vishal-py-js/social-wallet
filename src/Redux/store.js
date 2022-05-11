@@ -13,6 +13,7 @@ import { suggestionsReducer } from './SearchSuggestions/Reducers';
 import { networkReducer } from './Wallets/NetworkSwitch/Reducers';
 import { searchModalReducer } from './Modal/SearchModal/Reducers';
 import { fullScreenchatReducer } from './FullScreenChat/Reducers';
+import { groupMemberReducer } from './Chat/GroupChat/GroupMembers/Reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line
   
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
     suggestions: suggestionsReducer,
     network: networkReducer,
     search: searchModalReducer,
+    groupMembers: groupMemberReducer,
 });
  
 
