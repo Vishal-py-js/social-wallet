@@ -18,7 +18,9 @@ const settingsIcon = "assets/icons/settings-icon.svg"
 
 
 const Container = styled.div`
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+    background: rgba(152, 80, 191, 1);
+    border: 1px solid rgba(144, 255, 153, 1);
     height: 100vh;
     width: 114px;
     position: fixed;
@@ -38,15 +40,16 @@ const Container = styled.div`
     justify-content: space-around;
     .selected-item{
         transition: 0.3s;
-        box-shadow: inset 0px 2px 0px 0px #C8FDCB,
-                    inset -5px 0 7px -5px #C8FDCB, 
-                    inset 5px 0px 7px -5px #C8FDCB;
+        // box-shadow: inset 0px 2px 0px 0px #C8FDCB,
+        //             inset -5px 0 7px -5px #C8FDCB, 
+        //             inset 5px 0px 7px -5px #C8FDCB;
         padding: 10px 0px 0 0px;
         margin: 0 17px 0 7px;
         margin: ${
             props=>props.chatDisplay?"0 17px 0 7px":"0 7px 0 7px"
         };
-        border-radius: 10px;
+        border: 3px solid rgba(144, 255, 153, 1);
+        border-radius: 5px;
     }
     @media (max-width: 768px) {
         width: 85px;

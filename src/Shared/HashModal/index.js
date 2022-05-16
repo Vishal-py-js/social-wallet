@@ -25,9 +25,12 @@ const Container = styled.div`
     };
     transition: 0.7s;
     //border: 1px solid rgba(108, 255, 119, 1);
-    box-shadow: inset 0 4px 5px -5px rgba(108, 255, 119, 1),
-              inset -5px 0 4px -5px rgba(108, 255, 119, 1), 
-              inset 5px 0 4px -5px rgba(108, 255, 119, 1);
+    // box-shadow: inset 0 4px 5px -5px rgba(108, 255, 119, 1),
+    //           inset -5px 0 4px -5px rgba(108, 255, 119, 1), 
+    //           inset 5px 0 4px -5px rgba(108, 255, 119, 1);
+    border: 2px solid;
+    border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
+    border-image-slice: 1;
     
     .close{
         position: absolute;

@@ -30,7 +30,8 @@ const Container = styled.div`
         margin-left: 8rem;
         align-items: center;
         h2{
-            color: rgba(200, 253, 203, 1);
+            //color: rgba(200, 253, 203, 1);
+            color: rgba(13, 3, 51, 1);
         }
     }
 `
@@ -44,6 +45,7 @@ const Selector = styled.div`
     h3{
         font-weight: 400;
         letter-spacing: 2px;
+        color: rgba(13, 3, 51, 1);
     }
     div{
         display: flex;
@@ -53,20 +55,27 @@ const Selector = styled.div`
         strong{
             font-size: 22px;
             color: #FB258B;
+            color: rgba(13, 3, 51, 1);
+        }
+        h1{
+            color: rgba(13, 3, 51, 1);
         }
     }
     
     select{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-        color: #C8FDCB;
+        //color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
         height: 3rem;
         border-radius: 5px;
         font-size: 19px;
         text-align: center;
         cursor: pointer;
         option{
-            color: #C8FDCB;
-            background: black;
+            //color: #C8FDCB;
+            color: rgba(13, 3, 51, 1);
+            //background: black;
+            background: rgba(152, 80, 191, 1);
             border-radius: 5px;
             cursor: pointer;
             li{
@@ -82,25 +91,31 @@ const CoinSelector = styled.div`
     select{
         cursor: pointer;
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-        color: #C8FDCB;
+        //color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
         height: 3rem;
         border-radius: 5px;
         font-size: 19px;
         text-align: center;
         option{
-            color: #C8FDCB;
-            background: black;
+            //color: #C8FDCB;
+            color: rgba(13, 3, 51, 1);
+            background: rgba(152, 80, 191, 1);
             border-radius: 5px;
         }
     }
 `
 const Graph = styled.div`
     margin: 0 5rem 0 7.5vw;
-    border: 1px solid #C8FDCB;
+    //border: 1px solid #C8FDCB;
+    border: 1px solid rgba(13, 3, 51, 1); 
 `
 
 const Friends = styled.div`
-    margin-left: 7.5vw;  
+    margin-left: 7.5vw; 
+    h4{
+        color: black;
+    } 
 `
 
 const ImageContainer = styled.div`
@@ -159,7 +174,7 @@ const HomeScreen = (props) => {
     return(
         <Container>
             <div className="search-bar">
-                <h2>Search</h2>
+                {/* <h2>Search</h2> */}
                 {/* <Searchbar /> */}
             </div>
             <Selector>

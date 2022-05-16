@@ -16,8 +16,10 @@ padding-left: 1rem;
     .rec-message{
         color: black;
         padding: 0 0px 0 8px;
-        background: rgba(255, 87, 167, 1);
-        border: 1px solid #FF57A7;
+        //background: rgba(255, 87, 167, 1);
+        background: #6CFF77;
+        //border: 1px solid #FF57A7;
+        border: 1px solid rgba(13, 3, 51, 1);
         flex-direction: row;
             word-wrap: break-word;
         p{

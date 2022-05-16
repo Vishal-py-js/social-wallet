@@ -20,9 +20,11 @@ const CardContainer = styled.div`
     justify-content: space-between;
     width: 18rem;
     //border: 0.1px solid rgba(108, 255, 119, 1);
-    box-shadow: inset 0 -5px 5px -5px rgba(108, 255, 119, 1), 
-              inset 0 5px 5px -5px rgba(108, 255, 119, 1), 
-              inset 5px 0 5px -5px rgba(108, 255, 119, 1);
+    // box-shadow: inset 0 -5px 5px -5px rgba(108, 255, 119, 1), 
+    //           inset 0 5px 5px -5px rgba(108, 255, 119, 1), 
+    //           inset 5px 0 5px -5px rgba(108, 255, 119, 1);
+    box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
     padding: 0.8rem 0.8rem 0.8rem 0.8rem;
     background: linear-gradient(97.02deg, rgba(242, 194, 195, 0.12) 5.21%, rgba(242, 194, 195, 0) 97.96%);
 

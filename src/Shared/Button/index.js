@@ -3,6 +3,7 @@ import styled from "styled-components";
 const ButtonContainer = styled.button`
     padding: 15px 30px 15px 30px;
     color: #C8FDCB;
+    color: black;
     cursor: pointer;
     font-size: 20px;
     display: flex;

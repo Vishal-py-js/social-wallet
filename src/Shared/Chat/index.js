@@ -13,8 +13,9 @@ const expand = "assets/icons/expand.svg"
 const Container = styled.div`
     position: fixed;
     z-index: 111 !important;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(108, 255, 119, 0.03) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(108, 255, 119, 0.03) 97.96%);
     //background: black;
+    background: rgba(221, 164, 252, 1);
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.15) 5.21%, rgba(108, 255, 119, 0.06) 97.96%);
     opacity: 0.95;
     height: ${
@@ -37,7 +38,7 @@ const Container = styled.div`
     //max-width: 35rem;
     transition: width 0.7s;
     //transition: width 0.8s;
-    border-left: 3px solid rgba(108, 255, 119, 1);
+    //border-left: 3px solid rgba(108, 255, 119, 1);
     top: 0;
     left: auto;
     right: 0;

@@ -14,11 +14,12 @@ const Container = styled.div`
     width: 93%;
     padding: 0.5rem 1rem 0.3rem 0.5rem;
     display: flex;
-
+    box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
     justify-content: space-around;
     //flex-direction: column;
     gap: 1rem;
-    border: 1px solid #C8FDCB;
+    //border: 1px solid #C8FDCB;
 `
 
 const Image = styled.div`
@@ -52,7 +53,8 @@ const Text = styled.div`
     //margin-left: 5rem;
     //position: relative;
     justify-content: center;
-    color: #C8FDCB;
+    //color: #C8FDCB;
+    color: rgba(13, 3, 51, 1);
     gap: 1rem;
     
     .user{
@@ -83,7 +85,8 @@ const Text = styled.div`
         font-size: 24px;
         font-weight: 500;
         white-space: nowrap;
-        color: rgba(108, 255, 119, 1);
+        //color: rgba(108, 255, 119, 1);
+        color: rgba(13, 3, 51, 1);
         border: 2px solid rgba(108, 255, 119, 1);
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.0) 5.21%, rgba(108, 255, 119, 0) 97.96%);
     }

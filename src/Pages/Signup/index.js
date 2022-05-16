@@ -22,10 +22,12 @@ const arrowIcon = "assets/icons/arrow-icon.svg"
 const Container = styled.div`
     height: 100vh;
     width: 100%;
-    background-image: url('assets/images/signup-bg.png');
-    background-repeat: no-repeat;
-    background-size: 70% 70%;
-    color: #fff; 
+    //background-image: url('assets/images/signup-bg.png');
+    //background-repeat: no-repeat;
+    //background-size: 70% 70%;
+    background: rgba(223, 162, 255, 1);
+    //color: #fff; 
+    color: black;
     display: flex;
     gap: 5rem;
     flex-direction: column;
@@ -80,7 +82,7 @@ const Signup = (props) => {
         <Container>
             {/* <button onClick={getInfo}>Create Account</button> */}
             {/* <button onClick={coinbaseAuth}>Coinbase</button> */}
-            <a style={{fontSize: "20px", color: "white"}} href="https://www.coinbase.com/oauth/authorize?client_id=a6c624fa2a7eb7b0dbf95a2bbd4afd9bf319be59ea85e88a302ca7db96b9f14a&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fhome&response_type=code&scope=wallet%3Auser%3Aread">Connect to Coinbase</a>
+            <a style={{fontSize: "20px", color: "black"}} href="https://www.coinbase.com/oauth/authorize?client_id=a6c624fa2a7eb7b0dbf95a2bbd4afd9bf319be59ea85e88a302ca7db96b9f14a&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fhome&response_type=code&scope=wallet%3Auser%3Aread">Connect to Coinbase</a>
             <Header>
                 <h1>WELCOME TO COIN WALLET</h1>
                 <p>Already have an account? <strong>Login</strong></p>

@@ -15,7 +15,9 @@ const Container = styled.div`
     display: flex;
     height: 100%;
     width: 100%;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
+    background: rgba(221, 164, 252, 1);
+
     // .sidebar{
     //     //flex:1;
     //     width: 7vw;
@@ -46,15 +48,17 @@ const Tabs = styled.div`
     justify-content: space-between;
     padding: 0 0 0 3rem;
     color: #C8FDCB;
+    color: rgba(13, 3, 51, 1);
     opacity: 0.7;
     h3{
         cursor:pointer;
         font-size: 21px;
-        font-weight: 300;
+        font-weight: 400;
     }
     .activate{
-        color: #FB258B;
-        font-weight: 500;
+        color: rgba(144, 255, 153, 1);
+        font-weight: 700;
+        //font-size: 21px;
     }
 `
 

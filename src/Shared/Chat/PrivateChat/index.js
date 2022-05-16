@@ -137,7 +137,9 @@ const MessageInput = styled.form`
     margin-left: 2em;
     margin-bottom: 2rem;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(185, 11, 122, 0.06) 97.96%);
-    border: 1px solid #6CFF77; 
+    background: rgba(144, 255, 153, 1);
+    //border: 1px solid #6CFF77; 
+    border: 1px solid rgba(13, 3, 51, 1);
     img{
         height: 30px;
     }
@@ -148,7 +150,7 @@ const MessageInput = styled.form`
             width: 20rem;
             border: none;
             background: none;
-            color: white;
+            color: black;
             font-size: 18px;
             :focus{
                 outline: none;

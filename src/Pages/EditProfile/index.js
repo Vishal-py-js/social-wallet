@@ -10,6 +10,7 @@ const Container = styled.div`
     color: #fff;
     display: flex;
     flex-direction: column;
+    //background: gray;
     justify-content: space-around;
     padding: 4rem 20rem 4rem 20rem;
     padding: ${

@@ -4,7 +4,7 @@ import NetworkSwitch from "../NetworkSwitch";
 import WalletTabs from "../WalletTabs";
 
 const copy = "assets/icons/copy-icon.svg"
-const dropdown = "assets/icons/dropdown-icon.svg"
+const dropdown = "assets/icons/dropdown-icon2.svg"
 
 const Wrapper = styled.div`
     display: flex;
@@ -16,7 +16,8 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 10px;
-        color: #fff;
+        //color: #fff;
+        color: rgba(13, 3, 51, 1);
         font-size: 18px;
         font-weight: 500;
         img{
@@ -32,7 +33,8 @@ const Wrapper = styled.div`
             align-items: center;
             gap: 10px;
             small{
-                color: gray;
+                //color: gray;
+                color: rgba(13, 3, 51, 1);
                 font-size: 18px;
             }
         }
@@ -43,7 +45,8 @@ const Wrapper = styled.div`
         gap: 10px;
         padding-top: 8px;
         span{
-            color: #6CFF77;
+            //color: #6CFF77;
+            color: rgba(13, 3, 51, 1);
         }
     }
     .value{
@@ -57,18 +60,22 @@ const Wrapper = styled.div`
             h3{
                 font-size: 26px;
                 font-weight: 500;
-                color: #6CFF77;
+                //color: #6CFF77;
+                color: rgba(13, 3, 51, 1);
             }
             span{
                 font-size: 13px;
-                color: #FB258B;
+                //color: #FB258B;
+                color: rgba(13, 3, 51, 1);
             }
             small{
-                color: gray;
+                //color: gray;
+                color: rgba(13, 3, 51, 1);
                 font-size: 17px;
             }
             p{
-                color: gray;
+                //color: gray;
+                color: rgba(13, 3, 51, 1);
                 font-size: 13px;
             }
         }

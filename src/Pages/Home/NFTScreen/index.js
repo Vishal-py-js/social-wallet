@@ -35,7 +35,6 @@ const Body = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    
 `
 
 const Selector = styled.div`
@@ -43,15 +42,17 @@ const Selector = styled.div`
     justify-content: space-between;
     select{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-        color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
+        font-weight: 700;
+        border: 1px solid rgba(13, 3, 51, 1);
         height: 3rem;
         border-radius: 5px;
         font-size: 19px;
         padding: 0 1rem 0 1rem;
         text-align: center;
         option{
-            color: #C8FDCB;
-            background: black;
+            color: rgba(13, 3, 51, 1);
+            background: rgba(152, 80, 191, 1);
             border-radius: 5px;
         }
     }

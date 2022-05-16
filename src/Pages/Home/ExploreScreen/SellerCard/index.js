@@ -12,20 +12,22 @@ const Container = styled.div`
     text-align: center;
     line-height: 0;
     //border: 1px solid #FB258B;
-    border-radius: 0px;
-    box-shadow: inset 0 3px 5px -5px #FB258B,
-              inset -5px 0 3px -5px #FB258B, 
-              inset 5px 0 2px -5px #FB258B;
+    border-radius: 5px;
+    // box-shadow: inset 0 3px 5px -5px #FB258B,
+    //           inset -5px 0 3px -5px #FB258B, 
+    //           inset 5px 0 2px -5px #FB258B;
+    box-shadow: 5px 5px 5px 0.25px rgba(0, 0, 0, 0.25);
     padding: 1rem 2rem 1rem 2rem;
     background: linear-gradient(97.02deg, rgba(242, 194, 195, 0.12) 5.21%, rgba(242, 194, 195, 0) 97.96%);
 
     h4{
-        color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
         white-space: nowrap;
     }
     h3{
         font-weight: 500;
         font-size: 16px;
+        color: rgba(13, 3, 51, 1);
         white-space: nowrap;
     }
     

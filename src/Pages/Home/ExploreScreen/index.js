@@ -45,25 +45,28 @@ const Container = styled.div`
         //padding-right: 2%;
     }
     .selected-seller{
-        box-shadow: inset 0 7px 0px -5px #FB258B,
-                    inset -5px 0 6px -5px #FB258B, 
-                    inset 5px 0 6px -5px #FB258B;
-        transition-duration: 0.3s;
-        transform: scale(1.07);
+        // box-shadow: inset 0 7px 0px -5px #FB258B,
+        //             inset -5px 0 6px -5px #FB258B, 
+        //             inset 5px 0 6px -5px #FB258B;
+        border: 2px solid rgba(13, 3, 51, 1);
+        transition-duration: 0.2s;
+        //transform: scale(1.07);
     }
     .selected-bid{
-        box-shadow: inset 0 8px 0px -5px rgba(108, 255, 119, 1),
-                    inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
-                    inset 5px 0 5px -3px rgba(108, 255, 119, 1);
-        transition-duration: 0.3s;
-        transform: scale(1.03);
+        // box-shadow: inset 0 8px 0px -5px rgba(108, 255, 119, 1),
+        //             inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
+        //             inset 5px 0 5px -3px rgba(108, 255, 119, 1);
+        transition-duration: 0.2s;
+        // transform: scale(1.03);
+        border: 2px solid rgba(13, 3, 51, 1);
     }
     .selected-collection{
-        box-shadow: inset 0 7px 0px -5px rgba(108, 255, 119, 1),
-                    inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
-                    inset 5px 0 5px -3px rgba(108, 255, 119, 1);
+        // box-shadow: inset 0 7px 0px -5px rgba(108, 255, 119, 1),
+        //             inset -5px 0 5px -3px rgba(108, 255, 119, 1), 
+        //             inset 5px 0 5px -3px rgba(108, 255, 119, 1);
         transition-duration: 0.3s;
-        transform: scale(1.03);
+        // transform: scale(1.03);
+        border: 2px solid rgba(13, 3, 51, 1);
     }
 `
 
@@ -73,19 +76,21 @@ const Header = styled.div`
     //padding-right: 9%;
     align-items: center;
     h2{
-        color: rgba(108, 255, 119, 1);
+        //color: rgba(108, 255, 119, 1);
+        color: rgba(13, 3, 51, 1);
         //font
     }
     select{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-        color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
         height: 3rem;
+        border: 1px solid rgba(13, 3, 51, 1);
         border-radius: 5px;
         font-size: 19px;
         text-align: center;
         cursor: pointer;
         option{
-            color: #C8FDCB;
+            color: rgba(13, 3, 51, 1);
             background: black;
             border-radius: 5px;
         }

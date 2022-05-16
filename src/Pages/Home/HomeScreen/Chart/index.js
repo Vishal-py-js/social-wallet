@@ -9,7 +9,7 @@ const data = {
       fill: false,
       lineTension: 0.9,
       backgroundColor: 'linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0.01) 97.96%)',
-      borderColor: '#6CFF77',
+      borderColor: 'rgba(13, 3, 51, 1)',
       borderCapStyle: 'butt',
       borderDash: [],
       borderDashOffset: 0.0,
@@ -43,7 +43,7 @@ const options = {
       display: true,
       ticks:{
         padding: 60,
-        fontColor: "gray",
+        fontColor: "black",
         fontSize: 15
       },
       gridLines: {
@@ -56,7 +56,7 @@ const options = {
       },
       ticks:{
         padding: 60,
-        fontColor: "#fff",
+        fontColor: "rgba(13, 3, 51, 1)",
         fontSize: 20
       },
       type: "linear",

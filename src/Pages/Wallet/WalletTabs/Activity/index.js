@@ -25,7 +25,8 @@ const Container = styled.div`
     .title{
         display: flex;
         //gap: 14vw;
-        color: gray;
+        //color: gray;
+        color: rgba(13, 3, 51, 1);
         font-size: 16px;
         font-weight: 500;
         justify-content: space-between;
@@ -38,9 +39,10 @@ const CardContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
-    box-shadow: inset 0 3px 0px -2px rgba(108, 255, 119, 1),
-                    inset -4px 0 3px -3px rgba(108, 255, 119, 1), 
-                    inset 4px 0 0px -3px rgba(108, 255, 119, 1);
+    // box-shadow: inset 0 3px 0px -2px rgba(108, 255, 119, 1),
+    //                 inset -4px 0 3px -3px rgba(108, 255, 119, 1), 
+    //                 inset 4px 0 0px -3px rgba(108, 255, 119, 1);
+    box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
     padding: 1rem 0.5rem 1rem 1rem;
     //color: #fff;
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
@@ -49,11 +51,13 @@ const CardContainer = styled.div`
         flex-direction: column;
         align-items: center;
         padding: 6px 6px;
-        color: #C8FDCB;
+        //color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
         img{
-            box-shadow: inset 0 6px 0px -4px rgba(108, 255, 119, 1),
-                    inset -4px 0 4px -3px rgba(108, 255, 119, 1), 
-                    inset 5px 0 0px -3px rgba(108, 255, 119, 1);
+            // box-shadow: inset 0 6px 0px -4px rgba(108, 255, 119, 1),
+            //         inset -4px 0 4px -3px rgba(108, 255, 119, 1), 
+            //         inset 5px 0 0px -3px rgba(108, 255, 119, 1);
+            border: 2px solid rgba(200, 253, 203, 1);
             padding: 8px 8px;
             border-radius: 5px;
             //height: 30px;
@@ -69,19 +73,22 @@ const CardContainer = styled.div`
         flex-direction: column;
         gap: 5px;
         span{
-            color: rgba(200, 253, 203, 1);
+            //color: rgba(200, 253, 203, 1);
+            color: rgba(13, 3, 51, 1);
             align-self: center;
         }
         div{
             display: flex;
             strong{
-                color: rgba(200, 253, 203, 1);
+                //color: rgba(200, 253, 203, 1);
+                color: rgba(13, 3, 51, 1);
                 font-size: 22px;
             }
         }
     }
     .time{
-        color: gray;
+        //color: gray;
+        color: rgba(13, 3, 51, 1);
     }
 `
 

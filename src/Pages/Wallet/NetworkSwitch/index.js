@@ -154,12 +154,15 @@ export default function NetworkSwitch() {
 
 const Select = styled.select`
     background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-    color: #fff;
+    //color: #fff;
+    color: rgba(13, 3, 51, 1);
+    border: 1px solid rgba(13, 3, 51, 1);
     font-size: 17px;
     height: 3rem;
     border-radius: 5px;
     option{
-        background: black;
+        //background: black;
+        background: rgba(152, 80, 191, 1);
         align-items: center;
         text-align: center;
     }

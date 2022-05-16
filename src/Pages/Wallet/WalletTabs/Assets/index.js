@@ -173,7 +173,7 @@ const Assets = () => {
     return(
         <Container>
             {
-                NFTs.length===0?<h3 style={{color: "white"}}>You don't have any NFT yet</h3>:
+                NFTs.length===0?<h3 style={{color: "black"}}>You don't have any NFT yet</h3>:
                 NFTs.map(nft=>(
                     <AssetCard title={nft.meta.name} imgSrc={nft.meta.content[1].url}/>
                 ))

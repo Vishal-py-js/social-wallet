@@ -17,7 +17,9 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border: 1px solid #C8FDCB;
+    box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    //border: 1px solid #C8FDCB;
 `
 
 const Image = styled.div`
@@ -40,13 +42,14 @@ const Text = styled.div`
     justify-content: space-between;
     //gap: 8px;
     color: #C8FDCB;
+    color: rgba(13, 3, 51, 1);
     font-size: 17px;
     div{
         display: flex;
         align-items: center;
     }
     p{
-        font-weight: 300;
+        font-weight: 400;
     }
     img{
         height: 17px;

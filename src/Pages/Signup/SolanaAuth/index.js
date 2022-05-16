@@ -33,6 +33,7 @@ strong{
   font-size: 23px;
   weight: 600;
   color: #fff;
+  color: black;
 }
 transition: all 350ms;
 &:hover{

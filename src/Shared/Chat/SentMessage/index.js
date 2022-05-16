@@ -16,7 +16,8 @@ const Container = styled.div`
         color: black;
         padding: 0 5px 0 8px;
         background: #6CFF77;
-        border: 1px solid #6CFF77;
+        //border: 1px solid #6CFF77;
+        border: 1px solid rgba(13, 3, 51, 1);
         flex-direction: row;
             word-wrap: break-word;
         p{

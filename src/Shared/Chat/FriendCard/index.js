@@ -8,10 +8,14 @@ const Container = styled.div`
     align-items: center;
     line-height: 0;
     border-radius: 5px;
-    padding: 10px 30px 0 30px;
-    border: 1px solid;
-    border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 80%);
-    border-image-slice: 1;
+    padding: 10px 25px 0 25px;
+    // border: 1px solid;
+    // border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 80%);
+    // border-image-slice: 1;
+    border: 3px solid rgba(144, 255, 153, 1);
+    p{
+        color: rgba(13, 3, 51, 1);
+    }
 `
 
 const FriendCard = ({imgSrc, title}) => {

@@ -21,7 +21,8 @@ const Container = styled.div`
     //align-items: center;
     //justify-content: center;
     height: 100vh;
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.09) 5.21%, rgba(185, 11, 122, 0.12) 97.96%);
+    background: rgba(221, 164, 252, 1);
     h1{
         align-self: center;
         color: #6CFF77;

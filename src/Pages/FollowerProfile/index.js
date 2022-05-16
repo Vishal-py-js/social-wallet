@@ -16,16 +16,19 @@ const Container = styled.div`
     display: flex;
     //width: 90vw;
     width: ${
-        props=>props.chatDisplay?"58vw": "90vw"
+        props=>props.chatDisplay?"58vw": "91.6vw"
     };
     transition: 0.7s;
     flex-direction: column;
     //align-items: center;
     justify-content: center;
     padding: 5rem 0 3rem 2rem;
+    background: rgba(223, 162, 255, 1);
+
     gap: 3rem;
     h2{
-        color: #C8FDCB;
+        //color: #C8FDCB;
+        color: rgba(13, 3, 51, 1);
     }
 `
 
@@ -40,7 +43,9 @@ const ProfileDetails = styled.div`
         flex-direction: column;
         .profile-image{
             padding: 5px 5px;
-            border: 2px solid rgba(108, 255, 119);
+            //border: 2px solid rgba(108, 255, 119);
+            box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
             div{
                 padding: 25px 25px;
                 background: linear-gradient(180deg, #C8FDCB 0%, #0C1B0D 100%);
@@ -51,7 +56,8 @@ const ProfileDetails = styled.div`
     .user{
         width: 35vw;
         //background: red;
-        color: white;
+        //color: white;
+        color: rgba(13, 3, 51, 1);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -61,14 +67,15 @@ const ProfileDetails = styled.div`
             gap: 3vw;
             strong{
                 font-size: 24px;
-                color: #C8FDCB;
-
+                //color: #C8FDCB;
+                color: rgba(13, 3, 51, 1);
             }
         }
         .user-bio{
             
             span{
-                color: #C8FDCB;
+                //color: #C8FDCB;
+                color: rgba(13, 3, 51, 1);
                 font-size: 20px;
                 font-weight: 700;
             }
@@ -81,7 +88,8 @@ const ProfileDetails = styled.div`
             gap: 2rem;
             align-items: center;
             small{
-                color: #C8FDCB;
+                //color: #C8FDCB;
+                color: rgba(13, 3, 51, 1);
                 font-size: 16px;
             }
         }
@@ -99,7 +107,8 @@ const ProfileDetails = styled.div`
             width: fit-content;
             font-weight: 600;
             font-size: 17px;
-            color: #6CFF77;
+            //color: #6CFF77;
+            color: rgba(13, 3, 51, 1);
             border: 2px solid #6CFF77;
         }
     }
@@ -124,7 +133,9 @@ const Collection = styled.div`
 
 const CardContainer = styled.div`
     padding: 4px 5px 0 5px;
-    border: 2px solid rgba(108, 255, 119);
+    //border: 2px solid rgba(108, 255, 119);
+    box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
     width: fit-content;
     div{
         padding: 25px 25px;

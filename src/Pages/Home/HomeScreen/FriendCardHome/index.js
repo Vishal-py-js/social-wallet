@@ -8,15 +8,20 @@ const Container = styled.div`
     .friend-card-img{
         //border: 1px solid #C8FDCB;
         padding: 12px 16px;
-        border: 1px solid;
-        border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 80%);
-        border-image-slice: 1;
+        // border: 1px solid;
+        // border-image: linear-gradient(180deg, #C8FDCB 0%, rgba(0, 0, 0, 0) 80%);
+        // border-image-slice: 1;
+        border: 2px solid rgba(144, 255, 153, 1);
+        
     }
     .selected-friend-card{
         border: 1.5px solid;
         border-image: linear-gradient(180deg, #C8FDCB 95%, rgba(0, 0, 0, 0) 100%);
         border-image-slice: 1;
         transition: 0.5s;
+    }
+    h4{
+        color: black;
     }
 `
 

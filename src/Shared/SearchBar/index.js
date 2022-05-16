@@ -50,7 +50,10 @@ const SearchbarContainer = styled.div`
         background: black;
         //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.00) 5.21%, rgba(108, 255, 119, 0) 97.96%);
         //border: 1px solid rgba(222, 222, 222, 0.32);
-        border: 1px solid rgba(200, 253, 203, 1);
+        //border: 1px solid rgba(200, 253, 203, 1);
+        border: 2px solid;
+        border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
+        border-image-slice: 1;
         box-sizing: border-box;
         //border-radius: 8px; 
         position: relative;
@@ -90,22 +93,40 @@ const SearchbarContainer = styled.div`
         z-index: 0 ;
     }
     .suggestions{
+        display: flex;
+        flex-direction: column;
+        //justify-content: space-between;
         position: absolute;
         left: 0.8rem;
-        width: 95%;
-        height: 15rem;
-        cursor:pointer;
+        width: 88%;
+        height: fit-content;
+        cursor: pointer;
         transform: scalex(1.05); 
-        border-radius: 0 0 17px 17px;
-        background: #042F1A;
-        //background: black;
-        //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.7) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+        border: 2px solid;
+        border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
+        border-image-slice: 1;
+        box-shadow: -6px 15px 20px 0px rgba(0, 47, 28, 1);
+        background: linear-gradient(97.02deg, #141C19 5.21%, #041A12 97.96%);
+        padding: 0 1vw;
         z-index: -1;
-        div{
-            padding: 25px;
-            border-bottom: 1px solid rgba(224, 224, 224, 0.12); 
-            img{
-                margin-right: 6px
+        h3{
+            color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            font-size: 16px;
+        }
+        .search{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            h2{
+                color: rgba(200, 253, 203, 1);
+                font-weight: 400;
+                font-size: 19px;
+            }
+            small{
+                color: rgba(108, 255, 119, 1);
             }
         }
     }
@@ -158,22 +179,22 @@ const Searchbar = () => {
                 isDropdownShown && <>
                     {/* <div className="form-bg"></div> */}
                     <div className="suggestions">
-                        {/* <div onClick={() => setQuery('Karen Kultra')}>
-                            <img src={history} alt="history" />
-                            Karen Kultra
+                        <h3>Recent Searches</h3>                        
+                        <div className='search'>
+                            <h2>NFT Collections</h2>
+                            <small>Remove</small>
                         </div>
-                        <div onClick={() => setQuery('Kultra Karen')}>
-                            <img src={history} alt="history" />
-                            Kultra Karen 
+                        <div className='search'>
+                            <h2>NFT Wallet Values</h2>
+                            <small>Remove</small>
                         </div>
-                        <div onClick={() => setQuery('')}>
-                            <img src={history} alt="history" />
-                            Karen Kultra
+                        <div className='search'>
+                            <h2>NFT Avatars</h2>
+                            <small>Remove</small>
                         </div>
-                        <div onClick={() => setQuery('')}>
-                            <img src={history} alt="history" />
-                            Karen Kultra
-                        </div> */}
+                        <div className='search'>
+
+                        </div>
                     </div> 
                 </>
             }
