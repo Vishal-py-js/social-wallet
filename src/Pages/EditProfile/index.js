@@ -11,6 +11,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     //background: gray;
+    background: rgba(221, 164, 252, 1);
     justify-content: space-around;
     padding: 4rem 20rem 4rem 20rem;
     padding: ${
@@ -42,7 +43,8 @@ const Avatar = styled.div`
         padding: 5px 5px;
         cursor: pointer;
         width: 12rem;
-        border: 2px solid rgba(108, 255, 119);
+        box-shadow: 10px 10px 20px 0.25px rgba(0, 0, 0, 0.25);
+        //border: 2px solid rgba(108, 255, 119);
         div{
             padding: 25px 25px;
             background: linear-gradient(180deg, #C8FDCB 0%, #0C1B0D 100%);
@@ -51,8 +53,10 @@ const Avatar = styled.div`
     button{
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0) 5.21%, rgba(185, 11, 122, 0) 97.96%);
         border: 2px solid rgba(108, 255, 119);
+        border: 2px solid black;
         padding: 10px 25px;
-        color: #C8FDCB;
+        //color: #C8FDCB;
+        color: black;
         font-size: 16px;
         display: flex;
         justify-content: space-around;
@@ -66,6 +70,7 @@ const UserName = styled.div`
     flex-direction: column;
     h3{
         color: #C8FDCB;
+        color: black;
         font-size: 22px;
     }
     input{
@@ -76,6 +81,7 @@ const UserName = styled.div`
         color: #fff;
         padding-left: 15px;
         border: 1px solid rgba(108, 255, 119);
+        border: 1px solid black;
         :focus{
             outline: 0.001rem solid #6CFF77;
             border-radius: 3px;
@@ -91,6 +97,7 @@ const Bio = styled.div`
     .bio-content{
         h3{
             color: #C8FDCB;
+            color: black;
             font-size: 22px;
         }
         textarea{
@@ -101,6 +108,7 @@ const Bio = styled.div`
             padding: 12px 0px 0 15px;
             background: linear-gradient(97.02deg, rgba(108, 255, 119, 0) 5.21%, rgba(185, 11, 122, 0) 97.96%);
             border: 1px solid rgba(108, 255, 119);
+            border: 1px solid black;
             :focus{
                 outline: 0.001rem solid #6CFF77;
                 border-radius: 3px;
@@ -122,11 +130,14 @@ const Save = styled.div`
             cursor: pointer;
             width: fit-content;
             background: rgba(108, 255, 119, 0.15);
+            background: none;
             padding: 12px 40px;
             font-size: 18px;
             font-weight: 600;
             border: 2px solid rgba(108, 255, 119, 1);
+            border: 1px solid black;
             color: rgba(108, 255, 119, 1);
+            color: black;
         }
     }
 `

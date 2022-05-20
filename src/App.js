@@ -17,6 +17,7 @@ import Wallet from './Pages/Wallet';
 import UserProfile from './Pages/UserProfile';
 import FollowerProfile from './Pages/FollowerProfile';
 import EditProfile from './Pages/EditProfile';
+import LandingPage from './Pages/Landing';
 
 const Container = styled.div`
   width: ${
@@ -59,11 +60,11 @@ function App() {
                 <a href='signup'>Signup</a><br/>
                 <a href='home'>Home</a><br/>
                 <a href='editprofile'>Profile</a><br/>
-                {/* <a href='profile'>Profile</a><br/> */}
                 <a href='wallet'>Wallet</a><br/>
                 <a href='user'>User Profile</a><br/>
                 <a href='follower'>Follower Profile</a><br/>
               </div>
+              {/* <LandingPage /> */}
             </Route>
             
             <Route exact path='/signup' component={Signup} />

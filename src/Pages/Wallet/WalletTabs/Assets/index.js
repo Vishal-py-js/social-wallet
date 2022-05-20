@@ -169,7 +169,7 @@ const AssetCard = ({imgSrc, title}) => {
 
 const Assets = () => {
     const NFTs = useSelector(state => state.nfts.nfts)
-
+    console.log(NFTs);
     return(
         <Container>
             {

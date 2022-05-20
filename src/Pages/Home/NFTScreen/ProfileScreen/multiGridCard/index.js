@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { shareModalOn } from "../../../../../Redux/Modal/ShareModal/Actions";
+import CommentModal from "./CommentModal";
 
 
 const cardImg1 = "./assets/images/nft-card1.png"
@@ -41,7 +42,7 @@ const Text = styled.div`
     //position: relative;
     justify-content: space-between;
     //gap: 8px;
-    color: #C8FDCB;
+    //color: #C8FDCB;
     color: rgba(13, 3, 51, 1);
     font-size: 17px;
     div{
@@ -50,6 +51,7 @@ const Text = styled.div`
     }
     p{
         font-weight: 400;
+        cursor: pointer;
     }
     img{
         height: 17px;
@@ -59,12 +61,17 @@ const Text = styled.div`
 
 const ProfileMultiCard = ({imgSrc}) => {
 
+    const [showComment, setShowComment] = useState(false);
+
     const dispatch = useDispatch()
 
     const shareModalHandler = () => {
         dispatch(shareModalOn())
     }
 
+    const handleComment = () => {
+        setShowComment(true)
+    }
     // const [star, setStar] = useState(false)
     return(
         <Container>
@@ -73,13 +80,16 @@ const ProfileMultiCard = ({imgSrc}) => {
                 <img className="star" src={star} alt=""/>
             </Image>
             <Text>
-                <p>COMMENT</p>
+                <p onClick={handleComment}>COMMENT</p>
                 <img onClick={shareModalHandler} src={share} alt="" />
                 <div>
                     <img src={gem} alt=""/>
                     <span>11.44</span>
                 </div>
             </Text>
+            {
+                showComment?<CommentModal imgSource={imgSrc} setShowComment={setShowComment}/>:""
+            }
         </Container>
     )
 }

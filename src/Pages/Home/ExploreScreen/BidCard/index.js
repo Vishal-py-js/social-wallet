@@ -48,9 +48,9 @@ const CardContainer = styled.div`
     .bidder-content{
         display: flex;
         gap: 0.5rem;
-        img{
-            box-shadow: 5px 5x 10px 0.25px rgba(0, 0, 0, 0.25);
-        }
+        // img{
+        //     box-shadow: 5px 5x 10px 0.25px rgba(0, 0, 0, 0.25);
+        // }
     }
 `
 

@@ -100,7 +100,6 @@ const SearchbarContainer = styled.div`
         left: 0.8rem;
         width: 88%;
         height: fit-content;
-        cursor: pointer;
         transform: scalex(1.05); 
         border: 2px solid;
         border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
@@ -120,13 +119,18 @@ const SearchbarContainer = styled.div`
             align-items: center;
             justify-content: space-between;
             height: 50px;
+            &:hover{
+                    background: linear-gradient(97.02deg, #141C19 5.21%, #041A12 97.96%);
+                }
             h2{
                 color: rgba(200, 253, 203, 1);
                 font-weight: 400;
                 font-size: 19px;
+                cursor: pointer;
             }
             small{
                 color: rgba(108, 255, 119, 1);
+                cursor: pointer;
             }
         }
     }
