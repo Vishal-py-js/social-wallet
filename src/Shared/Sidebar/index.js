@@ -73,7 +73,7 @@ const Sidebar = (props) => {
     const handleSearchClick = () => {
         if(searchDisplay==false){
             dispatch(searchModalOn())
-            //dispatch(hashModalOff())
+            dispatch(hashModalOff())
         } else {
             dispatch(searchModalOff())
         }
@@ -94,7 +94,7 @@ const Sidebar = (props) => {
             dispatch(hashModalOff())
         } else {
             dispatch(hashModalOn())
-            //dispatch(searchModalOff())
+            dispatch(searchModalOff())
         }
     }
 
