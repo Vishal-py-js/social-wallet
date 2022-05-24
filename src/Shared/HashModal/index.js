@@ -14,6 +14,8 @@ const Container = styled.div`
     //display: none;
     gap: 10px;
     background: linear-gradient(97.02deg, #1A382C 5.21%, #113025 97.96%);
+    background: rgba(221, 164, 252, 1);
+    box-shadow: -6px 10px 15px 0px rgba(0, 0, 0, 1);
     padding: 5px 8rem 20px 4rem;
     position: fixed;
     width: 20rem;
@@ -30,6 +32,7 @@ const Container = styled.div`
     //           inset 5px 0 4px -5px rgba(108, 255, 119, 1);
     border: 2px solid;
     border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
+    border-image: linear-gradient(107.63deg, black 64.34%, rgba(0, 0, 0, 0) 112.84%);
     border-image-slice: 1;
     
     .close{

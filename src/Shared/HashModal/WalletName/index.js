@@ -10,6 +10,7 @@ const WalletContainer = styled.div`
     margin-top: 1rem;
     justify-content: space-between;
     align-items: center;
+    color: black;
 
     div{
         display: flex;

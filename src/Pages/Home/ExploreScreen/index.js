@@ -18,8 +18,8 @@ const bids2 = "/assets/images/bids2.png"
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 90%;
-    padding-left: 3%;
+    width: 94%;
+    padding-left: 2%;
     //padding-right: 2rem;
     //gap: 3rem;
     height: fit-content;
@@ -81,17 +81,19 @@ const Header = styled.div`
         //font
     }
     select{
-        background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+        //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+        background: rgba(176, 107, 225, 1);
         color: rgba(13, 3, 51, 1);
         height: 3rem;
-        border: 1px solid rgba(13, 3, 51, 1);
+        //border: 1px solid rgba(13, 3, 51, 1);
         border-radius: 5px;
-        font-size: 19px;
+        font-size: 18px;
         text-align: center;
         cursor: pointer;
         option{
             color: rgba(13, 3, 51, 1);
             background: black;
+            background: rgba(176, 107, 225, 1);
             border-radius: 5px;
         }
     }

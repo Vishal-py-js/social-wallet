@@ -7,6 +7,12 @@ const Container = styled.div`
     flex-direction: column;
     gap: 3rem;
     //justify-content: space-around;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
 `
 
 const FollowerCont = styled.div`
@@ -22,14 +28,15 @@ const FollowerCont = styled.div`
             font-size: 19px;
             font-weight: 500;
             color: rgba(200, 253, 203, 1);
-
+            color: black;
         }
     }
     .remove{
         button{
             padding: 7px 15px;
             color: #6CFF77;
-            font-size: 16px;
+            color: black;
+            font-size: 15px;
             font-weight: 600;
             background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
             border: 1px solid #6CFF77;

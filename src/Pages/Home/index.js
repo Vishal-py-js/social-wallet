@@ -57,8 +57,8 @@ const Tabs = styled.div`
     }
     .activate{
         color: rgba(144, 255, 153, 1);
-        font-weight: 700;
-        //font-size: 21px;
+        font-weight: 600;
+        font-size: 22px;
     }
 `
 

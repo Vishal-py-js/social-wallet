@@ -30,7 +30,8 @@ align-items: center;
 //background: linear-gradient(97.02deg, rgba(108, 255, 119, 1) 5.21%, rgba(108, 255, 119, 1) 97.96%);
 //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.12) 5.21%, rgba(108, 255, 119, 0) 97.96%);
 background: none;
-border: 4px solid linear-gradient(107.63deg, #C8FDCB 38.04%, rgba(0, 0, 0, 0) 112.84%);
+//border: 4px solid linear-gradient(107.63deg, #C8FDCB 38.04%, rgba(0, 0, 0, 0) 112.84%);
+border: 1px solid black;
 
 strong{
   font-size: 23px;

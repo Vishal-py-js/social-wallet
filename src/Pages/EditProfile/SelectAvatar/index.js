@@ -28,6 +28,7 @@ const Container = styled.div`
     top: 13.5rem;
     transition: 0.9s;
     background: black;
+    background: rgba(176, 107, 225, 1);
     //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0) 5.21%, rgba(185, 11, 122, 0) 97.96%);
     height: 37rem;
     width: 23.5rem;

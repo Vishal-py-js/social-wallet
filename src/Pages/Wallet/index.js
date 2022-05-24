@@ -6,10 +6,12 @@ import axios from "axios"
 import React, { useEffect, useState } from "react";
 import ConnectWalletModal from "../../Shared/ConnectWalletModal";
 import { walletModalOn } from "../../Redux/Modal/WalletModal/Actions";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 //import 'bootstrap/dist/css/bootstrap.css';
 
 const metamask = "assets/icons/metamask.svg"
 const solana = "assets/images/phantom.jpg"
+const back = "assets/icons/back.svg"
 
 const Container = styled.div`
     width: 100%;
@@ -45,8 +47,10 @@ const Container = styled.div`
         gap: 17px;
         align-items: center;
         border-radius: 5px;
-        background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.12) 5.21%, rgba(108, 255, 119, 0) 97.96%);
-        border: 4px solid linear-gradient(107.63deg, #C8FDCB 38.04%, rgba(0, 0, 0, 0) 112.84%);
+        //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.12) 5.21%, rgba(108, 255, 119, 0) 97.96%);
+        background: rgba(176, 107, 225, 1);
+        //border: 4px solid linear-gradient(107.63deg, #C8FDCB 38.04%, rgba(0, 0, 0, 0) 112.84%);
+        border: none;
         transition: all 350ms;
             
         //position: relative;
@@ -59,6 +63,13 @@ const Container = styled.div`
         -webkit-transition-duration: 0.2s; /* Safari */
         
         }
+    .back-nav{
+        height: 30px;
+        position: absolute;
+        left: 5vw;
+        top: 8vh;
+        cursor: pointer;
+    }
 `
 
 const WalletContainer = styled.div`
@@ -104,10 +115,12 @@ const Wallet = () => {
     }, [wallets])
 
     const walletMod = useSelector(state=>state.wallet)
+    const history = useHistory()
     
     return(
         <Container>
             <h1>WALLETS</h1>
+            <img className="back-nav" onClick={history.goBack} src={back} alt=""/>
             {
                 walletMod?<ConnectWalletModal />:""
             }

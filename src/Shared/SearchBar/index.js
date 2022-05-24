@@ -48,11 +48,13 @@ const SearchbarContainer = styled.div`
         } 
         //background: rgba(250, 250, 250, 0.2);
         background: black;
+        background: none;
         //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.00) 5.21%, rgba(108, 255, 119, 0) 97.96%);
         //border: 1px solid rgba(222, 222, 222, 0.32);
         //border: 1px solid rgba(200, 253, 203, 1);
         border: 2px solid;
         border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
+        border-image: linear-gradient(107.63deg, black 64.34%, rgba(0, 0, 0, 0) 112.84%);
         border-image-slice: 1;
         box-sizing: border-box;
         //border-radius: 8px; 
@@ -66,6 +68,7 @@ const SearchbarContainer = styled.div`
         input{
             background : none;
             color: rgba(200, 253, 203, 0.5);
+            color: black;
             border:none;
             font-size: 20px;
             width: 25vw;
@@ -103,13 +106,17 @@ const SearchbarContainer = styled.div`
         transform: scalex(1.05); 
         border: 2px solid;
         border-image: linear-gradient(107.63deg, #C8FDCB 64.34%, rgba(0, 0, 0, 0) 112.84%);
+        border-image: linear-gradient(107.63deg, black 64.34%, rgba(0, 0, 0, 0) 112.84%);
         border-image-slice: 1;
         box-shadow: -6px 15px 20px 0px rgba(0, 47, 28, 1);
+        box-shadow: -6px 15px 20px 0px rgba(0, 0, 0, 1);
         background: linear-gradient(97.02deg, #141C19 5.21%, #041A12 97.96%);
+        background: none;
         padding: 0 1vw;
         z-index: -1;
         h3{
             color: rgba(255, 255, 255, 1);
+            color: black;
             font-weight: 400;
             font-size: 16px;
         }
@@ -120,16 +127,19 @@ const SearchbarContainer = styled.div`
             justify-content: space-between;
             height: 50px;
             &:hover{
-                    background: linear-gradient(97.02deg, #141C19 5.21%, #041A12 97.96%);
+                   //background: linear-gradient(97.02deg, #141C19 5.21%, #041A12 97.96%);
+                    background: pink;
                 }
             h2{
                 color: rgba(200, 253, 203, 1);
+                color: black;
                 font-weight: 400;
                 font-size: 19px;
                 cursor: pointer;
             }
             small{
                 color: rgba(108, 255, 119, 1);
+                color: black;
                 cursor: pointer;
             }
         }

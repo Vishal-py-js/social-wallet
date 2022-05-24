@@ -7,6 +7,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: scroll;
 `
 
 const FollowerCont = styled.div`
@@ -14,6 +20,7 @@ const FollowerCont = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 7rem;
+    //max-width: 30vw;
     justify-content: space-between;
     .follower-details{
         display: flex;
@@ -22,14 +29,17 @@ const FollowerCont = styled.div`
             font-size: 19px;
             font-weight: 500;
             color: rgba(200, 253, 203, 1);
-
+            color: black;
         }
     }
     .remove{
+        
         button{
+            //align-self: flex-end;
             padding: 7px 15px;
             color: #6CFF77;
-            font-size: 16px;
+            color: black;
+            font-size: 15px;
             font-weight: 600;
             background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.07) 5.21%, rgba(108, 255, 119, 0) 97.96%);
             border: 1px solid #6CFF77;

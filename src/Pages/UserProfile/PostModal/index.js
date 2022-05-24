@@ -10,15 +10,15 @@ const close = "assets/icons/close-icon.svg"
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    //align-self: center;
-    justify-content: center;
-    align-items: center;
+    align-self: center;
+    //justify-content: center;
+    //align-items: center;
     top: 0;
     left: 0;
     height: 100vh;
     position: fixed;
     width: 93.3vw;
-    //background: none;
+    background: none;
     z-index: 2;
     backdrop-filter: blur(5px);
 `
@@ -26,16 +26,18 @@ const Container = styled.div`
 const Body = styled.div`
     display: flex;
     flex-direction: column;
-    //align-self: center;
-    //justify-content: center;
+    align-self: center;
+    //justify-content: space-between;
     //position: relative;
     //padding: 0 0 1px 0;
     width: 30vw;
-    height: fit-content;
-    background: red;
-    background: rgba(12, 17, 15, 1);
+    height: 90vh;
+    //backdrop-filter: blur(5px);
+    // background: red;
+    // background: rgba(12, 17, 15, 1);
     background: rgba(221, 164, 252, 1);
-    //border: 2px solid black;
+    border: 2px solid black;
+    //background: none;
     box-shadow: 20px 20px 40px 10px rgba(0, 0, 0, 0.7);
     .close{
         height: 20px;
@@ -58,12 +60,12 @@ const Body = styled.div`
 const Comments = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 2rem 0.5rem;
+    //padding: 2rem 0.5rem;
     margin: 0.5rem 0;
     max-height: 15rem;
-    gap: 15px;
+    //gap: 15px;
     //color: black;
-    justify-content: space-around;
+    //justify-content: space-around;
     scroll-snap-align: end;
     //scroll-snap-type: y proximity;
     ::-webkit-scrollbar{
@@ -110,6 +112,7 @@ const CommentInput = styled.div`
     background: rgba(144, 255, 153, 1);
     //border: 1px solid #6CFF77; 
     border: 1px solid rgba(13, 3, 51, 1);
+   
     img{
         height: 30px;
     }
@@ -122,6 +125,7 @@ const CommentInput = styled.div`
             background: none;
             color: black;
             font-size: 18px;
+            //max-height: 1rem;
             :focus{
                 outline: none;
             }
@@ -129,10 +133,9 @@ const CommentInput = styled.div`
     }
 `
 
-const CommentModal = ({imgSource, setShowComment, setShowPost}) => {
+const PostModal = ({imgSource, setShowPost}) => {
 
     const handleClose = () => {
-        setShowComment(false)
         setShowPost(false)
     }
 
@@ -298,4 +301,4 @@ const CommentModal = ({imgSource, setShowComment, setShowPost}) => {
     )
 }
 
-export default CommentModal
+export default PostModal

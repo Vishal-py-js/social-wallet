@@ -6,6 +6,7 @@ import { walletModalOff } from "../../Redux/Modal/WalletModal/Actions";
 
 const metamask = "assets/icons/metamask.svg"
 const phantom = "assets/images/phantom.jpg"
+const close = "assets/icons/close-icon.svg"
 
 const Container = styled.div`
     position: fixed;
@@ -22,11 +23,12 @@ const WalletContainer = styled.div`
     border-radius: 5px;
     z-index: 111 !important;
     //background: 	rgb(107,142,35);
-    background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.5) 5.21%, rgba(108, 255, 119, 0.5) 97.96%);
+    //background: linear-gradient(97.02deg, rgba(108, 255, 119, 0.5) 5.21%, rgba(108, 255, 119, 0.5) 97.96%);
+    background: rgba(176, 107, 225, 1);
     width: 30rem;
     height: 30rem;
     font-size: 40px;
-    border: 1px solid green;
+    //border: 1px solid green;
     top: 10rem;
     left: 37rem; 
     span{
@@ -80,7 +82,7 @@ const ConnectWalletModal = () => {
     return(
         <Container>
             <WalletContainer>
-                <span onClick={handleClose} style={{alignSelf: "flex-end"}}>close</span>
+                <img src={close} onClick={handleClose} style={{alignSelf: "flex-end"}} />
                 <h5>Select Wallet</h5>
                 <Wallets>
                     <MetaMaskAuth />

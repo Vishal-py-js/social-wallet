@@ -87,7 +87,7 @@ const ToggleContainer = styled.div`
     align-items: center;
     .activate{
         //background: rgba(255, 158, 205, 0.15);
-        border: 2px solid #C8FDCB;
+        //border: 2px solid #C8FDCB;
         color: rgba(200, 253, 203, 0.8);
     }
     div{
@@ -116,6 +116,7 @@ const Button = styled.button`
     
     padding: 10px 20px;
     background: rgba(200, 253, 203, 0.15);
+    background: rgba(176, 107, 225, 1);
     //color: rgba(200, 253, 203, 0.8);
     color: rgba(200, 253, 203, 0.5);
     font-size: 19px;

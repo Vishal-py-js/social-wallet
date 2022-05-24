@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import CommentModal from "../Home/NFTScreen/ProfileScreen/multiGridCard/CommentModal";
+import PostModal from "./PostModal";
 
 const image1 = "assets/icons/user-profile1.svg"
 const edit = "assets/icons/edit.svg"
@@ -107,6 +110,7 @@ const ProfileDetails = styled.div`
         color: rgba(13, 3, 51, 1);
         background: linear-gradient(97.02deg, rgba(108, 255, 119, 0) 5.21%, rgba(185, 11, 122, 0) 97.96%);
         padding: 10px 20px;
+        margin-top: 0.5rem;
         //border: 1px solid rgba(108, 255, 119);
         border: 1px solid rgba(13, 3, 51, 1);
     }
@@ -130,14 +134,24 @@ const CardContainer = styled.div`
     width: fit-content;
     div{
         padding: 25px 25px;
-        background: linear-gradient(180deg, #C8FDCB 0%, #0C1B0D 100%);
+        //background: linear-gradient(180deg, #C8FDCB 0%, #0C1B0D 100%);
     }
 `
 
 const NFTCard = ({imgSrc}) => {
+
+    const [showPost, setShowPost] = useState(false);
+
+    const handlePost = () => {
+        setShowPost(true)
+    }
+
     return(
         <CardContainer>
-            <img src={imgSrc} alt="user"/>
+            <img onClick={handlePost} src={imgSrc} alt="user"/>
+            {/* {
+                showPost?<PostModal imgSource={imgSrc} setShowPost={setShowPost}/>:""
+            } */}
         </CardContainer>
     )
 }
@@ -155,12 +169,12 @@ const UserProfile = () => {
                             <img src={image1} alt="user"/>
                         </div> 
                     </div>
-                    <button>EDIT PROFILE</button>
+                    {/* <button>EDIT PROFILE</button> */}
                 </div>
                 <div className="user">
                     <div className="user-name">
                         <strong>user_alex</strong>
-                        <img src={edit} alt="edit" />
+                        {/* <img src={edit} alt="edit" /> */}
                     </div>
                     <div className="user-bio">
                         <span>Bio</span>

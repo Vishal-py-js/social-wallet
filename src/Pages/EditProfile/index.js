@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 import SelectAvatar from "./SelectAvatar";
 
 const image1 = "assets/icons/user-profile1.svg"
 const edit = "assets/icons/edit.svg"
+const back = "assets/icons/back.svg"
 
 const Container = styled.div`
     color: #fff;
@@ -23,6 +25,14 @@ const Container = styled.div`
     h2{
         align-self: center;
         color: #6CFF77;
+    }
+    .back-nav{
+        height: 30px;
+        position: relative;
+        //left: 10rem;
+        right: 42vw;
+        top: 2vh;
+        cursor: pointer;
     }
 `
 
@@ -150,6 +160,8 @@ const EditProfile = () => {
 
     const chatDisplay = useSelector(state=>state.chat)
 
+    const history = useHistory()
+
     const handleAvatarModal = () => {
         setSelectAvatar(true)
     }
@@ -159,7 +171,11 @@ const EditProfile = () => {
             {
                 selectAvatar?<SelectAvatar setSelectAvatar={setSelectAvatar}/>:""
             }
-            <h2>EDIT USER PROFILE</h2>
+            {/* <div className="header"> */}
+                <img onClick={history.goBack} className="back-nav" src={back} alt=""/>
+                <h2>EDIT USER PROFILE</h2>
+            {/* </div> */}
+            
             <UserProfile>
                 <Avatar className="profile-detail">
                     <div className="profile-image">
